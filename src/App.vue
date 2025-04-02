@@ -1,36 +1,321 @@
 <template>
-  <div class="container py-4">
-    <header class="mb-4 text-center">
-      <h1 class="display-5 fw-bold mb-2">CV_Luoghi</h1>
-      <p class="lead text-muted">Luoghi</p>
-      <div class="d-flex justify-content-center mt-3">
-        <div class="stats-container d-flex flex-wrap justify-content-center gap-3">
-          <div v-for="(stat, index) in statistiche" :key="index" class="stat-card text-center p-2 rounded">
-            <div class="fs-4 fw-bold">{{ stat.valore }}</div>
-            <div class="stat-label small">{{ stat.label }}</div>
-          </div>
+  <v-app>
+    <!-- Navigation Drawer migliorato -->
+    <v-navigation-drawer v-model="drawer" app :width="280" elevation="4" temporary>
+      <v-card flat class="pa-4 text-center">
+        <v-avatar color="primary" size="80">
+          <v-icon size="48" color="white">mdi-map-marker</v-icon>
+        </v-avatar>
+        <h2 class="text-h5 mt-3 font-weight-medium">CV_Luoghi</h2>
+        <p class="text-caption text-medium-emphasis">Luoghi interessanti</p>
+      </v-card>
+      
+      <v-divider></v-divider>
+      
+      <v-list nav>
+        <v-list-item v-for="(item, i) in menuItems" :key="i" link :to="item.route">
+          <template v-slot:prepend>
+            <v-icon :color="item.color">{{ item.icon }}</v-icon>
+          </template>
+          <v-list-item-title>{{ item.text }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+      
+      <template v-slot:append>
+        <v-divider></v-divider>
+        <div class="pa-4">
+          <v-btn block color="primary" variant="tonal">
+            <v-icon start>mdi-information</v-icon>
+            Informazioni
+          </v-btn>
         </div>
-      </div>
-    </header>
-    
-    <main>
-      <LuoghiList 
-        :luoghi="luoghi" 
-        @luogo-selected="handleLuogoSelected" 
-      />
-      <LuogoDetails 
-        v-if="selectedLuogo" 
-        :luogo="selectedLuogo" 
-        :luoghi="luoghi"
-        @close="closeDetails"
-        @luogo-selected="handleLuogoSelected"
-      />
-    </main>
+      </template>
+    </v-navigation-drawer>
 
-    <footer class="text-center mt-5 py-3 text-muted border-top">
-      <small>© {{ currentYear }} - CV_Luoghi - FBaboni</small>
-    </footer>
-  </div>
+    <!-- App Bar migliorato -->
+    <v-app-bar app color="primary" elevation="2">
+      <v-app-bar-nav-icon @click="drawer = !drawer" color="white"></v-app-bar-nav-icon>
+      
+      <v-toolbar-title class="font-weight-bold">CV_Luoghi</v-toolbar-title>
+      
+      <v-spacer></v-spacer>
+      
+      <v-btn icon @click="toggleSearchBar">
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
+      
+      <v-btn icon @click="toggleThemeMode">
+        <v-icon>{{ isDarkMode ? 'mdi-weather-sunny' : 'mdi-weather-night' }}</v-icon>
+      </v-btn>
+      
+      <v-menu>
+        <template v-slot:activator="{ props }">
+          <v-btn icon v-bind="props">
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item v-for="(item, i) in dropdownMenu" :key="i" :value="item" @click="handleMenuAction(item.action)">
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+    </v-app-bar>
+    
+    <!-- Barra di ricerca espandibile -->
+    <v-expand-transition>
+      <v-app-bar v-if="showSearchBar" app color="surface" prominent>
+        <v-text-field
+          v-model="searchQuery"
+          label="Cerca luoghi..."
+          prepend-inner-icon="mdi-magnify"
+          clearable
+          hide-details
+          variant="solo"
+          density="comfortable"
+          class="mx-2"
+          @keyup.enter="searchLuoghi"
+        ></v-text-field>
+        <v-btn icon @click="toggleSearchBar">
+          <v-icon>mdi-close</v-icon>
+        </v-btn>
+      </v-app-bar>
+    </v-expand-transition>
+
+    <!-- Main Content -->
+    <v-main>
+      <v-container class="py-6">
+        <!-- Filtri -->
+        <v-row class="mb-6">
+          <v-col cols="12">
+            <v-card elevation="2" class="pa-4">
+              <v-card-title class="pb-2">Filtri</v-card-title>
+              <v-row>
+                <v-col cols="12" sm="4">
+                  <v-select
+                    v-model="filtriSelezionati.categoria"
+                    :items="categorieFiltro"
+                    label="Categoria"
+                    clearable
+                    variant="outlined"
+                    density="comfortable"
+                  ></v-select>
+                </v-col>
+                <v-col cols="12" sm="4">
+                  <v-select
+                    v-model="filtriSelezionati.ordinamento"
+                    :items="ordinamentiFiltro"
+                    label="Ordinamento"
+                    variant="outlined"
+                    density="comfortable"
+                  ></v-select>
+                </v-col>
+                <v-col cols="12" sm="4" class="d-flex align-center">
+                  <v-switch
+                    v-model="filtriSelezionati.preferiti"
+                    label="Solo preferiti"
+                    color="warning"
+                    hide-details
+                  ></v-switch>
+                  <v-spacer></v-spacer>
+                  <v-btn color="primary" @click="applicaFiltri">
+                    <v-icon start>mdi-filter</v-icon>
+                    Applica
+                  </v-btn>
+                </v-col>
+              </v-row>
+            </v-card>
+          </v-col>
+        </v-row>
+
+        <!-- Vista a tabs per diverse modalità di visualizzazione -->
+        <v-card elevation="2" class="mb-6">
+          <v-tabs v-model="activeTab" bg-color="primary" centered>
+            <v-tab value="list">
+              <v-icon start>mdi-format-list-bulleted</v-icon>
+              Lista
+            </v-tab>
+            <v-tab value="grid">
+              <v-icon start>mdi-grid</v-icon>
+              Griglia
+            </v-tab>
+            <v-tab value="map" v-if="hasMapFeature">
+              <v-icon start>mdi-map</v-icon>
+              Mappa
+            </v-tab>
+          </v-tabs>
+
+          <v-window v-model="activeTab">
+            <v-window-item value="list">
+              <LuoghiList 
+                :luoghi="luoghiFiltrati" 
+                @luogo-selected="handleLuogoSelected"
+                @toggle-preferito="togglePreferito" 
+              />
+            </v-window-item>
+            
+            <v-window-item value="grid">
+              <v-row class="pa-4">
+                <v-col v-for="luogo in luoghiFiltrati" :key="luogo.id" cols="12" sm="6" md="4" lg="3">
+                  <v-hover v-slot="{ isHovering, props }">
+                    <v-card 
+                      v-bind="props"
+                      :elevation="isHovering ? 8 : 2" 
+                      class="h-100"
+                      @click="handleLuogoSelected(luogo)"
+                    >
+                      <v-img
+                        :src="luogo.immagine || `/api/placeholder/400/200?text=${luogo.nome}`"
+                        height="200"
+                        cover
+                      >
+                        <template v-slot:placeholder>
+                          <v-row class="fill-height ma-0" align="center" justify="center">
+                            <v-progress-circular indeterminate color="primary"></v-progress-circular>
+                          </v-row>
+                        </template>
+                        <div class="fill-height d-flex flex-column justify-end">
+                          <v-chip
+                            size="small"
+                            class="ma-2 text-capitalize"
+                            :color="getCategoriaColor(luogo.categoria)"
+                          >
+                            {{ luogo.categoria }}
+                          </v-chip>
+                        </div>
+                      </v-img>
+                      
+                      <v-card-title class="text-truncate">
+                        {{ luogo.nome }}
+                        <v-btn
+                          icon="mdi-heart"
+                          variant="text"
+                          size="small"
+                          :color="luogo.preferito ? 'error' : undefined"
+                          @click.stop="togglePreferito(luogo)"
+                        ></v-btn>
+                      </v-card-title>
+                      
+                      <v-card-subtitle>{{ luogo.localita }}</v-card-subtitle>
+                      
+                      <v-card-text class="text-truncate">
+                        {{ luogo.descrizione }}
+                      </v-card-text>
+                      
+                      <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn variant="text" color="primary" @click.stop="handleLuogoSelected(luogo)">
+                          Dettagli
+                          <v-icon end>mdi-arrow-right</v-icon>
+                        </v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-hover>
+                </v-col>
+              </v-row>
+            </v-window-item>
+            
+            <v-window-item value="map" v-if="hasMapFeature">
+              <div class="pa-4 text-center">
+                <p class="text-body-1">Visualizzazione mappa (da implementare)</p>
+              </div>
+            </v-window-item>
+          </v-window>
+        </v-card>
+
+        <!-- Dettagli Luogo con dialog -->
+        <v-dialog v-model="showLuogoDialog" fullscreen transition="dialog-bottom-transition">
+          <v-card>
+            <v-toolbar color="primary" dark>
+              <v-btn icon @click="closeDetails">
+                <v-icon>mdi-close</v-icon>
+              </v-btn>
+              <v-toolbar-title>{{ selectedLuogo?.nome }}</v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-btn icon @click="togglePreferito(selectedLuogo)" v-if="selectedLuogo">
+                <v-icon>{{ selectedLuogo.preferito ? 'mdi-heart' : 'mdi-heart-outline' }}</v-icon>
+              </v-btn>
+              <v-btn icon>
+                <v-icon>mdi-share-variant</v-icon>
+              </v-btn>
+            </v-toolbar>
+            
+            <div v-if="selectedLuogo" class="pa-4">
+              <LuogoDetails
+                :luogo="selectedLuogo"
+                :luoghi="luoghi"
+                @close="closeDetails"
+                @luogo-selected="handleLuogoSelected"
+                @toggle-preferito="togglePreferito"
+              />
+            </div>
+          </v-card>
+        </v-dialog>
+
+        <!-- Snackbar per notifiche -->
+        <v-snackbar v-model="snackbar.show" :color="snackbar.color" :timeout="3000">
+          {{ snackbar.text }}
+          <template v-slot:actions>
+            <v-btn variant="text" @click="snackbar.show = false">Chiudi</v-btn>
+          </template>
+        </v-snackbar>
+      </v-container>
+    </v-main>
+    
+    <!-- Speed dial per azioni rapide -->
+    <v-speed-dial
+      v-model="fab"
+      location="bottom right"
+      direction="top"
+      transition="scale-transition"
+      :style="{ position: 'fixed', bottom: '16px', right: '16px' }"
+    >
+      <template v-slot:activator>
+        <v-btn
+          color="primary"
+          icon="mdi-plus"
+          size="large"
+        ></v-btn>
+      </template>
+      <v-btn
+        color="green"
+        icon="mdi-plus-circle"
+        size="small"
+        @click="nuovoLuogo"
+      >
+        <v-tooltip activator="parent" location="left">Aggiungi nuovo luogo</v-tooltip>
+      </v-btn>
+      <v-btn
+        color="indigo"
+        icon="mdi-map-marker-radius"
+        size="small"
+        @click="trovaVicini"
+      >
+        <v-tooltip activator="parent" location="left">Trova luoghi vicini</v-tooltip>
+      </v-btn>
+      <v-btn
+        color="red"
+        icon="mdi-heart"
+        size="small"
+        @click="mostraPreferiti"
+      >
+        <v-tooltip activator="parent" location="left">Mostra preferiti</v-tooltip>
+      </v-btn>
+    </v-speed-dial>
+
+    <!-- Footer migliorato -->
+    <v-footer app class="bg-primary text-center d-flex flex-column">
+      <div class="pt-4 pb-3">
+        <v-btn v-for="icon in socialIcons" :key="icon" icon class="mx-2" variant="text">
+          <v-icon>{{ icon }}</v-icon>
+        </v-btn>
+      </div>
+      <v-divider></v-divider>
+      <div class="py-2 text-white">
+        <small>© {{ currentYear }} - CV_Luoghi - FBaboni</small>
+      </div>
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
@@ -46,14 +331,69 @@ export default {
   },
   data() {
     return {
+      drawer: false,
+      fab: false,
+      isDarkMode: false,
+      showSearchBar: false,
+      searchQuery: '',
+      activeTab: 'list',
+      showLuogoDialog: false,
+      hasMapFeature: false,
+      menuItems: [
+        { text: 'Home', route: '/', icon: 'mdi-home', color: 'primary' },
+        { text: 'Luoghi', route: '/luoghi', icon: 'mdi-map-marker-multiple', color: 'success' },
+        { text: 'Categorie', route: '/categorie', icon: 'mdi-shape', color: 'info' },
+        { text: 'Preferiti', route: '/preferiti', icon: 'mdi-heart', color: 'error' },
+        { text: 'Statistiche', route: '/statistiche', icon: 'mdi-chart-bar', color: 'warning' },
+        { text: 'Impostazioni', route: '/impostazioni', icon: 'mdi-cog', color: 'grey' }
+      ],
+      dropdownMenu: [
+        { title: 'Aggiorna dati', action: 'refresh' },
+        { title: 'Esporta luoghi', action: 'export' },
+        { title: 'Gestisci categorie', action: 'categories' },
+        { title: 'Informazioni', action: 'about' }
+      ],
+      socialIcons: [
+        'mdi-facebook',
+        'mdi-twitter',
+        'mdi-instagram',
+        'mdi-github'
+      ],
       luoghi: [],
       selectedLuogo: null,
-      currentYear: new Date().getFullYear()
-    }
+      currentYear: new Date().getFullYear(),
+      filtriSelezionati: {
+        categoria: null,
+        ordinamento: 'nome_asc',
+        preferiti: false
+      },
+      categorieFiltro: [
+        'ristorante',
+        'chiesa',
+        'museo',
+        'rifugio',
+        'lago',
+        'parco_naturale'
+      ],
+      ordinamentiFiltro: [
+        { title: 'Nome (A-Z)', value: 'nome_asc' },
+        { title: 'Nome (Z-A)', value: 'nome_desc' },
+        { title: 'Località', value: 'localita' },
+        { title: 'Categoria', value: 'categoria' }
+      ],
+      snackbar: {
+        show: false,
+        text: '',
+        color: 'success'
+      }
+    };
   },
   created() {
-    // Carica i dati dal file JSON
-    this.luoghi = luoghiData.luoghi;
+    // Caricamento luoghi e aggiunta della proprietà preferito
+    this.luoghi = luoghiData.luoghi.map(luogo => ({
+      ...luogo,
+      preferito: false
+    }));
   },
   computed: {
     statistiche() {
@@ -71,40 +411,182 @@ export default {
         { label: 'Laghi', valore: categorieCounts['lago'] || 0 },
         { label: 'Parchi', valore: categorieCounts['parco_naturale'] || 0 }
       ];
+    },
+    luoghiFiltrati() {
+      let risultato = [...this.luoghi];
+      
+      // Filtra per categoria
+      if (this.filtriSelezionati.categoria) {
+        risultato = risultato.filter(luogo => 
+          luogo.categoria === this.filtriSelezionati.categoria
+        );
+      }
+      
+      // Filtra per preferiti
+      if (this.filtriSelezionati.preferiti) {
+        risultato = risultato.filter(luogo => luogo.preferito);
+      }
+      
+      // Applica ordinamento
+      switch(this.filtriSelezionati.ordinamento) {
+        case 'nome_asc':
+          risultato.sort((a, b) => a.nome.localeCompare(b.nome));
+          break;
+        case 'nome_desc':
+          risultato.sort((a, b) => b.nome.localeCompare(a.nome));
+          break;
+        case 'localita':
+          risultato.sort((a, b) => a.localita.localeCompare(b.localita));
+          break;
+        case 'categoria':
+          risultato.sort((a, b) => a.categoria.localeCompare(b.categoria));
+          break;
+      }
+      
+      // Filtra per ricerca se presente
+      if (this.searchQuery) {
+        const query = this.searchQuery.toLowerCase();
+        risultato = risultato.filter(luogo => 
+          luogo.nome.toLowerCase().includes(query) || 
+          luogo.localita.toLowerCase().includes(query) ||
+          luogo.descrizione.toLowerCase().includes(query)
+        );
+      }
+      
+      return risultato;
     }
   },
   methods: {
     handleLuogoSelected(luogo) {
       this.selectedLuogo = luogo;
+      this.showLuogoDialog = true;
     },
     closeDetails() {
+      this.showLuogoDialog = false;
       this.selectedLuogo = null;
+    },
+    toggleThemeMode() {
+      this.isDarkMode = !this.isDarkMode;
+      this.$vuetify.theme.dark = this.isDarkMode;
+    },
+    toggleSearchBar() {
+      this.showSearchBar = !this.showSearchBar;
+      if (!this.showSearchBar) {
+        this.searchQuery = '';
+      } else {
+        // Focus on search field when opened
+        setTimeout(() => {
+          const searchField = document.querySelector('input[type="text"]');
+          if (searchField) searchField.focus();
+        }, 50);
+      }
+    },
+    searchLuoghi() {
+      this.showNotification(`Ricerca: ${this.searchQuery}`, 'info');
+    },
+    applicaFiltri() {
+      this.showNotification('Filtri applicati', 'success');
+    },
+    togglePreferito(luogo) {
+      if (luogo) {
+        luogo.preferito = !luogo.preferito;
+        this.showNotification(
+          luogo.preferito 
+            ? `${luogo.nome} aggiunto ai preferiti` 
+            : `${luogo.nome} rimosso dai preferiti`,
+          luogo.preferito ? 'success' : 'info'
+        );
+      }
+    },
+    handleMenuAction(action) {
+      switch(action) {
+        case 'refresh':
+          this.showNotification('Dati aggiornati', 'success');
+          break;
+        case 'export':
+          this.showNotification('Funzione di esportazione da implementare', 'info');
+          break;
+        case 'categories':
+          this.showNotification('Gestione categorie da implementare', 'info');
+          break;
+        case 'about':
+          this.showNotification('Informazioni applicazione', 'info');
+          break;
+      }
+    },
+    showNotification(text, color = 'success') {
+      this.snackbar.text = text;
+      this.snackbar.color = color;
+      this.snackbar.show = true;
+    },
+    getCategoriaColor(categoria) {
+      const colors = {
+        'Totale luoghi': 'primary',
+        'Ristoranti': 'red-darken-1',
+        'Chiese': 'blue-darken-2',
+        'Musei': 'amber-darken-2',
+        'Rifugi': 'green-darken-1',
+        'Laghi': 'blue',
+        'Parchi': 'green',
+        'ristorante': 'red-darken-1',
+        'chiesa': 'blue-darken-2',
+        'museo': 'amber-darken-2',
+        'rifugio': 'green-darken-1',
+        'lago': 'blue',
+        'parco_naturale': 'green'
+      };
+      return colors[categoria] || 'grey';
+    },
+    getCategoriaIcon(categoria) {
+      const icons = {
+        'Totale luoghi': 'mdi-map-marker-multiple',
+        'Ristoranti': 'mdi-silverware-fork-knife',
+        'Chiese': 'mdi-church',
+        'Musei': 'mdi-bank',
+        'Rifugi': 'mdi-home',
+        'Laghi': 'mdi-waves',
+        'Parchi': 'mdi-pine-tree'
+      };
+      return icons[categoria] || 'mdi-map-marker';
+    },
+    nuovoLuogo() {
+      this.showNotification('Funzione per aggiungere nuovo luogo', 'info');
+    },
+    trovaVicini() {
+      this.showNotification('Ricerca luoghi vicini', 'info');
+    },
+    mostraPreferiti() {
+      this.filtriSelezionati.preferiti = true;
+      this.applicaFiltri();
     }
   }
-}
+};
 </script>
 
 <style>
-body {
-  background-color: #f8f9fa;
+.v-navigation-drawer {
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-.container {
-  max-width: 960px;
+.on-hover {
+  transition: all 0.3s ease-in-out;
 }
 
-.stat-card {
-  background-color: #ffffff;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  min-width: 90px;
-  border: 1px solid #dee2e6;
+/* Animazioni per il speed dial */
+.v-speed-dial {
+  position: absolute;
 }
 
-.stat-label {
-  color: #6c757d;
+.v-speed-dial .v-btn {
+  margin-top: 10px;
 }
 
-header {
-  margin-bottom: 2rem;
+.v-speed-dial .v-btn:first-of-type {
+  margin-top: 0;
+}
+
+/* Stile per hover effect sulle cards */
+.v-card.on-hover {
+  transform: translateY(-5px);
 }
 </style>
