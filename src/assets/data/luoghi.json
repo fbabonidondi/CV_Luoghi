@@ -1,0 +1,62 @@
+{
+    "luoghi": [
+      {
+        "id": 1,
+        "categoria": "ristorante",
+        "nome": "La Trattoria del Buongustaio",
+        "data_visita": "2023-05-15",
+        "descrizione": "Tipico ristorante italiano con specialità regionali",
+        "indirizzo": "Via Roma 123, Milano",
+        "commento": "Ottimo rapporto qualità-prezzo, personale cordiale",
+        "lista_cibi": ["Pasta alla carbonara", "Bistecca alla fiorentina", "Tiramisù"]
+      },
+      {
+        "id": 2,
+        "categoria": "chiesa",
+        "nome": "Duomo di San Lorenzo",
+        "data_visita": "2023-06-10",
+        "descrizione": "Chiesa romanica del XII secolo",
+        "indirizzo": "Piazza Duomo 1, Genova",
+        "commento": "Architettura impressionante e ottimo stato di conservazione"
+      },
+      {
+        "id": 3,
+        "categoria": "museo",
+        "nome": "Museo di Arte Contemporanea",
+        "data_visita": "2023-07-05",
+        "descrizione": "Collezione di arte moderna e contemporanea",
+        "indirizzo": "Viale delle Arti 45, Roma",
+        "commento": "Esposizione varia e ben curata, audioguida disponibile"
+      },
+      {
+        "id": 4,
+        "categoria": "rifugio",
+        "nome": "Rifugio Monte Bianco",
+        "data_visita": "2023-08-20",
+        "descrizione": "Rifugio alpino situato lungo il sentiero per il Monte Bianco",
+        "indirizzo": "Sentiero E4, Courmayeur",
+        "commento": "Vista mozzafiato e cibo ottimo",
+        "altitudine": 2500
+      },
+      {
+        "id": 5,
+        "categoria": "lago",
+        "nome": "Lago di Garda",
+        "data_visita": "2023-09-02",
+        "descrizione": "Il più grande lago italiano",
+        "indirizzo": "Lombardia/Veneto/Trentino",
+        "commento": "Acqua cristallina e paesaggio incantevole",
+        "superficie": 370
+      },
+      {
+        "id": 6,
+        "categoria": "parco_naturale",
+        "nome": "Parco Nazionale del Gran Paradiso",
+        "data_visita": "2023-09-25",
+        "descrizione": "Uno dei parchi nazionali più antichi d'Italia",
+        "indirizzo": "Valle d'Aosta/Piemonte",
+        "commento": "Flora e fauna abbondanti, sentieri ben segnalati",
+        "estensione": 70000
+      }
+    ]
+  }
