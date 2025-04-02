@@ -1,8 +1,8 @@
 <template>
   <div class="container py-4">
     <header class="mb-4 text-center">
-      <h1 class="display-5 fw-bold mb-2">I Miei Luoghi Visitati</h1>
-      <p class="lead text-muted">Una collezione di luoghi interessanti visitati nel tempo</p>
+      <h1 class="display-5 fw-bold mb-2">CV_Luoghi</h1>
+      <p class="lead text-muted">Luoghi</p>
       <div class="d-flex justify-content-center mt-3">
         <div class="stats-container d-flex flex-wrap justify-content-center gap-3">
           <div v-for="(stat, index) in statistiche" :key="index" class="stat-card text-center p-2 rounded">
@@ -28,7 +28,7 @@
     </main>
 
     <footer class="text-center mt-5 py-3 text-muted border-top">
-      <small>© {{ currentYear }} - App Luoghi Visitati</small>
+      <small>© {{ currentYear }} - CV_Luoghi - FBaboni</small>
     </footer>
   </div>
 </template>

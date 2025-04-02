@@ -81,8 +81,8 @@
                   <div>
                     <div class="fw-bold">{{ luogo.nome }}</div>
                     <div class="text-muted small">{{ luogo.indirizzo }}</div>
+                    <div class="text-muted">{{ formatDate(luogo.data_visita) }}</div>
                   </div>
-                  <div class="text-muted">{{ formatDate(luogo.data_visita) }}</div>
                 </li>
               </ul>
             </div>
