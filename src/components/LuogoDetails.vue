@@ -45,8 +45,8 @@
     </v-tabs>
 
     <!-- Contenuto delle tabs -->
-    <v-window v-model="activeTab">
-      <!-- Tab Informazioni -->
+    <v-window v-model="activeTab" :touch="false">
+        <!-- Tab Informazioni -->
       <v-window-item value="info">
         <v-container class="pa-3">
           <v-row>
@@ -203,7 +203,7 @@
                   variant="outlined"
                   class="mb-2"
                   :color="`${getCategoriaColor(related.categoria)}-lighten-5`"
-                  @click="selectRelated(related)"
+                  @click.stop="openRelatedLuogo(related)"
                 >
                   <v-card-item class="pa-2">
                     <template v-slot:prepend>
@@ -342,6 +342,11 @@ export default {
   methods: {
     closeDetails() {
       this.$emit('close');
+    },
+    openRelatedLuogo(luogo) {
+      this.activeTab = 'info';
+      // Emette un evento per aprire il nuovo luogo mantenendo la finestra aperta
+      this.$emit('open-related-luogo', luogo);
     },
     selectRelated(luogo) {
       this.$emit('close');

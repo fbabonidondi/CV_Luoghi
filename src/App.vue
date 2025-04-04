@@ -308,6 +308,7 @@
                 :luoghi="luoghi"
                 @close="closeDetails"
                 @luogo-selected="handleLuogoSelected"
+                @open-related-luogo="handleRelatedLuogo"
                 @toggle-preferito="togglePreferito"
               />
             </div>
@@ -563,6 +564,12 @@ export default {
           luogo.preferito ? 'success' : 'info'
         );
       }
+    },
+    handleRelatedLuogo(luogo) {
+    // Aggiorna il luogo selezionato senza chiudere il dialog
+    this.selectedLuogo = luogo;
+    // Se necessario, fai scroll verso l'alto
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     },
     handleMenuAction(action) {
       switch(action) {
