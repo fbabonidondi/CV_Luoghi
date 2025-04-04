@@ -98,11 +98,9 @@
 export default {
   name: 'LuoghiList',
   props: {
-    luoghi: {
-      type: Array,
-      required: true
-    }
-  },
+  luoghi: { type: Array, required: true },
+  showFavorites: { type: Boolean, default: false }
+},
   data() {
     return {
       activeFilter: 'all',
@@ -119,29 +117,35 @@ export default {
     }
   },
   computed: {
-    filteredLuoghi() {
-      let filteredByCategory = this.luoghi;
-      
-      // Filtra per categoria se non è 'all'
-      if (this.activeFilter !== 'all') {
-        filteredByCategory = this.luoghi.filter(luogo => luogo.categoria === this.activeFilter);
-      }
-      
-      // Se non c'è una query di ricerca, restituisci i luoghi filtrati per categoria
-      if (!this.searchQuery.trim()) {
-        return filteredByCategory;
-      }
-      
-      // Filtra per query di ricerca
-      const query = this.searchQuery.toLowerCase().trim();
-      return filteredByCategory.filter(luogo => {
-        return (
-          luogo.nome.toLowerCase().includes(query) ||
-          luogo.indirizzo.toLowerCase().includes(query) ||
-          luogo.descrizione.toLowerCase().includes(query)
-        );
-      });
-    },
+  filteredLuoghi() {
+    // Inizia con tutti i luoghi oppure solo i preferiti
+    let filtered = this.luoghi;
+    
+    // Filtra preferiti se la prop è true
+    if (this.showFavorites) {
+      filtered = filtered.filter(luogo => luogo.preferito);
+    }
+    
+    // Filtra per categoria se non è 'all'
+    if (this.activeFilter !== 'all') {
+      filtered = filtered.filter(luogo => luogo.categoria === this.activeFilter);
+    }
+    
+    // Se non c'è una query di ricerca, restituisci i luoghi filtrati
+    if (!this.searchQuery.trim()) {
+      return filtered;
+    }
+    
+    // Filtra per query di ricerca
+    const query = this.searchQuery.toLowerCase().trim();
+    return filtered.filter(luogo => {
+      return (
+        luogo.nome.toLowerCase().includes(query) ||
+        luogo.indirizzo.toLowerCase().includes(query) ||
+        luogo.descrizione.toLowerCase().includes(query)
+      );
+    });
+  },
     categorieConLuoghi() {
       // Raggruppa i luoghi filtrati per categoria
       return this.categorie

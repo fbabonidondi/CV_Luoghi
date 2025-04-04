@@ -125,204 +125,17 @@
     <!-- Main Content -->
     <v-main>
       <router-view></router-view>
-      <v-container class="py-6">
-        <!-- Filtri -->
-        <v-row class="mb-6">
-          <v-col cols="12">
-            <v-card elevation="2" class="pa-4 rounded-lg">
-              <v-card-title class="pb-2">
-                <v-icon color="teal" class="me-2">mdi-filter-variant</v-icon>
-                Filtri
-              </v-card-title>
-              <v-row>
-                <v-col cols="12" sm="4">
-                  <v-select
-                    v-model="filtriSelezionati.categoria"
-                    :items="categorieFiltro"
-                    label="Categoria"
-                    clearable
-                    variant="outlined"
-                    density="comfortable"
-                    color="teal"
-                  ></v-select>
-                </v-col>
-                <v-col cols="12" sm="4">
-                  <v-select
-                    v-model="filtriSelezionati.ordinamento"
-                    :items="ordinamentiFiltro"
-                    label="Ordinamento"
-                    variant="outlined"
-                    density="comfortable"
-                    color="teal"
-                  ></v-select>
-                </v-col>
-                <v-col cols="12" sm="4" class="d-flex align-center">
-                  <v-switch
-                    v-model="filtriSelezionati.preferiti"
-                    label="Solo preferiti"
-                    color="teal"
-                    hide-details
-                  ></v-switch>
-                  <v-spacer></v-spacer>
-                  <v-btn color="teal" @click="applicaFiltri" variant="elevated" class="rounded-pill">
-                    <v-icon start>mdi-filter</v-icon>
-                    Applica
-                  </v-btn>
-                </v-col>
-              </v-row>
-            </v-card>
-          </v-col>
-        </v-row>
 
-        <!-- Vista a tabs per diverse modalità di visualizzazione -->
-        <v-card elevation="2" class="mb-6 rounded-lg overflow-hidden">
-          <v-tabs v-model="activeTab" bg-color="grey-darken-3" slider-color="teal" centered>
-            <v-tab value="list" class="text-body-1">
-              <v-icon start>mdi-format-list-bulleted</v-icon>
-              Lista
-            </v-tab>
-            <v-tab value="grid" class="text-body-1">
-              <v-icon start>mdi-grid</v-icon>
-              Griglia
-            </v-tab>
-            <v-tab value="map" v-if="hasMapFeature" class="text-body-1">
-              <v-icon start>mdi-map</v-icon>
-              Mappa
-            </v-tab>
-          </v-tabs>
-
-          <v-window v-model="activeTab">
-            <v-window-item value="list">
-              <LuoghiList 
-                :luoghi="luoghiFiltrati" 
-                @luogo-selected="handleLuogoSelected"
-                @toggle-preferito="togglePreferito" 
-              />
-            </v-window-item>
-            
-            <v-window-item value="grid">
-              <v-row class="pa-4">
-                <v-col v-for="luogo in luoghiFiltrati" :key="luogo.id" cols="12" sm="6" md="4" lg="3">
-                  <v-hover v-slot="{ isHovering, props }">
-                    <v-card 
-                      v-bind="props"
-                      :elevation="isHovering ? 8 : 2" 
-                      class="h-100 rounded-lg"
-                      @click="handleLuogoSelected(luogo)"
-                    >
-                      <v-img
-                        :src="luogo.immagine || `/api/placeholder/400/200?text=${luogo.nome}`"
-                        height="200"
-                        cover
-                      >
-                        <template v-slot:placeholder>
-                          <v-row class="fill-height ma-0" align="center" justify="center">
-                            <v-progress-circular indeterminate color="teal"></v-progress-circular>
-                          </v-row>
-                        </template>
-                        <div class="fill-height d-flex flex-column justify-space-between">
-                          <div class="d-flex justify-end pa-2">
-                            <v-btn
-                              icon
-                              variant="text"
-                              size="small"
-                              :color="luogo.preferito ? 'error' : 'white'"
-                              @click.stop="togglePreferito(luogo)"
-                            >
-                              <v-icon>{{ luogo.preferito ? 'mdi-heart' : 'mdi-heart-outline' }}</v-icon>
-                            </v-btn>
-                          </div>
-                          <div>
-                            <v-chip
-                              size="small"
-                              class="ma-2 text-capitalize"
-                              :color="getCategoriaColor(luogo.categoria)"
-                            >
-                              {{ luogo.categoria }}
-                            </v-chip>
-                          </div>
-                        </div>
-                      </v-img>
-                      
-                      <v-card-title class="text-truncate pb-1">
-                        {{ luogo.nome }}
-                      </v-card-title>
-                      
-                      <v-card-subtitle class="pb-1">
-                        <v-icon size="small" class="me-1">mdi-map-marker</v-icon>
-                        {{ luogo.localita }}
-                      </v-card-subtitle>
-                      
-                      <v-card-text class="text-truncate">
-                        {{ luogo.descrizione }}
-                      </v-card-text>
-                      
-                      <v-card-actions>
-                        <v-spacer></v-spacer>
-                        <v-btn variant="text" color="teal" @click.stop="handleLuogoSelected(luogo)" class="text-capitalize">
-                          Dettagli
-                          <v-icon end>mdi-arrow-right</v-icon>
-                        </v-btn>
-                      </v-card-actions>
-                    </v-card>
-                  </v-hover>
-                </v-col>
-              </v-row>
-            </v-window-item>
-            
-            <v-window-item value="map" v-if="hasMapFeature">
-              <div class="pa-4 text-center">
-                <p class="text-body-1">Visualizzazione mappa (da implementare)</p>
-              </div>
-            </v-window-item>
-          </v-window>
-        </v-card>
-
-        <!-- Dettagli Luogo con dialog -->
-        <v-dialog v-model="showLuogoDialog" fullscreen transition="dialog-bottom-transition">
-          <v-card>
-            <v-toolbar :color="getHeaderColor(selectedLuogo?.categoria)" dark>
-              <v-btn 
-                icon
-                class="mx-1"
-                variant="tonal"
-                color="white"
-                size="large"
-                @click="closeDetails"
-              >
-                <v-icon>mdi-close</v-icon>
-              </v-btn>
-              <v-toolbar-title class="text-truncate">{{ selectedLuogo?.nome }}</v-toolbar-title>
-              <v-spacer></v-spacer>
-              <v-btn icon @click="togglePreferito(selectedLuogo)" v-if="selectedLuogo">
-                <v-icon>{{ selectedLuogo.preferito ? 'mdi-heart' : 'mdi-heart-outline' }}</v-icon>
-              </v-btn>
-              <v-chip v-if="selectedLuogo" :color="getCategoriaColor(selectedLuogo.categoria)" variant="elevated">
-                {{ formatCategoria(selectedLuogo.categoria) }}
-              </v-chip>
-            </v-toolbar>
-            
-            <div v-if="selectedLuogo">
-              <LuogoDetails
-                :luogo="selectedLuogo"
-                :luoghi="luoghi"
-                @close="closeDetails"
-                @luogo-selected="handleLuogoSelected"
-                @open-related-luogo="handleRelatedLuogo"
-                @toggle-preferito="togglePreferito"
-              />
-            </div>
-          </v-card>
-        </v-dialog>
-
-        <!-- Snackbar per notifiche -->
-        <v-snackbar v-model="snackbar.show" :color="snackbar.color || 'teal'" :timeout="3000" location="top">
-          {{ snackbar.text }}
-          <template v-slot:actions>
-            <v-btn variant="text" @click="snackbar.show = false">Chiudi</v-btn>
-          </template>
-        </v-snackbar>
-      </v-container>
+      <!-- Speed dial per azioni rapide (mantieni se necessario) -->
+      <v-speed-dial
+        v-model="fab"
+        location="bottom right"
+        direction="top"
+        transition="scale-transition"
+        :style="{ position: 'fixed', bottom: '16px', right: '16px' }"
+      >
+        <!-- ... (mantieni lo speed dial esistente) ... -->
+      </v-speed-dial>
     </v-main>
     
     <!-- Speed dial per azioni rapide -->
@@ -386,15 +199,11 @@
 </template>
 
 <script>
-import LuoghiList from './components/LuoghiList.vue';
-import LuogoDetails from './components/LuogoDetails.vue';
 import luoghiData from './assets/data/luoghi.json';
 
 export default {
   name: 'App',
   components: {
-    LuoghiList,
-    LuogoDetails,
   },
   data() {
     return {
