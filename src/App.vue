@@ -1,9 +1,9 @@
 <template>
-  <v-app>
+  <v-app :theme="theme">
     <!-- Navigation Drawer migliorato -->
     <v-navigation-drawer v-model="drawer" app :width="280" elevation="4" temporary>
       <v-card flat class="pa-4 text-center">
-        <v-avatar color="primary" size="80">
+        <v-avatar color="teal" size="80">
           <v-icon size="48" color="white">mdi-map-marker</v-icon>
         </v-avatar>
         <h2 class="text-h5 mt-3 font-weight-medium">CV_Luoghi</h2>
@@ -15,7 +15,7 @@
       <v-list nav>
         <v-list-item v-for="(item, i) in menuItems" :key="i" link :to="item.route">
           <template v-slot:prepend>
-            <v-icon :color="item.color">{{ item.icon }}</v-icon>
+            <v-icon :color="item.color || 'teal'">{{ item.icon }}</v-icon>
           </template>
           <v-list-item-title>{{ item.text }}</v-list-item-title>
         </v-list-item>
@@ -24,7 +24,7 @@
       <template v-slot:append>
         <v-divider></v-divider>
         <div class="pa-4">
-          <v-btn block color="primary" variant="tonal">
+          <v-btn block color="teal" variant="tonal">
             <v-icon start>mdi-information</v-icon>
             Informazioni
           </v-btn>
@@ -33,15 +33,36 @@
     </v-navigation-drawer>
 
     <!-- App Bar migliorato -->
-    <v-app-bar app color="primary" elevation="2">
+    <v-app-bar app color="grey-darken-4" elevation="2">
       <v-app-bar-nav-icon @click="drawer = !drawer" color="white"></v-app-bar-nav-icon>
       
-      <v-toolbar-title class="font-weight-bold">CV_Luoghi</v-toolbar-title>
+      <v-toolbar-title class="font-weight-bold">
+        <span class="text-teal">CV_</span>Luoghi
+      </v-toolbar-title>
       
       <v-spacer></v-spacer>
+
+      <!-- Barra di ricerca integrata nell'app-bar -->
+      <v-slide-x-transition>
+        <v-text-field
+          v-if="showSearchBar"
+          v-model="searchQuery"
+          density="compact"
+          hide-details
+          variant="solo-filled"
+          rounded="pill"
+          placeholder="Cerca luoghi..."
+          prepend-inner-icon="mdi-magnify"
+          class="search-field mx-2"
+          bg-color="grey-darken-3"
+          clearable
+          style="max-width: 300px"
+          @keyup.enter="searchLuoghi"
+        ></v-text-field>
+      </v-slide-x-transition>
       
       <v-btn icon @click="toggleSearchBar">
-        <v-icon>mdi-magnify</v-icon>
+        <v-icon>{{ showSearchBar ? 'mdi-close' : 'mdi-magnify' }}</v-icon>
       </v-btn>
       
       <v-btn icon @click="toggleThemeMode">
@@ -61,26 +82,6 @@
         </v-list>
       </v-menu>
     </v-app-bar>
-    
-    <!-- Barra di ricerca espandibile -->
-    <v-expand-transition>
-      <v-app-bar v-if="showSearchBar" app color="surface" prominent>
-        <v-text-field
-          v-model="searchQuery"
-          label="Cerca luoghi..."
-          prepend-inner-icon="mdi-magnify"
-          clearable
-          hide-details
-          variant="solo"
-          density="comfortable"
-          class="mx-2"
-          @keyup.enter="searchLuoghi"
-        ></v-text-field>
-        <v-btn icon @click="toggleSearchBar">
-          <v-icon>mdi-close</v-icon>
-        </v-btn>
-      </v-app-bar>
-    </v-expand-transition>
 
     <!-- Main Content -->
     <v-main>
@@ -88,8 +89,11 @@
         <!-- Filtri -->
         <v-row class="mb-6">
           <v-col cols="12">
-            <v-card elevation="2" class="pa-4">
-              <v-card-title class="pb-2">Filtri</v-card-title>
+            <v-card elevation="2" class="pa-4 rounded-lg">
+              <v-card-title class="pb-2">
+                <v-icon color="teal" class="me-2">mdi-filter-variant</v-icon>
+                Filtri
+              </v-card-title>
               <v-row>
                 <v-col cols="12" sm="4">
                   <v-select
@@ -99,6 +103,7 @@
                     clearable
                     variant="outlined"
                     density="comfortable"
+                    color="teal"
                   ></v-select>
                 </v-col>
                 <v-col cols="12" sm="4">
@@ -108,17 +113,18 @@
                     label="Ordinamento"
                     variant="outlined"
                     density="comfortable"
+                    color="teal"
                   ></v-select>
                 </v-col>
                 <v-col cols="12" sm="4" class="d-flex align-center">
                   <v-switch
                     v-model="filtriSelezionati.preferiti"
                     label="Solo preferiti"
-                    color="warning"
+                    color="teal"
                     hide-details
                   ></v-switch>
                   <v-spacer></v-spacer>
-                  <v-btn color="primary" @click="applicaFiltri">
+                  <v-btn color="teal" @click="applicaFiltri" variant="elevated" class="rounded-pill">
                     <v-icon start>mdi-filter</v-icon>
                     Applica
                   </v-btn>
@@ -129,17 +135,17 @@
         </v-row>
 
         <!-- Vista a tabs per diverse modalità di visualizzazione -->
-        <v-card elevation="2" class="mb-6">
-          <v-tabs v-model="activeTab" bg-color="primary" centered>
-            <v-tab value="list">
+        <v-card elevation="2" class="mb-6 rounded-lg overflow-hidden">
+          <v-tabs v-model="activeTab" bg-color="grey-darken-3" slider-color="teal" centered>
+            <v-tab value="list" class="text-body-1">
               <v-icon start>mdi-format-list-bulleted</v-icon>
               Lista
             </v-tab>
-            <v-tab value="grid">
+            <v-tab value="grid" class="text-body-1">
               <v-icon start>mdi-grid</v-icon>
               Griglia
             </v-tab>
-            <v-tab value="map" v-if="hasMapFeature">
+            <v-tab value="map" v-if="hasMapFeature" class="text-body-1">
               <v-icon start>mdi-map</v-icon>
               Mappa
             </v-tab>
@@ -161,7 +167,7 @@
                     <v-card 
                       v-bind="props"
                       :elevation="isHovering ? 8 : 2" 
-                      class="h-100"
+                      class="h-100 rounded-lg"
                       @click="handleLuogoSelected(luogo)"
                     >
                       <v-img
@@ -171,32 +177,41 @@
                       >
                         <template v-slot:placeholder>
                           <v-row class="fill-height ma-0" align="center" justify="center">
-                            <v-progress-circular indeterminate color="primary"></v-progress-circular>
+                            <v-progress-circular indeterminate color="teal"></v-progress-circular>
                           </v-row>
                         </template>
-                        <div class="fill-height d-flex flex-column justify-end">
-                          <v-chip
-                            size="small"
-                            class="ma-2 text-capitalize"
-                            :color="getCategoriaColor(luogo.categoria)"
-                          >
-                            {{ luogo.categoria }}
-                          </v-chip>
+                        <div class="fill-height d-flex flex-column justify-space-between">
+                          <div class="d-flex justify-end pa-2">
+                            <v-btn
+                              icon
+                              variant="text"
+                              size="small"
+                              :color="luogo.preferito ? 'error' : 'white'"
+                              @click.stop="togglePreferito(luogo)"
+                            >
+                              <v-icon>{{ luogo.preferito ? 'mdi-heart' : 'mdi-heart-outline' }}</v-icon>
+                            </v-btn>
+                          </div>
+                          <div>
+                            <v-chip
+                              size="small"
+                              class="ma-2 text-capitalize"
+                              :color="getCategoriaColor(luogo.categoria)"
+                            >
+                              {{ luogo.categoria }}
+                            </v-chip>
+                          </div>
                         </div>
                       </v-img>
                       
-                      <v-card-title class="text-truncate">
+                      <v-card-title class="text-truncate pb-1">
                         {{ luogo.nome }}
-                        <v-btn
-                          icon="mdi-heart"
-                          variant="text"
-                          size="small"
-                          :color="luogo.preferito ? 'error' : undefined"
-                          @click.stop="togglePreferito(luogo)"
-                        ></v-btn>
                       </v-card-title>
                       
-                      <v-card-subtitle>{{ luogo.localita }}</v-card-subtitle>
+                      <v-card-subtitle class="pb-1">
+                        <v-icon size="small" class="me-1">mdi-map-marker</v-icon>
+                        {{ luogo.localita }}
+                      </v-card-subtitle>
                       
                       <v-card-text class="text-truncate">
                         {{ luogo.descrizione }}
@@ -204,7 +219,7 @@
                       
                       <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn variant="text" color="primary" @click.stop="handleLuogoSelected(luogo)">
+                        <v-btn variant="text" color="teal" @click.stop="handleLuogoSelected(luogo)" class="text-capitalize">
                           Dettagli
                           <v-icon end>mdi-arrow-right</v-icon>
                         </v-btn>
@@ -226,11 +241,11 @@
         <!-- Dettagli Luogo con dialog -->
         <v-dialog v-model="showLuogoDialog" fullscreen transition="dialog-bottom-transition">
           <v-card>
-            <v-toolbar color="primary" dark>
+            <v-toolbar color="grey-darken-4" dark>
               <v-btn icon @click="closeDetails">
-                <v-icon>mdi-close</v-icon>
+                <v-icon>mdi-arrow-left</v-icon>
               </v-btn>
-              <v-toolbar-title>{{ selectedLuogo?.nome }}</v-toolbar-title>
+              <v-toolbar-title class="text-truncate">{{ selectedLuogo?.nome }}</v-toolbar-title>
               <v-spacer></v-spacer>
               <v-btn icon @click="togglePreferito(selectedLuogo)" v-if="selectedLuogo">
                 <v-icon>{{ selectedLuogo.preferito ? 'mdi-heart' : 'mdi-heart-outline' }}</v-icon>
@@ -253,7 +268,7 @@
         </v-dialog>
 
         <!-- Snackbar per notifiche -->
-        <v-snackbar v-model="snackbar.show" :color="snackbar.color" :timeout="3000">
+        <v-snackbar v-model="snackbar.show" :color="snackbar.color || 'teal'" :timeout="3000" location="top">
           {{ snackbar.text }}
           <template v-slot:actions>
             <v-btn variant="text" @click="snackbar.show = false">Chiudi</v-btn>
@@ -272,23 +287,26 @@
     >
       <template v-slot:activator>
         <v-btn
-          color="primary"
+          color="teal"
           icon="mdi-plus"
           size="large"
+          elevation="4"
         ></v-btn>
       </template>
       <v-btn
         color="green"
         icon="mdi-plus-circle"
         size="small"
+        elevation="2"
         @click="nuovoLuogo"
       >
         <v-tooltip activator="parent" location="left">Aggiungi nuovo luogo</v-tooltip>
       </v-btn>
       <v-btn
-        color="indigo"
+        color="blue"
         icon="mdi-map-marker-radius"
         size="small"
+        elevation="2"
         @click="trovaVicini"
       >
         <v-tooltip activator="parent" location="left">Trova luoghi vicini</v-tooltip>
@@ -297,21 +315,22 @@
         color="red"
         icon="mdi-heart"
         size="small"
+        elevation="2"
         @click="mostraPreferiti"
       >
         <v-tooltip activator="parent" location="left">Mostra preferiti</v-tooltip>
       </v-btn>
     </v-speed-dial>
 
-    <!-- Footer migliorato -->
-    <v-footer app class="bg-primary text-center d-flex flex-column">
+    <!-- Footer -->
+    <v-footer app class="bg-grey-darken-4 text-center d-flex flex-column pa-0">
       <div class="pt-4 pb-3">
-        <v-btn v-for="icon in socialIcons" :key="icon" icon class="mx-2" variant="text">
+        <v-btn v-for="icon in socialIcons" :key="icon" icon class="mx-2" variant="text" color="teal">
           <v-icon>{{ icon }}</v-icon>
         </v-btn>
       </div>
       <v-divider></v-divider>
-      <div class="py-2 text-white">
+      <div class="py-2 text-grey">
         <small>© {{ currentYear }} - CV_Luoghi - FBaboni</small>
       </div>
     </v-footer>
@@ -327,14 +346,14 @@ export default {
   name: 'App',
   components: {
     LuoghiList,
-    LuogoDetails
+    LuogoDetails,
   },
   data() {
     return {
       drawer: false,
       fab: false,
-      isDarkMode: false,
-      showSearchBar: false,
+      isDarkMode: true,
+      showSearchBar: true,
       searchQuery: '',
       activeTab: 'list',
       showLuogoDialog: false,
