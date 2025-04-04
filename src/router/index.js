@@ -19,7 +19,7 @@ const routes = [
     path: '/preferiti', 
     name: 'Preferiti',
     component: HomePage,
-    props: { showFavorites: true } // Prop per filtrare preferiti
+    props: { showFavorites: true }
   },
   { 
     path: '/luoghi/:id', 
@@ -30,14 +30,14 @@ const routes = [
   { 
     path: '/statistiche', 
     name: 'Statistiche', 
-    component: StatistichePage 
+    component: StatistichePage ,
+    props: { luoghi: luoghiData.luoghi } 
   }
 ];
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  props: { luoghi: luoghiData.luoghi }
 });
 
 export default router;

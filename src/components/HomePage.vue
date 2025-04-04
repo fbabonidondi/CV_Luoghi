@@ -236,7 +236,10 @@
           'museo',
           'rifugio',
           'lago',
-          'parco_naturale'
+          'parco_naturale',
+          'castello',
+          'monumento',
+          'teatro',
         ],
         ordinamentiFiltro: [
           { title: 'Nome (A-Z)', value: 'nome_asc' },
@@ -252,6 +255,11 @@
       };
     },
     created() {
+            // Controlla se c'è un parametro categoria nella query string
+    if (this.$route.query.categoria) {
+      this.filtriSelezionati.categoria = this.$route.query.categoria;
+      this.applicaFiltri();
+    }
       // Caricamento luoghi e aggiunta della proprietà preferito
       this.luoghi = luoghiData.luoghi.map(luogo => ({
         ...luogo,

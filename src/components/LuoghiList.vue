@@ -116,6 +116,12 @@ export default {
       ]
     }
   },
+  created() {
+    // Se c'è un parametro categoria nella route, imposta il filtro corrispondente
+    if (this.$route.query.categoria) {
+      this.activeFilter = this.$route.query.categoria;
+    }
+  },
   computed: {
   filteredLuoghi() {
     // Inizia con tutti i luoghi oppure solo i preferiti
