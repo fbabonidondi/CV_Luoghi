@@ -13,13 +13,20 @@
       <v-divider></v-divider>
       
       <v-list nav>
-        <v-list-item v-for="(item, i) in menuItems" :key="i" link :to="item.route">
-          <template v-slot:prepend>
-            <v-icon :color="item.color || 'teal'">{{ item.icon }}</v-icon>
-          </template>
-          <v-list-item-title>{{ item.text }}</v-list-item-title>
+      <v-list-item 
+        v-for="(item, i) in menuItems" 
+        :key="i" 
+        link 
+        :to="item.route">
+        
+        <template v-slot:prepend>
+          <v-icon :color="item.color || 'teal'">{{ item.icon }}</v-icon>
+        </template>
+
+        <v-list-item-title>{{ item.text }}</v-list-item-title>
         </v-list-item>
-      </v-list>
+       </v-list>
+
       
       <template v-slot:append>
         <v-divider></v-divider>
@@ -32,12 +39,22 @@
       </template>
     </v-navigation-drawer>
 
-    <!-- App Bar migliorato -->
+    <!-- App Bar migliorato con icone sempre visibili -->
     <v-app-bar app color="grey-darken-4" elevation="2">
-      <v-app-bar-nav-icon @click="drawer = !drawer" color="white"></v-app-bar-nav-icon>
+      <!-- Menu navigation icon con stile ben visibile -->
+      <v-btn
+        icon
+        color="teal-lighten-1"
+        class="ml-2 mr-1"
+        size="large"
+        variant="tonal"
+        @click="drawer = !drawer"
+      >
+        <v-icon>mdi-menu</v-icon>
+      </v-btn>
       
       <v-toolbar-title class="font-weight-bold">
-        <span class="text-teal">CV_</span>Luoghi
+        <span class="text-teal">CV_Luoghi</span>
       </v-toolbar-title>
       
       <v-spacer></v-spacer>
@@ -61,17 +78,39 @@
         ></v-text-field>
       </v-slide-x-transition>
       
-      <v-btn icon @click="toggleSearchBar">
+      <!-- Bottoni icona ben visibili con sfondo e colore -->
+      <v-btn 
+        icon
+        class="mx-1"
+        variant="tonal"
+        color="teal-lighten-1"
+        size="large"
+        @click="toggleSearchBar"
+      >
         <v-icon>{{ showSearchBar ? 'mdi-close' : 'mdi-magnify' }}</v-icon>
       </v-btn>
       
-      <v-btn icon @click="toggleThemeMode">
+      <v-btn 
+        icon
+        class="mx-1"
+        variant="tonal"
+        color="amber-lighten-1"
+        size="large"
+        @click="toggleThemeMode"
+      >
         <v-icon>{{ isDarkMode ? 'mdi-weather-sunny' : 'mdi-weather-night' }}</v-icon>
       </v-btn>
       
       <v-menu>
         <template v-slot:activator="{ props }">
-          <v-btn icon v-bind="props">
+          <v-btn 
+            icon
+            class="mx-1"
+            variant="tonal"
+            color="blue-lighten-1"
+            size="large"
+            v-bind="props"
+          >
             <v-icon>mdi-dots-vertical</v-icon>
           </v-btn>
         </template>
@@ -85,6 +124,7 @@
 
     <!-- Main Content -->
     <v-main>
+      <router-view></router-view>
       <v-container class="py-6">
         <!-- Filtri -->
         <v-row class="mb-6">

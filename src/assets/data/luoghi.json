@@ -1,62 +1,350 @@
 {
-    "luoghi": [
-      {
-        "id": 1,
-        "categoria": "ristorante",
-        "nome": "La Trattoria del Buongustaio",
-        "data_visita": "2023-05-15",
-        "descrizione": "Tipico ristorante italiano con specialità regionali",
-        "indirizzo": "Via Roma 123, Milano",
-        "commento": "Ottimo rapporto qualità-prezzo, personale cordiale",
-        "lista_cibi": ["Pasta alla carbonara", "Bistecca alla fiorentina", "Tiramisù"]
-      },
-      {
-        "id": 2,
-        "categoria": "chiesa",
-        "nome": "Duomo di San Lorenzo",
-        "data_visita": "2023-06-10",
-        "descrizione": "Chiesa romanica del XII secolo",
-        "indirizzo": "Piazza Duomo 1, Genova",
-        "commento": "Architettura impressionante e ottimo stato di conservazione"
-      },
-      {
-        "id": 3,
-        "categoria": "museo",
-        "nome": "Museo di Arte Contemporanea",
-        "data_visita": "2023-07-05",
-        "descrizione": "Collezione di arte moderna e contemporanea",
-        "indirizzo": "Viale delle Arti 45, Roma",
-        "commento": "Esposizione varia e ben curata, audioguida disponibile"
-      },
-      {
-        "id": 4,
-        "categoria": "rifugio",
-        "nome": "Rifugio Monte Bianco",
-        "data_visita": "2023-08-20",
-        "descrizione": "Rifugio alpino situato lungo il sentiero per il Monte Bianco",
-        "indirizzo": "Sentiero E4, Courmayeur",
-        "commento": "Vista mozzafiato e cibo ottimo",
-        "altitudine": 2500
-      },
-      {
-        "id": 5,
-        "categoria": "lago",
-        "nome": "Lago di Garda",
-        "data_visita": "2023-09-02",
-        "descrizione": "Il più grande lago italiano",
-        "indirizzo": "Lombardia/Veneto/Trentino",
-        "commento": "Acqua cristallina e paesaggio incantevole",
-        "superficie": 370
-      },
-      {
-        "id": 6,
-        "categoria": "parco_naturale",
-        "nome": "Parco Nazionale del Gran Paradiso",
-        "data_visita": "2023-09-25",
-        "descrizione": "Uno dei parchi nazionali più antichi d'Italia",
-        "indirizzo": "Valle d'Aosta/Piemonte",
-        "commento": "Flora e fauna abbondanti, sentieri ben segnalati",
-        "estensione": 70000
-      }
-    ]
-  }
+  "luoghi": [
+    {
+      "id": 1,
+      "categoria": "ristorante",
+      "nome": "La Trattoria del Buongustaio",
+      "data_visita": "2023-05-15",
+      "descrizione": "Tipico ristorante italiano con specialità regionali",
+      "indirizzo": "Via Roma 123, Milano",
+      "commento": "Ottimo rapporto qualità-prezzo, personale cordiale",
+      "lista_cibi": ["Pasta alla carbonara", "Bistecca alla fiorentina", "Tiramisù"]
+    },
+    {
+      "id": 2,
+      "categoria": "chiesa",
+      "nome": "Duomo di San Lorenzo",
+      "data_visita": "2023-06-10",
+      "descrizione": "Chiesa romanica del XII secolo",
+      "indirizzo": "Piazza Duomo 1, Genova",
+      "commento": "Architettura impressionante e ottimo stato di conservazione"
+    },
+    {
+      "id": 3,
+      "categoria": "museo",
+      "nome": "Museo di Arte Contemporanea",
+      "data_visita": "2023-07-05",
+      "descrizione": "Collezione di arte moderna e contemporanea",
+      "indirizzo": "Viale delle Arti 45, Roma",
+      "commento": "Esposizione varia e ben curata, audioguida disponibile"
+    },
+    {
+      "id": 4,
+      "categoria": "rifugio",
+      "nome": "Rifugio Monte Bianco",
+      "data_visita": "2023-08-20",
+      "descrizione": "Rifugio alpino situato lungo il sentiero per il Monte Bianco",
+      "indirizzo": "Sentiero E4, Courmayeur",
+      "commento": "Vista mozzafiato e cibo ottimo",
+      "altitudine": 2500
+    },
+    {
+      "id": 5,
+      "categoria": "lago",
+      "nome": "Lago di Garda",
+      "data_visita": "2023-09-02",
+      "descrizione": "Il più grande lago italiano",
+      "indirizzo": "Lombardia/Veneto/Trentino",
+      "commento": "Acqua cristallina e paesaggio incantevole",
+      "superficie": 370
+    },
+    {
+      "id": 6,
+      "categoria": "parco_naturale",
+      "nome": "Parco Nazionale del Gran Paradiso",
+      "data_visita": "2023-09-25",
+      "descrizione": "Uno dei parchi nazionali più antichi d'Italia",
+      "indirizzo": "Valle d'Aosta/Piemonte",
+      "commento": "Flora e fauna abbondanti, sentieri ben segnalati",
+      "estensione": 70000
+    },
+    {
+      "id": 7,
+      "categoria": "ristorante",
+      "nome": "Ristorante Rubacuori",
+      "data_visita": "2024-04-01",
+      "descrizione": "Ristorante italiano con piatti tradizionali e opzioni vegetariane",
+      "indirizzo": "Via Dante 4, Milano",
+      "commento": "Ambiente romantico e cibo delizioso",
+      "lista_cibi": ["Risotto alla milanese", "Cotoletta alla milanese", "Panna cotta"]
+    },
+    {
+      "id": 8,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Maurizio al Monastero Maggiore",
+      "data_visita": "2024-04-02",
+      "descrizione": "Chiesa con affreschi del Cinquecento, nota come la Cappella Sistina di Milano",
+      "indirizzo": "Corso Magenta 15, Milano",
+      "commento": "Affreschi spettacolari e atmosfera suggestiva"
+    },
+    {
+      "id": 9,
+      "categoria": "museo",
+      "nome": "Pinacoteca di Brera",
+      "data_visita": "2024-04-03",
+      "descrizione": "Museo d'arte con una vasta collezione di opere italiane",
+      "indirizzo": "Via Brera 28, Milano",
+      "commento": "Collezione impressionante e ambiente storico"
+    },
+    {
+      "id": 10,
+      "categoria": "rifugio",
+      "nome": "Rifugio Azzoni",
+      "data_visita": "2024-04-04",
+      "descrizione": "Rifugio situato presso la vetta del Resegone",
+      "indirizzo": "Vetta del Resegone, Lecco",
+      "commento": "Panorama mozzafiato e ottima cucina",
+      "altitudine": 1860
+    },
+    {
+      "id": 11,
+      "categoria": "lago",
+      "nome": "Lago di Como",
+      "data_visita": "2024-04-05",
+      "descrizione": "Lago famoso per i suoi paesaggi pittoreschi e le ville storiche",
+      "indirizzo": "Como",
+      "commento": "Paesaggi incantevoli e atmosfera romantica",
+      "superficie": 146
+    },
+    {
+      "id": 12,
+      "categoria": "parco_naturale",
+      "nome": "Parco Agricolo Sud Milano",
+      "data_visita": "2024-04-06",
+      "descrizione": "Vasta area naturale protetta con aree coltivate e boschi",
+      "indirizzo": "Milano",
+      "commento": "Perfetto per escursioni e attività all'aria aperta",
+      "estensione": 47000
+    },
+    {
+      "id": 13,
+      "categoria": "ristorante",
+      "nome": "La Società Milano",
+      "data_visita": "2024-04-07",
+      "descrizione": "Ristorante italiano con ambiente elegante e cucina raffinata",
+      "indirizzo": "Via Monte Napoleone 10, Milano",
+      "commento": "Ottimo servizio e piatti deliziosi",
+      "lista_cibi": ["Tartare di manzo", "Ravioli al tartufo", "Mousse al cioccolato"]
+    },
+    {
+      "id": 14,
+      "categoria": "chiesa",
+      "nome": "Basilica di Sant'Ambrogio",
+      "data_visita": "2024-04-08",
+      "descrizione": "Una delle chiese più antiche e importanti di Milano",
+      "indirizzo": "Piazza Sant'Ambrogio 15, Milano",
+      "commento": "Architettura storica e atmosfera spirituale"
+    },
+    {
+      "id": 15,
+      "categoria": "museo",
+      "nome": "Museo del Novecento",
+      "data_visita": "2024-04-09",
+      "descrizione": "Museo dedicato all'arte del XX secolo",
+      "indirizzo": "Piazza del Duomo, Milano",
+      "commento": "Collezione varia e ben organizzata"
+    },
+    {
+      "id": 16,
+      "categoria": "rifugio",
+      "nome": "Rifugio Riella",
+      "data_visita": "2024-04-10",
+      "descrizione": "Rifugio situato a 1275 metri nel Triangolo Lariano",
+      "indirizzo": "Monte Palanzone, Como",
+      "commento": "Ottima cucina e vista panoramica",
+      "altitudine": 1275
+    },
+    {
+      "id": 17,
+      "categoria": "lago",
+      "nome": "Lago Maggiore",
+      "data_visita": "2024-04-11",
+      "descrizione": "Il secondo lago più grande d'Italia",
+      "indirizzo": "Verbano-Cusio-Ossola/Novara/Varese",
+      "commento": "Paesaggi spettacolari e numerose attività acquatiche",
+      "superficie": 212
+    },
+    {
+      "id": 18,
+      "categoria": "parco_naturale",
+      "nome": "Parco delle Cave",
+      "data_visita": "2024-04-12",
+      "descrizione": "Parco con laghi e aree boschive, ideale per escursioni",
+      "indirizzo": "Milano",
+      "commento": "Perfetto per una giornata all'aria aperta",
+      "estensione": 130
+    },
+    {
+      "id": 19,
+      "categoria": "ristorante",
+      "nome": "Mi View Restaurant",
+      "data_visita": "2024-04-13",
+      "descrizione": "Ristorante con vista panoramica sulla città",
+      "indirizzo": "Via Silvio Pellico 3, Milano",
+      "commento": "Vista spettacolare e cucina eccellente",
+      "lista_cibi": ["Sushi", "Tempura", "Tiramisù"]
+    },
+    {
+      "id": 20,
+      "categoria": "chiesa",
+      "nome": "Chiesa di Santa Maria delle Grazie",
+      "data_visita": "2024-04-14",
+      "descrizione": "Chiesa famosa per l'Ultima Cena di Leonardo da Vinci",
+      "indirizzo": "Piazza Santa Maria delle Grazie, Milano",
+      "commento": "Capolavoro artistico e storico"
+    },
+    {
+      "id": 21,
+      "categoria": "museo",
+      "nome": "Museo della Scienza e della Tecnologia Leonardo da Vinci",
+      "data_visita": "2024-04-15",
+      "descrizione": "Museo interattivo dedicato a scienza e tecnologia",
+      "indirizzo": "Via San Vittore 21, Milano",
+      "commento": "Esperienza educativa e divertente"
+    },
+    {
+      "id": 22,
+      "categoria": "ristorante",
+      "nome": "Pizzeria Quei Due",
+      "data_visita": "2024-04-16",
+      "descrizione": "Pizzeria con forno a legna e ingredienti freschi",
+      "indirizzo": "Via Marghera 12, Milano",
+      "commento": "Pizza deliziosa e ambiente accogliente",
+      "lista_cibi": ["Margherita", "Diavola", "Quattro Formaggi"]
+    },
+    {
+      "id": 23,
+      "categoria": "chiesa",
+      "nome": "Chiesa di Sant'Antonio Abate",
+      "data_visita": "2024-04-17",
+      "descrizione": "Chiesa barocca con opere d'arte significative",
+      "indirizzo": "Via Sant'Antonio 5, Milano",
+      "commento": "Architettura impressionante e opere d'arte notevoli"
+    },
+    {
+      "id": 24,
+      "categoria": "museo",
+      "nome": "Museo Archeologico di Milano",
+      "data_visita": "2024-04-18",
+      "descrizione": "Museo dedicato alla storia antica di Milano",
+      "indirizzo": "Corso Magenta 15, Milano",
+      "commento": "Collezione ricca e ben conservata"
+    },
+    {
+      "id": 25,
+      "categoria": "rifugio",
+      "nome": "Rifugio Alpe Piazza",
+      "data_visita": "2024-04-19",
+      "descrizione": "Rifugio situato a 1833 metri con vista panoramica",
+      "indirizzo": "Monte Piazza, Sondrio",
+      "commento": "Vista spettacolare e cucina tradizionale",
+      "altitudine": 1833
+    },
+    {
+      "id": 26,
+      "categoria": "lago",
+      "nome": "Lago d'Iseo",
+      "data_visita": "2024-04-20",
+      "descrizione": "Lago famoso per l'isola di Monte Isola",
+      "indirizzo": "Brescia",
+      "commento": "Paesaggi pittoreschi e atmosfera rilassante",
+      "superficie": 65
+    },
+    {
+      "id": 27,
+      "categoria": "parco_naturale",
+      "nome": "Parco Nord Milano",
+      "data_visita": "2024-04-21",
+      "descrizione": "Grande parco urbano con aree verdi e percorsi ciclabili",
+      "indirizzo": "Milano",
+      "commento": "Ideale per attività all'aria aperta e picnic",
+      "estensione": 640
+    },
+    {
+      "id": 28,
+      "categoria": "ristorante",
+      "nome": "The Meatball Family",
+      "data_visita": "2024-04-22",
+      "descrizione": "Ristorante specializzato in polpette e piatti italiani",
+      "indirizzo": "Via Solferino 18, Milano",
+      "commento": "Polpette deliziose e ambiente familiare",
+      "lista_cibi": ["Polpette al sugo", "Polpette fritte", "Polpette al forno"]
+    },
+    {
+      "id": 29,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Lorenzo Maggiore",
+      "data_visita": "2024-04-23",
+      "descrizione": "Basilica paleocristiana con architettura storica",
+      "indirizzo": "Corso di Porta Ticinese 35, Milano",
+      "commento": "Architettura antica e atmosfera spirituale"
+    },
+    {
+      "id": 30,
+      "categoria": "museo",
+      "nome": "Museo della Moda e del Costume",
+      "data_visita": "2024-04-24",
+      "descrizione": "Museo dedicato alla storia della moda e del costume",
+      "indirizzo": "Via Sant'Andrea 6, Milano",
+      "commento": "Collezione affascinante e ben curata"
+    },
+    {
+      "id": 31,
+      "categoria": "rifugio",
+      "nome": "Rifugio Venini",
+      "data_visita": "2024-04-25",
+      "descrizione": "Rifugio situato in Val d'Intelvi con vista lago",
+      "indirizzo": "Val d'Intelvi, Como",
+      "commento": "Vista incantevole e cucina tradizionale",
+      "altitudine": 1576
+    },
+    {
+      "id": 32,
+      "categoria": "lago",
+      "nome": "Lago di Varese",
+      "data_visita": "2024-04-26",
+      "descrizione": "Lago circondato da colline e sentieri per escursioni",
+      "indirizzo": "Varese",
+      "commento": "Paesaggi naturali e percorsi per trekking",
+      "superficie": 14.5
+    },
+    {
+      "id": 33,
+      "categoria": "parco_naturale",
+      "nome": "Parco delle Groane",
+      "data_visita": "2024-04-27",
+      "descrizione": "Parco naturale con boschi e brughiere",
+      "indirizzo": "Milano",
+      "commento": "Ideale per escursioni e osservazione della fauna",
+      "estensione": 3500
+    },
+    {
+      "id": 34,
+      "categoria": "ristorante",
+      "nome": "Fx",
+      "data_visita": "2024-04-28",
+      "descrizione": "Ristorante accogliente con piatti della tradizione italiana",
+      "indirizzo": "Via Tortona 1, Milano",
+      "commento": "Ambiente accogliente e cibo eccellente",
+      "lista_cibi": ["Lasagna", "Tagliatelle al ragù", "Tiramisù"]
+    },
+    {
+      "id": 35,
+      "categoria": "chiesa",
+      "nome": "Chiesa di Santa Maria presso San Satiro",
+      "data_visita": "2024-04-29",
+      "descrizione": "Chiesa famosa per l'illusione prospettica del Bramante",
+      "indirizzo": "Via Torino 19, Milano",
+      "commento": "Capolavoro architettonico e storico"
+    },
+    {
+      "id": 36,
+      "categoria": "museo",
+      "nome": "Museo del Design Italiano",
+      "data_visita": "2024-04-30",
+      "descrizione": "Museo dedicato al design italiano e internazionale",
+      "indirizzo": "Via Cerva 14, Milano",
+      "commento": "Collezione innovativa e ben organizzata"
+    }
+  ]  
+}

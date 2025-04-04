@@ -1,27 +1,29 @@
 <template>
   <v-container>
     <v-card elevation="2" class="mb-4">
-      <v-card-title class="bg-primary">
+      <v-card-title class="bg-grey-darken-3">
         <span class="text-white">Luoghi visitati per categoria</span>
       </v-card-title>
       
       <v-card-text>
         <v-row align="center" class="mb-4">
           <v-btn-toggle
-            v-model="activeFilter"
-            mandatory
-            color="primary"
-            variant="outlined"
-            divided
+          v-model="activeFilter"
+          mandatory
+          color="grey-darken-4"
+          variant="flat"
+          divided
+          class="my-4"
+        >
+          <v-btn value="all" @click="setFilter('all')">Tutti</v-btn>
+          <v-btn 
+            v-for="categoria in categorie" 
+            :key="categoria.id"
+            :value="categoria.id"
+            class="text-white"
           >
-            <v-btn value="all" @click="setFilter('all')">Tutti</v-btn>
-            <v-btn 
-              v-for="categoria in categorie" 
-              :key="categoria.id"
-              :value="categoria.id"
-            >
-              {{ categoria.label }}
-            </v-btn>
+            {{ categoria.label }}
+          </v-btn>
           </v-btn-toggle>
 
           <v-spacer></v-spacer>
@@ -211,4 +213,22 @@ export default {
   .v-list-item:hover {
     background-color: rgba(0,0,0,0.04);
   }
+
+  /* Stile per i bottoni dei filtri */
+::v-deep .v-btn-toggle .v-btn {
+  background-color: #616161 !important;
+  transition: all 0.3s ease;
+}
+
+/* Stile per il bottone attivo */
+::v-deep .v-btn-toggle .v-btn.v-btn--active {
+  background-color: #424242 !important;
+  transform: scale(1.02);
+}
+
+/* Regolazione spaziatura header */
+.v-card-title {
+  padding: 16px 24px;
+  transition: background-color 0.3s ease;
+}
   </style>
