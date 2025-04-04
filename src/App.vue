@@ -281,21 +281,28 @@
         <!-- Dettagli Luogo con dialog -->
         <v-dialog v-model="showLuogoDialog" fullscreen transition="dialog-bottom-transition">
           <v-card>
-            <v-toolbar color="grey-darken-4" dark>
-              <v-btn icon @click="closeDetails">
-                <v-icon>mdi-arrow-left</v-icon>
+            <v-toolbar :color="getHeaderColor(selectedLuogo?.categoria)" dark>
+              <v-btn 
+                icon
+                class="mx-1"
+                variant="tonal"
+                color="white"
+                size="large"
+                @click="closeDetails"
+              >
+                <v-icon>mdi-close</v-icon>
               </v-btn>
               <v-toolbar-title class="text-truncate">{{ selectedLuogo?.nome }}</v-toolbar-title>
               <v-spacer></v-spacer>
               <v-btn icon @click="togglePreferito(selectedLuogo)" v-if="selectedLuogo">
                 <v-icon>{{ selectedLuogo.preferito ? 'mdi-heart' : 'mdi-heart-outline' }}</v-icon>
               </v-btn>
-              <v-btn icon>
-                <v-icon>mdi-share-variant</v-icon>
-              </v-btn>
+              <v-chip v-if="selectedLuogo" :color="getCategoriaColor(selectedLuogo.categoria)" variant="elevated">
+                {{ formatCategoria(selectedLuogo.categoria) }}
+              </v-chip>
             </v-toolbar>
             
-            <div v-if="selectedLuogo" class="pa-4">
+            <div v-if="selectedLuogo">
               <LuogoDetails
                 :luogo="selectedLuogo"
                 :luoghi="luoghi"
@@ -617,14 +624,42 @@ export default {
     mostraPreferiti() {
       this.filtriSelezionati.preferiti = true;
       this.applicaFiltri();
-    }
+    },
+    formatCategoria(categoria) {
+    if (!categoria) return 'Categoria non specificata';
+    
+    const categorieMap = {
+      'ristorante': 'Ristorante',
+      'chiesa': 'Chiesa',
+      'museo': 'Museo',
+      'rifugio': 'Rifugio',
+      'lago': 'Lago',
+      'parco_naturale': 'Parco Naturale'
+    };
+    
+    return categorieMap[categoria] || categoria;
+    },
+  
+    getHeaderColor(categoria) {
+      if (!categoria) return 'grey';
+      
+      const colorMap = {
+        'ristorante': 'red-darken-1',
+        'chiesa': 'blue-darken-2',
+        'museo': 'amber-darken-2',
+        'rifugio': 'green-darken-1',
+        'lago': 'blue',
+        'parco_naturale': 'green'
+      };
+      return colorMap[categoria] || 'grey';
+    },
   }
 };
 </script>
 
 <style>
 .v-navigation-drawer {
-  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 10px solid rgba(231, 29, 29, 0.12);
 }
 
 .on-hover {
@@ -646,6 +681,6 @@ export default {
 
 /* Stile per hover effect sulle cards */
 .v-card.on-hover {
-  transform: translateY(-5px);
+  transform: translateY(-50px);
 }
 </style>

@@ -1,102 +1,79 @@
 <template>
-  <v-dialog v-model="dialogLocal" fullscreen transition="dialog-bottom-transition">
-    <v-card>
-      <v-toolbar :color="getHeaderColor(luogo.categoria)" density="comfortable">
-        <!-- Bottone icona ben visibile con sfondo e colore -->
-        <v-btn 
-          icon
-          class="mx-1"
-          variant="tonal"
-          color="white"
-          size="large"
-          @click="closeDetails"
-        >
-          <v-icon>mdi-close</v-icon>
-        </v-btn>
-        
-        <v-toolbar-title>{{ luogo.nome }}</v-toolbar-title>
-        
-        <v-spacer></v-spacer>
-        
-        <v-chip :color="getCategoriaColor(luogo.categoria)" variant="elevated">
-          {{ formatCategoria(luogo.categoria) }}
-        </v-chip>
-      </v-toolbar>
+  <!-- Remove the v-dialog wrapper since it's already in the parent -->
+  <div>
+    <v-card-text class="pa-6">
+      <v-row>
+        <v-col cols="12" md="6">
+          <v-card variant="outlined" class="pa-4 mb-4">
+            <v-card-title class="text-h6">Informazioni</v-card-title>
+            
+            <v-list density="comfortable">
+              <v-list-item>
+                <template v-slot:prepend>
+                  <v-icon icon="mdi-calendar"></v-icon>
+                </template>
+                <v-list-item-subtitle>Data visita</v-list-item-subtitle>
+                <v-list-item-title>{{ formatDate(luogo.data_visita) }}</v-list-item-title>
+              </v-list-item>
 
-      <v-card-text class="pa-6">
-        <v-row>
-          <v-col cols="12" md="6">
-            <v-card variant="outlined" class="pa-4 mb-4">
-              <v-card-title class="text-h6">Informazioni</v-card-title>
-              
-              <v-list density="comfortable">
-                <v-list-item>
-                  <template v-slot:prepend>
-                    <v-icon icon="mdi-calendar"></v-icon>
-                  </template>
-                  <v-list-item-subtitle>Data visita</v-list-item-subtitle>
-                  <v-list-item-title>{{ formatDate(luogo.data_visita) }}</v-list-item-title>
-                </v-list-item>
+              <v-list-item>
+                <template v-slot:prepend>
+                  <v-icon icon="mdi-map-marker"></v-icon>
+                </template>
+                <v-list-item-subtitle>Indirizzo</v-list-item-subtitle>
+                <v-list-item-title>{{ luogo.indirizzo }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-card>
 
-                <v-list-item>
-                  <template v-slot:prepend>
-                    <v-icon icon="mdi-map-marker"></v-icon>
-                  </template>
-                  <v-list-item-subtitle>Indirizzo</v-list-item-subtitle>
-                  <v-list-item-title>{{ luogo.indirizzo }}</v-list-item-title>
-                </v-list-item>
-              </v-list>
-            </v-card>
+          <v-card variant="outlined" class="pa-4">
+            <v-card-title class="text-h6">Descrizione</v-card-title>
+            <v-card-text>{{ luogo.descrizione }}</v-card-text>
+          </v-card>
+        </v-col>
 
-            <v-card variant="outlined" class="pa-4">
-              <v-card-title class="text-h6">Descrizione</v-card-title>
-              <v-card-text>{{ luogo.descrizione }}</v-card-text>
-            </v-card>
-          </v-col>
+        <v-col cols="12" md="6">
+          <v-card variant="outlined" class="pa-4 mb-4">
+            <v-card-title class="text-h6">Dettagli specifici</v-card-title>
+            <!-- Campi specifici per categoria (stesso contenuto) -->
+          </v-card>
 
-          <v-col cols="12" md="6">
-            <v-card variant="outlined" class="pa-4 mb-4">
-              <v-card-title class="text-h6">Dettagli specifici</v-card-title>
-              <!-- Campi specifici per categoria (stesso contenuto) -->
-            </v-card>
+          <v-card variant="outlined" class="pa-4">
+            <v-card-title class="text-h6">Luoghi correlati</v-card-title>
+            <v-card-text>
+              <v-chip-group>
+                <v-chip
+                  v-for="related in relatedLuoghi"
+                  :key="related.id"
+                  variant="outlined"
+                  @click="selectRelated(related)"
+                >
+                  {{ related.nome }}
+                </v-chip>
+              </v-chip-group>
+              <v-alert v-if="relatedLuoghi.length === 0" type="info" variant="tonal">
+                Nessun luogo correlato trovato
+              </v-alert>
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-card-text>
 
-            <v-card variant="outlined" class="pa-4">
-              <v-card-title class="text-h6">Luoghi correlati</v-card-title>
-              <v-card-text>
-                <v-chip-group>
-                  <v-chip
-                    v-for="related in relatedLuoghi"
-                    :key="related.id"
-                    variant="outlined"
-                    @click="selectRelated(related)"
-                  >
-                    {{ related.nome }}
-                  </v-chip>
-                </v-chip-group>
-                <v-alert v-if="relatedLuoghi.length === 0" type="info" variant="tonal">
-                  Nessun luogo correlato trovato
-                </v-alert>
-              </v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-card-text>
-
-      <v-card-actions class="pa-4">
-        <v-spacer></v-spacer>
-        <v-btn variant="tonal" @click="closeDetails">Chiudi</v-btn>
-        <v-btn 
-          color="primary" 
-          variant="tonal"
-          class="mx-1"
-          size="large"
-        >
-          <v-icon start>mdi-map</v-icon>
-          Vedi sulla mappa
-        </v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-dialog>
+    <v-card-actions class="pa-4">
+      <v-spacer></v-spacer>
+      <v-btn variant="tonal" @click="closeDetails">Chiudi</v-btn>
+      <v-btn 
+        color="primary" 
+        variant="tonal"
+        class="mx-1"
+        size="large"
+      >
+        <v-icon start>mdi-map</v-icon>
+        Vedi sulla mappa
+      </v-btn>
+    </v-card-actions>
+  </div>
 </template>
   
 <script>
@@ -110,23 +87,6 @@ export default {
     luoghi: {
       type: Array,
       default: () => []
-    },
-    modelValue: {
-      type: Boolean,
-      default: false
-    }
-  },
-  data() {
-    return {
-      dialogLocal: this.modelValue
-    };
-  },
-  watch: {
-    modelValue(newValue) {
-      this.dialogLocal = newValue;
-    },
-    dialogLocal(newValue) {
-      this.$emit('update:modelValue', newValue);
     }
   },
   computed: {
@@ -144,7 +104,6 @@ export default {
   },
   methods: {
     closeDetails() {
-      this.dialogLocal = false;
       this.$emit('close');
     },
     selectRelated(luogo) {

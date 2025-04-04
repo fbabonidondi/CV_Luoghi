@@ -1,4 +1,3 @@
-// src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router';
 import LuoghiList from '../components/LuoghiList.vue';
 import LuogoDetails from '../components/LuogoDetails.vue';
