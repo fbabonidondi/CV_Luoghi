@@ -15,6 +15,7 @@
                 cols="6" 
                 sm="4" 
                 md="2"
+                @click="handleCategoryClick(stat.label)"
               >
                 <v-hover v-slot="{ isHovering, props }">
                   <v-card
@@ -103,66 +104,108 @@
     </v-row>
   </v-container>
 </template>
-  
-  <script>
-  export default {
-    name: 'StatistichePage',
-    props: {
-      luoghi: {
-        type: Array,
-        required: true
-      }
-    },
-    computed: {
-      statistiche() {
-        const categorieCounts = this.luoghi.reduce((acc, luogo) => {
-          acc[luogo.categoria] = (acc[luogo.categoria] || 0) + 1;
-          return acc;
-        }, {});
-        
-        return [
-          { label: 'Totale luoghi', valore: this.luoghi.length },
-          { label: 'Ristoranti', valore: categorieCounts['ristorante'] || 0 },
-          { label: 'Chiese', valore: categorieCounts['chiesa'] || 0 },
-          { label: 'Musei', valore: categorieCounts['museo'] || 0 },
-          { label: 'Rifugi', valore: categorieCounts['rifugio'] || 0 },
-          { label: 'Laghi', valore: categorieCounts['lago'] || 0 },
-          { label: 'Parchi', valore: categorieCounts['parco_naturale'] || 0 }
-        ];
-      }
-    },
-    methods: {
-      getCategoriaColor(categoria) {
-        const colors = {
-          'Totale luoghi': 'primary',
-          'Ristoranti': 'red-darken-1',
-          'Chiese': 'blue-darken-2',
-          'Musei': 'amber-darken-2',
-          'Rifugi': 'green-darken-1',
-          'Laghi': 'blue',
-          'Parchi': 'green'
-        };
-        return colors[categoria] || 'grey';
-      },
-      getCategoriaIcon(categoria) {
-        const icons = {
-          'Totale luoghi': 'mdi-map-marker-multiple',
-          'Ristoranti': 'mdi-silverware-fork-knife',
-          'Chiese': 'mdi-church',
-          'Musei': 'mdi-bank',
-          'Rifugi': 'mdi-home',
-          'Laghi': 'mdi-waves',
-          'Parchi': 'mdi-pine-tree'
-        };
-        return icons[categoria] || 'mdi-map-marker';
-      }
+
+<script>
+export default {
+  name: 'StatistichePage',
+  props: {
+    luoghi: {
+      type: Array,
+      required: true
     }
-  };
-  </script>
-  
-  <style scoped>
-  .v-card.on-hover {
-    transform: translateY(-5px);
-    transition: all 0.3s ease-in-out;
+  },
+  computed: {
+    statistiche() {
+      const categorieCounts = this.luoghi.reduce((acc, luogo) => {
+        acc[luogo.categoria] = (acc[luogo.categoria] || 0) + 1;
+        return acc;
+      }, {});
+      
+      const statisticheArray = Object.entries(categorieCounts).map(([categoria, count]) => ({
+        label: this.formatCategoria(categoria),
+        valore: count
+      }));
+      
+      statisticheArray.unshift({
+        label: 'Totale luoghi',
+        valore: this.luoghi.length
+      });
+      
+      return statisticheArray;
+    }
+  },
+  methods: {
+    handleCategoryClick(categoryLabel) {
+      const categoryMap = {
+        'Ristoranti': 'ristorante',
+        'Chiese': 'chiesa',
+        'Musei': 'museo',
+        'Rifugi': 'rifugio',
+        'Laghi': 'lago',
+        'Parchi Naturali': 'parco_naturale',
+        'Castelli': 'castello',
+        'Teatri': 'teatro',
+        'Monumenti': 'monumento'
+      };
+      const categoryValue = categoryMap[categoryLabel];
+      if (categoryValue) {
+        this.$router.push({
+          path: '/luoghi',
+          query: { categoria: categoryValue }
+        });
+      }
+    },
+    getCategoriaColor(categoria) {
+      const colors = {
+        'Totale luoghi': 'primary',
+        'Ristoranti': 'red-darken-1',
+        'Chiese': 'blue-darken-2',
+        'Musei': 'amber-darken-2',
+        'Rifugi': 'green-darken-1',
+        'Laghi': 'blue',
+        'Parchi Naturali': 'green',
+        'Castelli': 'purple-darken-1',
+        'Teatri': 'orange-darken-1',
+        'Monumenti': 'cyan-darken-1'
+      };
+      return colors[categoria] || 'grey';
+    },
+    getCategoriaIcon(categoria) {
+      const icons = {
+        'Totale luoghi': 'mdi-map-marker-multiple',
+        'Ristoranti': 'mdi-silverware-fork-knife',
+        'Chiese': 'mdi-church',
+        'Musei': 'mdi-bank',
+        'Rifugi': 'mdi-home',
+        'Laghi': 'mdi-waves',
+        'Parchi Naturali': 'mdi-pine-tree',
+        'Castelli': 'mdi-castle',
+        'Teatri': 'mdi-drama-masks',
+        'Monumenti': 'mdi-cross'
+      };
+      return icons[categoria] || 'mdi-map-marker';
+    },
+    formatCategoria(categoria) {
+      const categorieMap = {
+        'ristorante': 'Ristoranti',
+        'chiesa': 'Chiese',
+        'museo': 'Musei',
+        'rifugio': 'Rifugi',
+        'lago': 'Laghi',
+        'parco_naturale': 'Parchi Naturali',
+        'castello': 'Castelli',
+        'teatro': 'Teatri',
+        'monumento': 'Monumenti'
+      };
+      return categorieMap[categoria] || categoria.charAt(0).toUpperCase() + categoria.slice(1);
+    }
   }
-  </style>
+}
+</script>
+
+<style scoped>
+.v-card.on-hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease-in-out;
+}
+</style>

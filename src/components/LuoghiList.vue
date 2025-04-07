@@ -8,22 +8,22 @@
       <v-card-text>
         <v-row align="center" class="mb-4">
           <v-btn-toggle
-          v-model="activeFilter"
-          mandatory
-          color="grey-darken-4"
-          variant="flat"
-          divided
-          class="my-4"
-        >
-          <v-btn value="all" @click="setFilter('all')">Tutti</v-btn>
-          <v-btn 
-            v-for="categoria in categorie" 
-            :key="categoria.id"
-            :value="categoria.id"
-            class="text-white"
+            v-model="activeFilter"
+            mandatory
+            color="grey-darken-4"
+            variant="flat"
+            divided
+            class="my-4"
           >
-            {{ categoria.label }}
-          </v-btn>
+            <v-btn value="all" @click="setFilter('all')">Tutti</v-btn>
+            <v-btn 
+              v-for="categoria in categorieUniche" 
+              :key="categoria.id"
+              :value="categoria.id"
+              class="text-white"
+            >
+              {{ categoria.label }}
+            </v-btn>
           </v-btn-toggle>
 
           <v-spacer></v-spacer>
@@ -93,48 +93,40 @@
     </v-alert>
   </v-container>
 </template>
-  
+
 <script>
 export default {
   name: 'LuoghiList',
   props: {
-    luoghi: {
-      type: Array,
-      required: true
-    }
+    luoghi: { type: Array, required: true },
+    showFavorites: { type: Boolean, default: false }
   },
   data() {
     return {
       activeFilter: 'all',
       searchQuery: '',
-      expandedCategories: ['ristorante'], // La prima categoria è espansa di default
-      categorie: [
-        { id: 'ristorante', label: 'Ristoranti' },
-        { id: 'chiesa', label: 'Chiese' },
-        { id: 'museo', label: 'Musei' },
-        { id: 'rifugio', label: 'Rifugi' },
-        { id: 'lago', label: 'Laghi' },
-        { id: 'parco_naturale', label: 'Parchi Naturali' }
-      ]
+      expandedCategories: ['ristorante'] // La prima categoria è espansa di default
+    }
+  },
+  created() {
+    if (this.$route.query.categoria) {
+      this.activeFilter = this.$route.query.categoria;
     }
   },
   computed: {
     filteredLuoghi() {
-      let filteredByCategory = this.luoghi;
-      
-      // Filtra per categoria se non è 'all'
+      let filtered = this.luoghi;
+      if (this.showFavorites) {
+        filtered = filtered.filter(luogo => luogo.preferito);
+      }
       if (this.activeFilter !== 'all') {
-        filteredByCategory = this.luoghi.filter(luogo => luogo.categoria === this.activeFilter);
+        filtered = filtered.filter(luogo => luogo.categoria === this.activeFilter);
       }
-      
-      // Se non c'è una query di ricerca, restituisci i luoghi filtrati per categoria
       if (!this.searchQuery.trim()) {
-        return filteredByCategory;
+        return filtered;
       }
-      
-      // Filtra per query di ricerca
       const query = this.searchQuery.toLowerCase().trim();
-      return filteredByCategory.filter(luogo => {
+      return filtered.filter(luogo => {
         return (
           luogo.nome.toLowerCase().includes(query) ||
           luogo.indirizzo.toLowerCase().includes(query) ||
@@ -142,20 +134,25 @@ export default {
         );
       });
     },
+    categorieUniche() {
+      const categorie = new Set(this.luoghi.map(luogo => luogo.categoria));
+      return Array.from(categorie).sort().map(categoria => ({
+        id: categoria,
+        label: this.formatCategoria(categoria)
+      }));
+    },
     categorieConLuoghi() {
-      // Raggruppa i luoghi filtrati per categoria
-      return this.categorie
+      return this.categorieUniche
         .map(categoria => {
           const luoghiCategoria = this.filteredLuoghi.filter(luogo => 
             luogo.categoria === categoria.id
           );
-          
           return {
             ...categoria,
             luoghi: luoghiCategoria
           };
         })
-        .filter(categoria => categoria.luoghi.length > 0); // Mostra solo categorie con luoghi
+        .filter(categoria => categoria.luoghi.length > 0);
     }
   },
   methods: {
@@ -164,8 +161,6 @@ export default {
     },
     setFilter(categoria) {
       this.activeFilter = categoria;
-      
-      // Se stiamo filtrando per una categoria specifica, espandiamola
       if (categoria !== 'all') {
         this.expandedCategories = [categoria];
       }
@@ -181,9 +176,26 @@ export default {
         'museo': 'mdi-bank',
         'rifugio': 'mdi-home',
         'lago': 'mdi-water',
-        'parco_naturale': 'mdi-tree'
+        'parco_naturale': 'mdi-pine-tree',
+        'castello': 'mdi-castle',
+        'teatro': 'mdi-drama-masks',
+        'monumento': 'mdi-cross'
       };
       return iconMap[categoria] || 'mdi-map-marker';
+    },
+    formatCategoria(categoria) {
+      const categorieMap = {
+        'ristorante': 'Ristoranti',
+        'chiesa': 'Chiese',
+        'museo': 'Musei',
+        'rifugio': 'Rifugi',
+        'lago': 'Laghi',
+        'parco_naturale': 'Parchi Naturali',
+        'castello': 'Castelli',
+        'teatro': 'Teatri',
+        'monumento': 'Monumenti'
+      };
+      return categorieMap[categoria] || categoria.charAt(0).toUpperCase() + categoria.slice(1);
     },
     isExpanded(categoriaId) {
       return this.expandedCategories.includes(categoriaId);
@@ -199,22 +211,22 @@ export default {
   }
 }
 </script>
-  
-  <style scoped>
-  .v-expansion-panel-title {
-    background-color: rgba(0,0,0,0.03);
-  }
-  
-  .v-list-item {
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .v-list-item:hover {
-    background-color: rgba(0,0,0,0.04);
-  }
 
-  /* Stile per i bottoni dei filtri */
+<style scoped>
+.v-expansion-panel-title {
+  background-color: rgba(0,0,0,0.03);
+}
+
+.v-list-item {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.v-list-item:hover {
+  background-color: rgba(0,0,0,0.04);
+}
+
+/* Stile per i bottoni dei filtri */
 ::v-deep .v-btn-toggle .v-btn {
   background-color: #616161 !important;
   transition: all 0.3s ease;
@@ -231,4 +243,4 @@ export default {
   padding: 16px 24px;
   transition: background-color 0.3s ease;
 }
-  </style>
+</style>

@@ -46,7 +46,7 @@
 
     <!-- Contenuto delle tabs -->
     <v-window v-model="activeTab" :touch="false">
-        <!-- Tab Informazioni -->
+      <!-- Tab Informazioni -->
       <v-window-item value="info">
         <v-container class="pa-3">
           <v-row>
@@ -115,73 +115,22 @@
                 <div class="text-dark">{{ luogo.commento || 'Nessun commento disponibile' }}</div>
               </v-card>
               
-              <!-- Campi specifici per categoria -->
-              <template v-if="luogo.categoria === 'ristorante' && luogo.lista_cibi">
-                <v-card
-                  variant="outlined"
-                  class="mb-2 pa-2"
-                  :color="`${getCategoriaColor(luogo.categoria)}-lighten-5`"
-                >
-                  <div class="text-subtitle-2 font-weight-bold mb-1 text-dark">Lista cibi</div>
-                  <div class="d-flex flex-wrap">
-                    <v-chip
-                      v-for="(cibo, index) in luogo.lista_cibi"
-                      :key="index"
-                      size="small"
-                      class="ma-1"
-                      :color="getHeaderColor(luogo.categoria)"
-                      label
-                    >
-                      {{ cibo }}
-                    </v-chip>
-                  </div>
-                </v-card>
+              <!-- Mostra tutti i campi extra -->
+              <template v-for="(value, key) in luogo" :key="key">
+                <template v-if="!isStandardField(key)">
+                  <v-card
+                    variant="outlined"
+                    class="mb-2 pa-2"
+                    :color="`${getCategoriaColor(luogo.categoria)}-lighten-5`"
+                  >
+                    <div class="text-subtitle-2 font-weight-bold mb-1 text-dark">{{ formatFieldName(key) }}</div>
+                    <div class="text-dark">{{ formatFieldValue(key, value) }}</div>
+                  </v-card>
+                </template>
               </template>
               
-              <template v-if="luogo.categoria === 'rifugio' && luogo.altitudine">
-                <v-card
-                  variant="outlined"
-                  class="mb-2 pa-2"
-                  :color="`${getCategoriaColor(luogo.categoria)}-lighten-5`"
-                >
-                  <div class="text-subtitle-2 font-weight-bold mb-1 text-dark">Altitudine</div>
-                  <div class="d-flex align-center text-dark">
-                    <v-icon icon="mdi-elevation-rise" class="mr-2" :color="getHeaderColor(luogo.categoria)"></v-icon>
-                    <span>{{ luogo.altitudine }} metri s.l.m.</span>
-                  </div>
-                </v-card>
-              </template>
-              
-              <template v-if="luogo.categoria === 'lago' && luogo.superficie">
-                <v-card
-                  variant="outlined"
-                  class="mb-2 pa-2"
-                  :color="`${getCategoriaColor(luogo.categoria)}-lighten-5`"
-                >
-                  <div class="text-subtitle-2 font-weight-bold mb-1 text-dark">Superficie</div>
-                  <div class="d-flex align-center text-dark">
-                    <v-icon icon="mdi-waves" class="mr-2" :color="getHeaderColor(luogo.categoria)"></v-icon>
-                    <span>{{ luogo.superficie }} km²</span>
-                  </div>
-                </v-card>
-              </template>
-              
-              <template v-if="luogo.categoria === 'parco_naturale' && luogo.estensione">
-                <v-card
-                  variant="outlined"
-                  class="mb-2 pa-2"
-                  :color="`${getCategoriaColor(luogo.categoria)}-lighten-5`"
-                >
-                  <div class="text-subtitle-2 font-weight-bold mb-1 text-dark">Estensione</div>
-                  <div class="d-flex align-center text-dark">
-                    <v-icon icon="mdi-ruler-square" class="mr-2" :color="getHeaderColor(luogo.categoria)"></v-icon>
-                    <span>{{ luogo.estensione }} ettari</span>
-                  </div>
-                </v-card>
-              </template>
-              
-              <!-- Fallback per altre categorie o campi mancanti -->
-              <v-alert v-if="!hasSpecificDetails" type="info" variant="tonal" density="compact" class="mt-2">
+              <!-- Messaggio se non ci sono dettagli specifici -->
+              <v-alert v-if="!hasExtraFields" type="info" variant="tonal" density="compact" class="mt-2">
                 Nessun dettaglio specifico disponibile per questa categoria
               </v-alert>
             </v-col>
@@ -325,18 +274,8 @@ export default {
                     this.isSimilarDate(l.data_visita, this.luogo.data_visita))
         .slice(0, 3);
     },
-    
-    hasSpecificDetails() {
-      const categoria = this.luogo.categoria;
-      
-      if (!categoria) return false;
-      
-      if (categoria === 'ristorante' && this.luogo.lista_cibi && this.luogo.lista_cibi.length > 0) return true;
-      if (categoria === 'rifugio' && this.luogo.altitudine) return true;
-      if (categoria === 'lago' && this.luogo.superficie) return true;
-      if (categoria === 'parco_naturale' && this.luogo.estensione) return true;
-      
-      return false;
+    hasExtraFields() {
+      return Object.keys(this.luogo).some(key => !this.isStandardField(key));
     }
   },
   methods: {
@@ -345,7 +284,6 @@ export default {
     },
     openRelatedLuogo(luogo) {
       this.activeTab = 'info';
-      // Emette un evento per aprire il nuovo luogo mantenendo la finestra aperta
       this.$emit('open-related-luogo', luogo);
     },
     selectRelated(luogo) {
@@ -356,23 +294,23 @@ export default {
     },
     formatDate(dateString) {
       if (!dateString) return 'Data non disponibile';
-      
       const options = { year: 'numeric', month: 'long', day: 'numeric' };
       return new Date(dateString).toLocaleDateString('it-IT', options);
     },
     formatCategoria(categoria) {
       if (!categoria) return 'Categoria non specificata';
-      
       const categorieMap = {
         'ristorante': 'Ristorante',
         'chiesa': 'Chiesa',
         'museo': 'Museo',
         'rifugio': 'Rifugio',
         'lago': 'Lago',
-        'parco_naturale': 'Parco Naturale'
+        'parco_naturale': 'Parco Naturale',
+        'castello': 'Castello',
+        'teatro': 'Teatro',
+        'monumento': 'Monumento'
       };
-      
-      return categorieMap[categoria] || categoria;
+      return categorieMap[categoria] || categoria.charAt(0).toUpperCase() + categoria.slice(1);
     },
     getCategoriaIcon(categoria) {
       const iconMap = {
@@ -381,45 +319,71 @@ export default {
         'museo': 'mdi-bank',
         'rifugio': 'mdi-home',
         'lago': 'mdi-water',
-        'parco_naturale': 'mdi-tree'
+        'parco_naturale': 'mdi-pine-tree',
+        'castello': 'mdi-castle',
+        'teatro': 'mdi-drama-masks',
+        'monumento': 'mdi-cross'
       };
-      
       return iconMap[categoria] || 'mdi-map-marker';
     },
     getHeaderColor(categoria) {
       if (!categoria) return 'grey';
-      
       const colorMap = {
-        'ristorante': 'red-darken-1',
-        'chiesa': 'blue-darken-2',
-        'museo': 'amber-darken-2',
-        'rifugio': 'green-darken-1',
-        'lago': 'blue',
-        'parco_naturale': 'green'
+        'ristorante': 'deep-orange-darken-2',
+        'chiesa': 'indigo-darken-3',
+        'museo': 'amber-darken-3',
+        'rifugio': 'light-green-darken-3',
+        'lago': 'light-blue-darken-3',
+        'parco_naturale': 'green-darken-2',
+        'castello': 'deep-purple-darken-2',
+        'teatro': 'orange-darken-3',
+        'monumento': 'teal-darken-2'
       };
+
       return colorMap[categoria] || 'grey';
     },
     getCategoriaColor(categoria) {
       if (!categoria) return 'grey';
-      
       const colorMap = {
         'ristorante': 'red',
         'chiesa': 'blue',
         'museo': 'amber',
         'rifugio': 'green',
         'lago': 'blue',
-        'parco_naturale': 'green'
+        'parco_naturale': 'green',
+        'castello': 'purple',
+        'teatro': 'orange',
+        'monumento': 'cyan'
       };
       return colorMap[categoria] || 'grey';
     },
     isSimilarDate(date1, date2) {
       if (!date1 || !date2) return false;
-      
       const d1 = new Date(date1);
       const d2 = new Date(date2);
       const diffTime = Math.abs(d2 - d1);
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
       return diffDays <= 30;
+    },
+    isStandardField(key) {
+      const standardFields = ['id', 'nome', 'categoria', 'data_visita', 'descrizione', 'indirizzo', 'commento', 'preferito'];
+      return standardFields.includes(key);
+    },
+    formatFieldName(key) {
+      return key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    },
+    formatFieldValue(key, value) {
+      if (Array.isArray(value)) {
+        return value.join(', ');
+      }
+      if (typeof value === 'number') {
+        if (key === 'altitudine') return `${value} metri s.l.m.`;
+        if (key === 'superficie') return `${value} km²`;
+        if (key === 'estensione') return `${value} ettari`;
+        if (key === 'anno_costruzione') return `${value}`;
+        return value;
+      }
+      return value;
     }
   }
 }
