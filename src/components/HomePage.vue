@@ -11,14 +11,14 @@
             <v-row>
               <v-col cols="12" sm="4">
                 <v-select
-                  v-model="filtriSelezionati.categoria"
-                  :items="categorieFiltro"
-                  label="Categoria"
-                  clearable
-                  variant="outlined"
-                  density="comfortable"
-                  color="teal"
-                ></v-select>
+  v-model="filtriSelezionati.categoria"
+  :items="categorieUniche"
+  label="Categoria"
+  clearable
+  variant="outlined"
+  density="comfortable"
+  color="teal"
+></v-select>
               </v-col>
               <v-col cols="12" sm="4">
                 <v-select
@@ -230,17 +230,6 @@
           ordinamento: 'nome_asc',
           preferiti: false
         },
-        categorieFiltro: [
-          'ristorante',
-          'chiesa',
-          'museo',
-          'rifugio',
-          'lago',
-          'parco_naturale',
-          'castello',
-          'monumento',
-          'teatro',
-        ],
         ordinamentiFiltro: [
           { title: 'Nome (A-Z)', value: 'nome_asc' },
           { title: 'Nome (Z-A)', value: 'nome_desc' },
@@ -272,6 +261,10 @@
       }
     },
     computed: {
+        categorieUniche() {
+        const categorie = new Set(this.luoghi.map(luogo => luogo.categoria));
+        return Array.from(categorie).sort();
+        },
       luoghiFiltrati() {
         let risultato = [...this.luoghi];
         
@@ -344,16 +337,33 @@
         this.snackbar.show = true;
       },
       getCategoriaColor(categoria) {
-        const colors = {
-          'ristorante': 'red-darken-1',
-          'chiesa': 'blue-darken-2',
-          'museo': 'amber-darken-2',
-          'rifugio': 'green-darken-1',
-          'lago': 'blue',
-          'parco_naturale': 'green'
-        };
-        return colors[categoria] || 'grey';
-      },
+  const colors = {
+    'ristorante': 'red-darken-1',
+    'chiesa': 'blue-darken-2',
+    'museo': 'amber-darken-2',
+    'rifugio': 'green-darken-1',
+    'lago': 'blue',
+    'parco_naturale': 'green',
+    'castello': 'purple-darken-1',
+    'teatro': 'orange-darken-1',
+    'monumento': 'cyan-darken-1'
+  };
+  return colors[categoria] || 'grey';
+},
+getCategoriaIcon(categoria) {
+  const icons = {
+    'ristorante': 'mdi-silverware-fork-knife',
+    'chiesa': 'mdi-church',
+    'museo': 'mdi-bank',
+    'rifugio': 'mdi-home',
+    'lago': 'mdi-waves',
+    'parco_naturale': 'mdi-pine-tree',
+    'castello': 'mdi-castle',
+    'teatro': 'mdi-drama-masks',
+    'monumento': 'mdi-monument'
+  };
+  return icons[categoria] || 'mdi-map-marker';
+},
       getHeaderColor(categoria) {
         if (!categoria) return 'grey';
         
@@ -368,19 +378,22 @@
         return colorMap[categoria] || 'grey';
       },
       formatCategoria(categoria) {
-        if (!categoria) return 'Categoria non specificata';
-        
-        const categorieMap = {
-          'ristorante': 'Ristorante',
-          'chiesa': 'Chiesa',
-          'museo': 'Museo',
-          'rifugio': 'Rifugio',
-          'lago': 'Lago',
-          'parco_naturale': 'Parco Naturale'
-        };
-        
-        return categorieMap[categoria] || categoria;
-      }
+  if (!categoria) return 'Categoria non specificata';
+  
+  const categorieMap = {
+    'ristorante': 'Ristorante',
+    'chiesa': 'Chiesa',
+    'museo': 'Museo',
+    'rifugio': 'Rifugio',
+    'lago': 'Lago',
+    'parco_naturale': 'Parco Naturale',
+    'castello': 'Castello',
+    'teatro': 'Teatro',
+    'monumento': 'Monumento'
+  };
+  
+  return categorieMap[categoria] || categoria.charAt(0).toUpperCase() + categoria.slice(1);
+}
     }
   };
   </script>

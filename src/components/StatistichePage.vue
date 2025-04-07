@@ -104,7 +104,7 @@
     </v-row>
   </v-container>
 </template>
-  
+
 <script>
 export default {
   name: 'StatistichePage',
@@ -121,33 +121,34 @@ export default {
         return acc;
       }, {});
       
-      return [
-        { label: 'Totale luoghi', valore: this.luoghi.length },
-        { label: 'Ristoranti', valore: categorieCounts['ristorante'] || 0 },
-        { label: 'Chiese', valore: categorieCounts['chiesa'] || 0 },
-        { label: 'Musei', valore: categorieCounts['museo'] || 0 },
-        { label: 'Rifugi', valore: categorieCounts['rifugio'] || 0 },
-        { label: 'Laghi', valore: categorieCounts['lago'] || 0 },
-        { label: 'Parchi', valore: categorieCounts['parco_naturale'] || 0 }
-      ];
+      const statisticheArray = Object.entries(categorieCounts).map(([categoria, count]) => ({
+        label: this.formatCategoria(categoria),
+        valore: count
+      }));
+      
+      statisticheArray.unshift({
+        label: 'Totale luoghi',
+        valore: this.luoghi.length
+      });
+      
+      return statisticheArray;
     }
   },
   methods: {
     handleCategoryClick(categoryLabel) {
-      // Mappa le etichette delle statistiche ai valori delle categorie
       const categoryMap = {
         'Ristoranti': 'ristorante',
         'Chiese': 'chiesa',
         'Musei': 'museo',
         'Rifugi': 'rifugio',
         'Laghi': 'lago',
-        'Parchi': 'parco_naturale'
+        'Parchi Naturali': 'parco_naturale',
+        'Castelli': 'castello',
+        'Teatri': 'teatro',
+        'Monumenti': 'monumento'
       };
-      
       const categoryValue = categoryMap[categoryLabel];
-      
       if (categoryValue) {
-        // Naviga alla pagina dei luoghi con il parametro della categoria
         this.$router.push({
           path: '/luoghi',
           query: { categoria: categoryValue }
@@ -162,7 +163,10 @@ export default {
         'Musei': 'amber-darken-2',
         'Rifugi': 'green-darken-1',
         'Laghi': 'blue',
-        'Parchi': 'green'
+        'Parchi Naturali': 'green',
+        'Castelli': 'purple-darken-1',
+        'Teatri': 'orange-darken-1',
+        'Monumenti': 'cyan-darken-1'
       };
       return colors[categoria] || 'grey';
     },
@@ -174,14 +178,31 @@ export default {
         'Musei': 'mdi-bank',
         'Rifugi': 'mdi-home',
         'Laghi': 'mdi-waves',
-        'Parchi': 'mdi-pine-tree'
+        'Parchi Naturali': 'mdi-pine-tree',
+        'Castelli': 'mdi-castle',
+        'Teatri': 'mdi-drama-masks',
+        'Monumenti': 'mdi-cross'
       };
       return icons[categoria] || 'mdi-map-marker';
+    },
+    formatCategoria(categoria) {
+      const categorieMap = {
+        'ristorante': 'Ristoranti',
+        'chiesa': 'Chiese',
+        'museo': 'Musei',
+        'rifugio': 'Rifugi',
+        'lago': 'Laghi',
+        'parco_naturale': 'Parchi Naturali',
+        'castello': 'Castelli',
+        'teatro': 'Teatri',
+        'monumento': 'Monumenti'
+      };
+      return categorieMap[categoria] || categoria.charAt(0).toUpperCase() + categoria.slice(1);
     }
   }
-};
+}
 </script>
-  
+
 <style scoped>
 .v-card.on-hover {
   transform: translateY(-5px);

@@ -273,21 +273,28 @@ export default {
   },
   computed: {
     statistiche() {
-      const categorieCounts = this.luoghi.reduce((acc, luogo) => {
-        acc[luogo.categoria] = (acc[luogo.categoria] || 0) + 1;
-        return acc;
-      }, {});
-      
-      return [
-        { label: 'Totale luoghi', valore: this.luoghi.length },
-        { label: 'Ristoranti', valore: categorieCounts['ristorante'] || 0 },
-        { label: 'Chiese', valore: categorieCounts['chiesa'] || 0 },
-        { label: 'Musei', valore: categorieCounts['museo'] || 0 },
-        { label: 'Rifugi', valore: categorieCounts['rifugio'] || 0 },
-        { label: 'Laghi', valore: categorieCounts['lago'] || 0 },
-        { label: 'Parchi', valore: categorieCounts['parco_naturale'] || 0 }
-      ];
-    },
+    const categorieCounts = this.luoghi.reduce((acc, luogo) => {
+      acc[luogo.categoria] = (acc[luogo.categoria] || 0) + 1;
+      return acc;
+    }, {});
+    
+    const statisticheArray = Object.entries(categorieCounts).map(([categoria, count]) => ({
+      label: this.formatCategoria(categoria), // Usa la funzione per formattare il nome
+      valore: count,
+      icon: this.getCategoriaIcon(categoria),
+      color: this.getCategoriaColor(categoria)
+    }));
+    
+    // Aggiungi il totale all'inizio
+    statisticheArray.unshift({
+      label: 'Totale luoghi',
+      valore: this.luoghi.length,
+      icon: 'mdi-map-marker-multiple',
+      color: 'primary'
+    });
+    
+    return statisticheArray;
+  },
     luoghiFiltrati() {
       let risultato = [...this.luoghi];
       
@@ -402,35 +409,35 @@ export default {
       this.snackbar.show = true;
     },
     getCategoriaColor(categoria) {
-      const colors = {
-        'Totale luoghi': 'primary',
-        'Ristoranti': 'red-darken-1',
-        'Chiese': 'blue-darken-2',
-        'Musei': 'amber-darken-2',
-        'Rifugi': 'green-darken-1',
-        'Laghi': 'blue',
-        'Parchi': 'green',
-        'ristorante': 'red-darken-1',
-        'chiesa': 'blue-darken-2',
-        'museo': 'amber-darken-2',
-        'rifugio': 'green-darken-1',
-        'lago': 'blue',
-        'parco_naturale': 'green'
-      };
-      return colors[categoria] || 'grey';
-    },
-    getCategoriaIcon(categoria) {
-      const icons = {
-        'Totale luoghi': 'mdi-map-marker-multiple',
-        'Ristoranti': 'mdi-silverware-fork-knife',
-        'Chiese': 'mdi-church',
-        'Musei': 'mdi-bank',
-        'Rifugi': 'mdi-home',
-        'Laghi': 'mdi-waves',
-        'Parchi': 'mdi-pine-tree'
-      };
-      return icons[categoria] || 'mdi-map-marker';
-    },
+  const colors = {
+    'Totale luoghi': 'primary',
+    'ristorante': 'red-darken-1',
+    'chiesa': 'blue-darken-2',
+    'museo': 'amber-darken-2',
+    'rifugio': 'green-darken-1',
+    'lago': 'blue',
+    'parco_naturale': 'green',
+    'castello': 'purple-darken-1',
+    'teatro': 'orange-darken-1',
+    'monumento': 'cyan-darken-1'
+  };
+  return colors[categoria] || 'grey';
+},
+getCategoriaIcon(categoria) {
+  const icons = {
+    'Totale luoghi': 'mdi-map-marker-multiple',
+    'ristorante': 'mdi-silverware-fork-knife',
+    'chiesa': 'mdi-church',
+    'museo': 'mdi-bank',
+    'rifugio': 'mdi-home',
+    'lago': 'mdi-waves',
+    'parco_naturale': 'mdi-pine-tree',
+    'castello': 'mdi-castle',
+    'teatro': 'mdi-drama-masks',
+    'monumento': 'mdi-monument'
+  };
+  return icons[categoria] || 'mdi-map-marker';
+},
     nuovoLuogo() {
       this.showNotification('Funzione per aggiungere nuovo luogo', 'info');
     },
@@ -442,19 +449,22 @@ export default {
       this.applicaFiltri();
     },
     formatCategoria(categoria) {
-    if (!categoria) return 'Categoria non specificata';
-    
-    const categorieMap = {
-      'ristorante': 'Ristorante',
-      'chiesa': 'Chiesa',
-      'museo': 'Museo',
-      'rifugio': 'Rifugio',
-      'lago': 'Lago',
-      'parco_naturale': 'Parco Naturale'
-    };
-    
-    return categorieMap[categoria] || categoria;
-    },
+  if (!categoria) return 'Categoria non specificata';
+  
+  const categorieMap = {
+    'ristorante': 'Ristorante',
+    'chiesa': 'Chiesa',
+    'museo': 'Museo',
+    'rifugio': 'Rifugio',
+    'lago': 'Lago',
+    'parco_naturale': 'Parco Naturale',
+    'castello': 'Castello',
+    'teatro': 'Teatro',
+    'monumento': 'Monumento'
+  };
+  
+  return categorieMap[categoria] || categoria.charAt(0).toUpperCase() + categoria.slice(1);
+},
   
     getHeaderColor(categoria) {
       if (!categoria) return 'grey';
