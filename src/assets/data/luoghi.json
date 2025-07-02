@@ -2,669 +2,3128 @@
   "luoghi": [
     {
       "id": 1,
-      "categoria": "ristorante",
-      "nome": "La Trattoria del Buongustaio",
-      "data_visita": "2023-05-15",
-      "descrizione": "Tipico ristorante italiano con specialità regionali",
-      "indirizzo": "Via Roma 123, Milano",
-      "commento": "Ottimo rapporto qualità-prezzo, personale cordiale",
-      "lista_cibi": ["Pasta alla carbonara", "Bistecca alla fiorentina", "Tiramisù"]
+      "categoria": "museo",
+      "nome": "Palazzo Te",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": ""
     },
     {
       "id": 2,
-      "categoria": "chiesa",
-      "nome": "Duomo di San Lorenzo",
-      "data_visita": "2023-06-10",
-      "descrizione": "Chiesa romanica del XII secolo",
-      "indirizzo": "Piazza Duomo 1, Genova",
-      "commento": "Architettura impressionante e ottimo stato di conservazione"
+      "categoria": "museo",
+      "nome": "Museo di Palazzo San Sebastiano",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": ""
     },
     {
       "id": 3,
       "categoria": "museo",
-      "nome": "Museo di Arte Contemporanea",
-      "data_visita": "2023-07-05",
-      "descrizione": "Collezione di arte moderna e contemporanea",
-      "indirizzo": "Viale delle Arti 45, Roma",
-      "commento": "Esposizione varia e ben curata, audioguida disponibile"
+      "nome": "Museo del Tempo",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": ""
     },
     {
       "id": 4,
-      "categoria": "rifugio",
-      "nome": "Rifugio Monte Bianco",
-      "data_visita": "2023-08-20",
-      "descrizione": "Rifugio alpino situato lungo il sentiero per il Monte Bianco",
-      "indirizzo": "Sentiero E4, Courmayeur",
-      "commento": "Vista mozzafiato e cibo ottimo",
-      "altitudine": 2500
+      "categoria": "museo",
+      "nome": "Area Archeologica - Domus Romana",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": ""
     },
     {
       "id": 5,
-      "categoria": "lago",
-      "nome": "Lago di Garda",
-      "data_visita": "2023-09-02",
-      "descrizione": "Il più grande lago italiano",
-      "indirizzo": "Lombardia/Veneto/Trentino",
-      "commento": "Acqua cristallina e paesaggio incantevole",
-      "superficie": 370
+      "categoria": "museo",
+      "nome": "Palazzo Ducale",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": ""
     },
     {
       "id": 6,
-      "categoria": "parco_naturale",
-      "nome": "Parco Nazionale del Gran Paradiso",
-      "data_visita": "2023-09-25",
-      "descrizione": "Uno dei parchi nazionali più antichi d'Italia",
-      "indirizzo": "Valle d'Aosta/Piemonte",
-      "commento": "Flora e fauna abbondanti, sentieri ben segnalati",
-      "estensione": 70000
+      "categoria": "museo",
+      "nome": "Museo Archeologico Nazionale di Mantova",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": ""
     },
     {
       "id": 7,
-      "categoria": "ristorante",
-      "nome": "Ristorante Rubacuori",
-      "data_visita": "2024-04-01",
-      "descrizione": "Ristorante italiano con piatti tradizionali e opzioni vegetariane",
-      "indirizzo": "Via Dante 4, Milano",
-      "commento": "Ambiente romantico e cibo delizioso",
-      "lista_cibi": ["Risotto alla milanese", "Cotoletta alla milanese", "Panna cotta"]
+      "categoria": "museo",
+      "nome": "Museo Egizio",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "10123 Torino TO",
+      "commento": ""
     },
     {
       "id": 8,
-      "categoria": "chiesa",
-      "nome": "Chiesa di San Maurizio al Monastero Maggiore",
-      "data_visita": "2024-04-02",
-      "descrizione": "Chiesa con affreschi del Cinquecento, nota come la Cappella Sistina di Milano",
-      "indirizzo": "Corso Magenta 15, Milano",
-      "commento": "Affreschi spettacolari e atmosfera suggestiva"
+      "categoria": "museo",
+      "nome": "The Museum of Modern Art (MoMA)",
+      "data_visita": "2015-03-08",
+      "descrizione": "",
+      "indirizzo": "New York NY 10019 USA",
+      "commento": ""
     },
     {
       "id": 9,
       "categoria": "museo",
-      "nome": "Pinacoteca di Brera",
-      "data_visita": "2024-04-03",
-      "descrizione": "Museo d'arte con una vasta collezione di opere italiane",
-      "indirizzo": "Via Brera 28, Milano",
-      "commento": "Collezione impressionante e ambiente storico"
+      "nome": "Metropolitan Museum of Art",
+      "data_visita": "2015-03-09",
+      "descrizione": "",
+      "indirizzo": "New York NY 10028 USA",
+      "commento": ""
     },
     {
       "id": 10,
-      "categoria": "rifugio",
-      "nome": "Rifugio Azzoni",
-      "data_visita": "2024-04-04",
-      "descrizione": "Rifugio situato presso la vetta del Resegone",
-      "indirizzo": "Vetta del Resegone, Lecco",
-      "commento": "Panorama mozzafiato e ottima cucina",
-      "altitudine": 1860
+      "categoria": "museo",
+      "nome": "American Museum of Natural History",
+      "data_visita": "2015-03-09",
+      "descrizione": "",
+      "indirizzo": "New York NY 10024 USA",
+      "commento": ""
     },
     {
       "id": 11,
-      "categoria": "lago",
-      "nome": "Lago di Como",
-      "data_visita": "2024-04-05",
-      "descrizione": "Lago famoso per i suoi paesaggi pittoreschi e le ville storiche",
-      "indirizzo": "Como",
-      "commento": "Paesaggi incantevoli e atmosfera romantica",
-      "superficie": 146
+      "categoria": "museo",
+      "nome": "Solomon R. Guggenheim Museum",
+      "data_visita": "2015-03-10",
+      "descrizione": "",
+      "indirizzo": "New York NY 10128 USA",
+      "commento": ""
     },
     {
       "id": 12,
-      "categoria": "parco_naturale",
-      "nome": "Parco Agricolo Sud Milano",
-      "data_visita": "2024-04-06",
-      "descrizione": "Vasta area naturale protetta con aree coltivate e boschi",
-      "indirizzo": "Milano",
-      "commento": "Perfetto per escursioni e attività all'aria aperta",
-      "estensione": 47000
+      "categoria": "museo",
+      "nome": "Statue of Liberty Museum",
+      "data_visita": "2015-03-11",
+      "descrizione": "",
+      "indirizzo": "Liberty Island New York NY 10004 USA",
+      "commento": ""
     },
     {
       "id": 13,
-      "categoria": "ristorante",
-      "nome": "La Società Milano",
-      "data_visita": "2024-04-07",
-      "descrizione": "Ristorante italiano con ambiente elegante e cucina raffinata",
-      "indirizzo": "Via Monte Napoleone 10, Milano",
-      "commento": "Ottimo servizio e piatti deliziosi",
-      "lista_cibi": ["Tartare di manzo", "Ravioli al tartufo", "Mousse al cioccolato"]
+      "categoria": "museo",
+      "nome": "Ellis Island National Museum of Immigration",
+      "data_visita": "2015-03-11",
+      "descrizione": "",
+      "indirizzo": "Ellis Island Jersey City NJ 07305 USA",
+      "commento": ""
     },
     {
       "id": 14,
-      "categoria": "chiesa",
-      "nome": "Basilica di Sant'Ambrogio",
-      "data_visita": "2024-04-08",
-      "descrizione": "Una delle chiese più antiche e importanti di Milano",
-      "indirizzo": "Piazza Sant'Ambrogio 15, Milano",
-      "commento": "Architettura storica e atmosfera spirituale"
+      "categoria": "museo",
+      "nome": "Museum Mensch und Natur",
+      "data_visita": "2015-04-02",
+      "descrizione": "",
+      "indirizzo": "80638 München GER",
+      "commento": ""
     },
     {
       "id": 15,
       "categoria": "museo",
-      "nome": "Museo del Novecento",
-      "data_visita": "2024-04-09",
-      "descrizione": "Museo dedicato all'arte del XX secolo",
-      "indirizzo": "Piazza del Duomo, Milano",
-      "commento": "Collezione varia e ben organizzata"
+      "nome": "Museum Brandhorst",
+      "data_visita": "2015-04-03",
+      "descrizione": "",
+      "indirizzo": "80333 München GER",
+      "commento": ""
     },
     {
       "id": 16,
-      "categoria": "rifugio",
-      "nome": "Rifugio Riella",
-      "data_visita": "2024-04-10",
-      "descrizione": "Rifugio situato a 1275 metri nel Triangolo Lariano",
-      "indirizzo": "Monte Palanzone, Como",
-      "commento": "Ottima cucina e vista panoramica",
-      "altitudine": 1275
+      "categoria": "museo",
+      "nome": "Pinakothek der Moderne",
+      "data_visita": "2015-04-03",
+      "descrizione": "",
+      "indirizzo": "80333 München GER",
+      "commento": ""
     },
     {
       "id": 17,
-      "categoria": "lago",
-      "nome": "Lago Maggiore",
-      "data_visita": "2024-04-11",
-      "descrizione": "Il secondo lago più grande d'Italia",
-      "indirizzo": "Verbano-Cusio-Ossola/Novara/Varese",
-      "commento": "Paesaggi spettacolari e numerose attività acquatiche",
-      "superficie": 212
+      "categoria": "museo",
+      "nome": "Museo Galileo",
+      "data_visita": "2016-02-16",
+      "descrizione": "",
+      "indirizzo": "50122 Firenze FI",
+      "commento": ""
     },
     {
       "id": 18,
-      "categoria": "parco_naturale",
-      "nome": "Parco delle Cave",
-      "data_visita": "2024-04-12",
-      "descrizione": "Parco con laghi e aree boschive, ideale per escursioni",
-      "indirizzo": "Milano",
-      "commento": "Perfetto per una giornata all'aria aperta",
-      "estensione": 130
+      "categoria": "museo",
+      "nome": "Museo di San Marco",
+      "data_visita": "2016-02-16",
+      "descrizione": "",
+      "indirizzo": "50122 Firenze FI",
+      "commento": ""
     },
     {
       "id": 19,
-      "categoria": "ristorante",
-      "nome": "Mi View Restaurant",
-      "data_visita": "2024-04-13",
-      "descrizione": "Ristorante con vista panoramica sulla città",
-      "indirizzo": "Via Silvio Pellico 3, Milano",
-      "commento": "Vista spettacolare e cucina eccellente",
-      "lista_cibi": ["Sushi", "Tempura", "Tiramisù"]
+      "categoria": "museo",
+      "nome": "Museo dell’Opera del Duomo di Firenze",
+      "data_visita": "2016-02-17",
+      "descrizione": "",
+      "indirizzo": "50122 Firenze FI",
+      "commento": ""
     },
     {
       "id": 20,
-      "categoria": "chiesa",
-      "nome": "Chiesa di Santa Maria delle Grazie",
-      "data_visita": "2024-04-14",
-      "descrizione": "Chiesa famosa per l'Ultima Cena di Leonardo da Vinci",
-      "indirizzo": "Piazza Santa Maria delle Grazie, Milano",
-      "commento": "Capolavoro artistico e storico"
+      "categoria": "museo",
+      "nome": "Palazzo Pitti",
+      "data_visita": "2016-02-17",
+      "descrizione": "",
+      "indirizzo": "50122 Firenze FI",
+      "commento": ""
     },
     {
       "id": 21,
       "categoria": "museo",
-      "nome": "Museo della Scienza e della Tecnologia Leonardo da Vinci",
-      "data_visita": "2024-04-15",
-      "descrizione": "Museo interattivo dedicato a scienza e tecnologia",
-      "indirizzo": "Via San Vittore 21, Milano",
-      "commento": "Esperienza educativa e divertente"
+      "nome": "Galleria degli Uﬃzi",
+      "data_visita": "2016-02-18",
+      "descrizione": "",
+      "indirizzo": "50122 Firenze FI",
+      "commento": ""
     },
     {
       "id": 22,
-      "categoria": "ristorante",
-      "nome": "Pizzeria Quei Due",
-      "data_visita": "2024-04-16",
-      "descrizione": "Pizzeria con forno a legna e ingredienti freschi",
-      "indirizzo": "Via Marghera 12, Milano",
-      "commento": "Pizza deliziosa e ambiente accogliente",
-      "lista_cibi": ["Margherita", "Diavola", "Quattro Formaggi"]
+      "categoria": "museo",
+      "nome": "Musée Matisse",
+      "data_visita": "2017-04-09",
+      "descrizione": "",
+      "indirizzo": "06000 Nice FRA",
+      "commento": ""
     },
     {
       "id": 23,
-      "categoria": "chiesa",
-      "nome": "Chiesa di Sant'Antonio Abate",
-      "data_visita": "2024-04-17",
-      "descrizione": "Chiesa barocca con opere d'arte significative",
-      "indirizzo": "Via Sant'Antonio 5, Milano",
-      "commento": "Architettura impressionante e opere d'arte notevoli"
+      "categoria": "museo",
+      "nome": "Musée National Marc Chagall",
+      "data_visita": "2017-04-09",
+      "descrizione": "",
+      "indirizzo": "06000 Nice FRA",
+      "commento": ""
     },
     {
       "id": 24,
       "categoria": "museo",
-      "nome": "Museo Archeologico di Milano",
-      "data_visita": "2024-04-18",
-      "descrizione": "Museo dedicato alla storia antica di Milano",
-      "indirizzo": "Corso Magenta 15, Milano",
-      "commento": "Collezione ricca e ben conservata"
+      "nome": "Fondazione Maeght",
+      "data_visita": "2017-04-10",
+      "descrizione": "",
+      "indirizzo": "06570 Saint-Paul-de-Vence FRA",
+      "commento": ""
     },
     {
       "id": 25,
-      "categoria": "rifugio",
-      "nome": "Rifugio Alpe Piazza",
-      "data_visita": "2024-04-19",
-      "descrizione": "Rifugio situato a 1833 metri con vista panoramica",
-      "indirizzo": "Monte Piazza, Sondrio",
-      "commento": "Vista spettacolare e cucina tradizionale",
-      "altitudine": 1833
+      "categoria": "museo",
+      "nome": "Musée Picasso",
+      "data_visita": "2017-04-10",
+      "descrizione": "",
+      "indirizzo": "06600 Antibes FRA",
+      "commento": ""
     },
     {
       "id": 26,
-      "categoria": "lago",
-      "nome": "Lago d'Iseo",
-      "data_visita": "2024-04-20",
-      "descrizione": "Lago famoso per l'isola di Monte Isola",
-      "indirizzo": "Brescia",
-      "commento": "Paesaggi pittoreschi e atmosfera rilassante",
-      "superficie": 65
+      "categoria": "museo",
+      "nome": "Museo delle Palaﬁtte del Lago di Ledro",
+      "data_visita": "2017-08-20",
+      "descrizione": "",
+      "indirizzo": "38067 Ledro TN",
+      "commento": ""
     },
     {
       "id": 27,
-      "categoria": "parco_naturale",
-      "nome": "Parco Nord Milano",
-      "data_visita": "2024-04-21",
-      "descrizione": "Grande parco urbano con aree verdi e percorsi ciclabili",
-      "indirizzo": "Milano",
-      "commento": "Ideale per attività all'aria aperta e picnic",
-      "estensione": 640
+      "categoria": "museo",
+      "nome": "Centro Visitatori Lago Ampola",
+      "data_visita": "2017-08-22",
+      "descrizione": "",
+      "indirizzo": "38067 Ledro TN",
+      "commento": ""
     },
     {
       "id": 28,
-      "categoria": "ristorante",
-      "nome": "The Meatball Family",
-      "data_visita": "2024-04-22",
-      "descrizione": "Ristorante specializzato in polpette e piatti italiani",
-      "indirizzo": "Via Solferino 18, Milano",
-      "commento": "Polpette deliziose e ambiente familiare",
-      "lista_cibi": ["Polpette al sugo", "Polpette fritte", "Polpette al forno"]
+      "categoria": "museo",
+      "nome": "Reptiland Galleria di Scienze Naturali e Centro Erpetologico",
+      "data_visita": "2017-08-26",
+      "descrizione": "",
+      "indirizzo": "38066 Riva del Garda TN",
+      "commento": ""
     },
     {
       "id": 29,
-      "categoria": "chiesa",
-      "nome": "Chiesa di San Lorenzo Maggiore",
-      "data_visita": "2024-04-23",
-      "descrizione": "Basilica paleocristiana con architettura storica",
-      "indirizzo": "Corso di Porta Ticinese 35, Milano",
-      "commento": "Architettura antica e atmosfera spirituale"
+      "categoria": "museo",
+      "nome": "Museo di Mineralogia",
+      "data_visita": "2017-10-13",
+      "descrizione": "",
+      "indirizzo": "43100 Parma PR",
+      "commento": ""
     },
     {
       "id": 30,
       "categoria": "museo",
-      "nome": "Museo della Moda e del Costume",
-      "data_visita": "2024-04-24",
-      "descrizione": "Museo dedicato alla storia della moda e del costume",
-      "indirizzo": "Via Sant'Andrea 6, Milano",
-      "commento": "Collezione affascinante e ben curata"
+      "nome": "Museo Mineralogico e Naturalistico di Bormio",
+      "data_visita": "2021-12-04",
+      "descrizione": "",
+      "indirizzo": "23032 Bormio SO",
+      "commento": ""
     },
     {
       "id": 31,
-      "categoria": "rifugio",
-      "nome": "Rifugio Venini",
-      "data_visita": "2024-04-25",
-      "descrizione": "Rifugio situato in Val d'Intelvi con vista lago",
-      "indirizzo": "Val d'Intelvi, Como",
-      "commento": "Vista incantevole e cucina tradizionale",
-      "altitudine": 1576
+      "categoria": "museo",
+      "nome": "Parco Archeo Natura di Fiavé",
+      "data_visita": "2022-06-18",
+      "descrizione": "",
+      "indirizzo": "38075 Fiavè TN",
+      "commento": ""
     },
     {
       "id": 32,
-      "categoria": "lago",
-      "nome": "Lago di Varese",
-      "data_visita": "2024-04-26",
-      "descrizione": "Lago circondato da colline e sentieri per escursioni",
-      "indirizzo": "Varese",
-      "commento": "Paesaggi naturali e percorsi per trekking",
-      "superficie": 14.5
+      "categoria": "museo",
+      "nome": "Museo Civico Di Todi",
+      "data_visita": "2022-12-03",
+      "descrizione": "",
+      "indirizzo": "06059 Todi PG",
+      "commento": ""
     },
     {
       "id": 33,
-      "categoria": "parco_naturale",
-      "nome": "Parco delle Groane",
-      "data_visita": "2024-04-27",
-      "descrizione": "Parco naturale con boschi e brughiere",
-      "indirizzo": "Milano",
-      "commento": "Ideale per escursioni e osservazione della fauna",
-      "estensione": 3500
+      "categoria": "museo",
+      "nome": "Cisterne Romane",
+      "data_visita": "2022-12-03",
+      "descrizione": "",
+      "indirizzo": "06059 Todi PG",
+      "commento": ""
     },
     {
       "id": 34,
-      "categoria": "ristorante",
-      "nome": "Fx",
-      "data_visita": "2024-04-28",
-      "descrizione": "Ristorante accogliente con piatti della tradizione italiana",
-      "indirizzo": "Via Tortona 1, Milano",
-      "commento": "Ambiente accogliente e cibo eccellente",
-      "lista_cibi": ["Lasagna", "Tagliatelle al ragù", "Tiramisù"]
+      "categoria": "museo",
+      "nome": "Museo Archeologico Nazionale dell’Umbria",
+      "data_visita": "2022-12-04",
+      "descrizione": "",
+      "indirizzo": "06121 Perugia PG",
+      "commento": ""
     },
     {
       "id": 35,
-      "categoria": "chiesa",
-      "nome": "Chiesa di Santa Maria presso San Satiro",
-      "data_visita": "2024-04-29",
-      "descrizione": "Chiesa famosa per l'illusione prospettica del Bramante",
-      "indirizzo": "Via Torino 19, Milano",
-      "commento": "Capolavoro architettonico e storico"
+      "categoria": "museo",
+      "nome": "Perugia Sotterranea - Area Archeologica",
+      "data_visita": "2022-12-04",
+      "descrizione": "",
+      "indirizzo": "06121 Perugia PG",
+      "commento": ""
     },
     {
       "id": 36,
       "categoria": "museo",
-      "nome": "Museo del Design Italiano",
-      "data_visita": "2024-04-30",
-      "descrizione": "Museo dedicato al design italiano e internazionale",
-      "indirizzo": "Via Cerva 14, Milano",
-      "commento": "Collezione innovativa e ben organizzata"
+      "nome": "Pozzo Etrusco",
+      "data_visita": "2022-12-04",
+      "descrizione": "",
+      "indirizzo": "06121 Perugia PG",
+      "commento": ""
     },
-      {
-        "id": 37,
-        "categoria": "rifugio",
-        "nome": "Rifugio Brioschi",
-        "data_visita": "2024-05-01",
-        "descrizione": "Rifugio situato sulla Grigna Settentrionale",
-        "indirizzo": "Esino Lario, Lecco",
-        "commento": "Vista panoramica sulle Alpi e sul Lago di Como",
-        "altitudine": 2410
-      },
-      {
-        "id": 38,
-        "categoria": "rifugio",
-        "nome": "Rifugio Rosalba",
-        "data_visita": "2024-05-02",
-        "descrizione": "Rifugio nelle Grigne con vista sul Lago di Como",
-        "indirizzo": "Mandello del Lario, Lecco",
-        "commento": "Ottimo punto di partenza per escursioni",
-        "altitudine": 1730
-      },
-      {
-        "id": 39,
-        "categoria": "rifugio",
-        "nome": "Rifugio Menaggio",
-        "data_visita": "2024-05-03",
-        "descrizione": "Rifugio sul Monte Grona con vista sul Lago di Como",
-        "indirizzo": "Menaggio, Como",
-        "commento": "Panorama mozzafiato e sentieri ben segnalati",
-        "altitudine": 1383
-      },
-      {
-        "id": 40,
-        "categoria": "rifugio",
-        "nome": "Rifugio Alpino",
-        "data_visita": "2024-05-04",
-        "descrizione": "Rifugio immerso nei boschi delle Prealpi",
-        "indirizzo": "Canzo, Como",
-        "commento": "Ambiente tranquillo e accogliente",
-        "altitudine": 1200
-      },
-      {
-        "id": 41,
-        "categoria": "rifugio",
-        "nome": "Rifugio Monte Bar",
-        "data_visita": "2024-05-05",
-        "descrizione": "Rifugio con vista sui laghi di Lugano e Como",
-        "indirizzo": "Tesserete, Svizzera",
-        "commento": "Posizione strategica per escursioni transfrontaliere",
-        "altitudine": 1600
-      },
-      {
-        "id": 42,
-        "categoria": "lago",
-        "nome": "Lago di Como",
-        "data_visita": "2024-05-06",
-        "descrizione": "Uno dei laghi più profondi d'Europa, famoso per la sua bellezza",
-        "indirizzo": "Como, Lecco",
-        "commento": "Paesaggi incantevoli e ville storiche",
-        "superficie": 146
-      },
-      {
-        "id": 43,
-        "categoria": "lago",
-        "nome": "Lago di Lugano",
-        "data_visita": "2024-05-07",
-        "descrizione": "Lago condiviso tra Italia e Svizzera",
-        "indirizzo": "Porlezza, Como",
-        "commento": "Acque cristalline e montagne circostanti",
-        "superficie": 48.7
-      },
-      {
-        "id": 44,
-        "categoria": "lago",
-        "nome": "Lago Maggiore",
-        "data_visita": "2024-05-08",
-        "descrizione": "Lago con isole pittoresche e giardini botanici",
-        "indirizzo": "Verbania, Varese",
-        "commento": "Destinazione turistica rinomata",
-        "superficie": 212
-      },
-      {
-        "id": 45,
-        "categoria": "lago",
-        "nome": "Lago di Garda",
-        "data_visita": "2024-05-09",
-        "descrizione": "Il più grande lago italiano, con clima mite e vegetazione mediterranea",
-        "indirizzo": "Sirmione, Brescia",
-        "commento": "Attività acquatiche e borghi storici",
-        "superficie": 370
-      },
-      {
-        "id": 46,
-        "categoria": "lago",
-        "nome": "Lago d'Iseo",
-        "data_visita": "2024-05-10",
-        "descrizione": "Lago con l'isola lacustre più grande d'Europa",
-        "indirizzo": "Iseo, Brescia",
-        "commento": "Paesaggi suggestivi e tranquillità",
-        "superficie": 65.3
-      },
-      {
-        "id": 47,
-        "categoria": "parco_naturale",
-        "nome": "Parco del Ticino",
-        "data_visita": "2024-05-11",
-        "descrizione": "Parco fluviale con ricca biodiversità",
-        "indirizzo": "Pavia, Milano",
-        "commento": "Sentieri per trekking e birdwatching",
-        "estensione": 91600
-      },
-      {
-        "id": 48,
-        "categoria": "parco_naturale",
-        "nome": "Parco dell'Adamello",
-        "data_visita": "2024-05-12",
-        "descrizione": "Parco montano con ghiacciai e fauna alpina",
-        "indirizzo": "Breno, Brescia",
-        "commento": "Escursioni ad alta quota e rifugi",
-        "estensione": 51000
-      },
-      {
-        "id": 49,
-        "categoria": "parco_naturale",
-        "nome": "Parco dello Stelvio",
-        "data_visita": "2024-05-13",
-        "descrizione": "Uno dei più grandi parchi nazionali italiani",
-        "indirizzo": "Bormio, Sondrio",
-        "commento": "Paesaggi alpini e possibilità di avvistare animali selvatici",
-        "estensione": 130700
-      },
-      {
-        "id": 50,
-        "categoria": "parco_naturale",
-        "nome": "Parco della Val Grande",
-        "data_visita": "2024-05-14",
-        "descrizione": "Area selvaggia con foreste e canyon",
-        "indirizzo": "Verbania",
-        "commento": "Ideale per escursionisti esperti",
-        "estensione": 14500
-      },
-      {
-        "id": 51,
-        "categoria": "parco_naturale",
-        "nome": "Parco delle Orobie Bergamasche",
-        "data_visita": "2024-05-15",
-        "descrizione": "Parco montano con vette oltre i 3000 metri",
-        "indirizzo": "Bergamo",
-        "commento": "Panorami mozzafiato e rifugi accoglienti",
-        "estensione": 63000
-      },
-      {
-        "id": 52,
-        "categoria": "ristorante",
-        "nome": "Trattoria del Lago",
-        "data_visita": "2024-05-16",
-        "descrizione": "Ristorante con vista sul lago e cucina locale",
-        "indirizzo": "Via Lungolago 10, Como",
-        "commento": "Piatti a base di pesce fresco e atmosfera romantica",
-        "lista_cibi": ["Risotto al pesce persico", "Lavarello alla griglia", "Torta di mele"]
-      },
-      {
-        "id": 53,
-        "categoria": "ristorante",
-        "nome": "Osteria Antica",
-        "data_visita": "2024-05-17",
-        "descrizione": "Osteria storica con piatti della tradizione",
-        "indirizzo": "Piazza Vecchia 5, Bergamo",
-        "commento": "Ambiente rustico e sapori autentici",
-        "lista_cibi": ["Casoncelli alla bergamasca", "Polenta taragna", "Stracciatella"]
-      },
-      {
-        "id": 54,
-        "categoria": "ristorante",
-        "nome": "Ristorante Bella Vista",
-        "data_visita": "2024-05-18",
-        "descrizione": "Ristorante panoramico con terrazza",
-        "indirizzo": "Via Monte Rosa 20, Varese",
-        "commento": "Vista sulle montagne e cucina raffinata",
-        "lista_cibi": ["Filetto di manzo", "Ravioli di zucca", "Panna cotta"]
-      },
-      {
-        "id": 55,
-        "categoria": "ristorante",
-        "nome": "La Locanda del Viaggiatore",
-        "data_visita": "2024-05-19",
-        "descrizione": "Locanda accogliente con piatti casalinghi",
-        "indirizzo": "Via dei Tigli 3, Lecco",
-        "commento": "Atmosfera familiare e porzioni generose",
-        "lista_cibi": ["Pizzoccheri", "Brasato al Barolo", "Torta sbrisolona"]
-      },
-      {
-        "id": 56,
-        "categoria": "ristorante",
-        "nome": "Ristorante Girasole",
-        "data_visita": "2024-05-20",
-        "descrizione": "Ristorante moderno con cucina innovativa",
-        "indirizzo": "Corso Italia 15, Milano",
-        "commento": "Presentazioni creative e ingredienti di qualità",
-        "lista_cibi": ["Carpaccio di tonno", "Risotto allo zafferano", "Cheesecake al limone"]
-      },
-      {
-        "id": 57,
-        "categoria": "chiesa",
-        "nome": "Duomo di Milano",
-        "data_visita": "2024-05-21",
-        "descrizione": "Cattedrale gotica simbolo di Milano",
-        "indirizzo": "Piazza del Duomo, Milano",
-        "commento": "Architettura imponente e vista dalla terrazza"
-      },
-      {
-        "id": 58,
-        "categoria": "chiesa",
-        "nome": "Basilica di Sant'Ambrogio",
-        "data_visita": "2024-05-22",
-        "descrizione": "Una delle più antiche chiese di Milano",
-        "indirizzo": "Piazza Sant'Ambrogio 15, Milano",
-        "commento": "Storia e arte romanica"
-      },
-      {
-        "id": 59,
-        "categoria": "chiesa",
-        "nome": "Chiesa di Santa Maria delle Grazie",
-        "data_visita": "2024-05-23",
-        "descrizione": "Famosa per l'Ultima Cena di Leonardo da Vinci",
-        "indirizzo": "Piazza Santa Maria delle Grazie, Milano",
-        "commento": "Capolavoro rinascimentale"
-      },
-      {
-        "id": 60,
-        "categoria": "chiesa",
-        "nome": "Chiesa di San Maurizio al Monastero Maggiore",
-        "data_visita": "2024-05-24",
-        "descrizione": "Conosciuta come la 'Cappella Sistina di Milano' per i suoi affreschi",
-        "indirizzo": "Corso Magenta 15, Milano",
-        "commento": "Arte e spiritualità"
-      },
-      {
-        "id": 61,
-        "categoria": "chiesa",
-        "nome": "Chiesa di San Lorenzo Maggiore",
-        "data_visita": "2024-05-25",
-        "descrizione": "Chiesa con colonne romane e mosaici paleocristiani",
-        "indirizzo": "Corso di Porta Ticinese 35, Milano",
-        "commento": "Testimonianza della Milano antica"
-      },
-      {
-        "id": 62,
-        "categoria": "museo",
-        "nome": "Pinacoteca di Brera",
-        "data_visita": "2024-05-26",
-        "descrizione": "Museo d'arte con capolavori dal Medioevo al Barocco",
-        "indirizzo": "Via Brera 28, Milano",
-        "commento": "Collezione straordinaria e palazzo storico"
-      },
-      {
-        "id": 63,
-        "categoria": "museo",
-        "nome": "Museo della Scienza e della Tecnologia Leonardo da Vinci",
-        "data_visita": "2024-05-27",
-        "descrizione": "Museo interattivo dedicato alla scienza e alla tecnologia",
-        "indirizzo": "Via San Vittore 21, Milano",
-        "commento": "Esposizioni affascinanti per tutte le età"
-      },
-      {
-        "id": 64,
-        "categoria": "museo",
-        "nome": "Museo del Novecento",
-        "data_visita": "2024-05-28",
-        "descrizione": "Museo dedicato all'arte del XX secolo",
-        "indirizzo": "Piazza del Duomo 12, Milano",
-        "commento": "Opere di artisti italiani e internazionali"
-      },
-      {
-        "id": 65,
-        "categoria": "museo",
-        "nome": "Museo Archeologico",
-        "data_visita": "2024-05-29",
-        "descrizione": "Museo con reperti dall'età preistorica al Medioevo",
-        "indirizzo": "Corso Magenta 15, Milano",
-        "commento": "Viaggio nella storia antica"
-      },
-      {
-        "id": 66,
-        "categoria": "museo",
-        "nome": "Museo di Storia Naturale",
-        "data_visita": "2024-05-30",
-        "descrizione": "Museo con collezioni di minerali, fossili e animali",
-        "indirizzo": "Corso Venezia 55, Milano",
-        "commento": "Esposizioni educative e ben curate"
-      },
-      {
-        "id": 67,
-        "categoria": "castello",
-        "nome": "Castello Sforzesco",
-        "data_visita": "2024-05-31",
-        "descrizione": "Fortezza storica con musei e parchi",
-        "indirizzo": "Piazza Castello, Milano",
-        "commento": "Simbolo della storia milanese",
-        "anno_costruzione": 1368
-      },
-      {
-        "id": 68,
-        "categoria": "teatro",
-        "nome": "Teatro alla Scala",
-        "data_visita": "2024-06-01",
-        "descrizione": "Uno dei teatri d'opera più famosi al mondo",
-        "indirizzo": "Via Filodrammatici 2, Milano",
-        "commento": "Acustica perfetta e produzioni di alto livello",
-        "capienza": 2030
-      },
-      {
-        "id": 69,
-        "categoria": "monumento",
-        "nome": "Arco della Pace",
-        "data_visita": "2024-06-02",
-        "descrizione": "Arco trionfale neoclassico",
-        "indirizzo": "Piazza Sempione, Milano",
-        "commento": "Punto di riferimento storico e architettonico",
-        "dedicato_a": "Pace tra le nazioni europee"
-      }
-    ]
+    {
+      "id": 37,
+      "categoria": "museo",
+      "nome": "Museo Regionale della Ceramica di Deruta",
+      "data_visita": "2022-12-05",
+      "descrizione": "",
+      "indirizzo": "06053 Deruta PG",
+      "commento": ""
+    },
+    {
+      "id": 38,
+      "categoria": "museo",
+      "nome": "Pinacoteca Comunale di Deruta",
+      "data_visita": "2022-12-05",
+      "descrizione": "",
+      "indirizzo": "06053 Deruta PG",
+      "commento": ""
+    },
+    {
+      "id": 39,
+      "categoria": "museo",
+      "nome": "Museo del Tibet Votigno di Canossa",
+      "data_visita": "2023-04-22",
+      "descrizione": "",
+      "indirizzo": "42026 Votigno di Canossa RE",
+      "commento": ""
+    },
+    {
+      "id": 40,
+      "categoria": "museo",
+      "nome": "Museo Nazionale di Canossa",
+      "data_visita": "2023-04-22",
+      "descrizione": "",
+      "indirizzo": "42026 Canossa RE",
+      "commento": ""
+    },
+    {
+      "id": 41,
+      "categoria": "museo",
+      "nome": "Museo del Fungo Porcino di Borgotaro",
+      "data_visita": "2023-09-17",
+      "descrizione": "",
+      "indirizzo": "43043 Borgo Val di Taro PR",
+      "commento": ""
+    },
+    {
+      "id": 42,
+      "categoria": "museo",
+      "nome": "Museo del Giocattolo",
+      "data_visita": "2023-09-23",
+      "descrizione": "",
+      "indirizzo": "46013 Canneto Sull’Oglio MN",
+      "commento": ""
+    },
+    {
+      "id": 43,
+      "categoria": "museo",
+      "nome": "Ecomuseo delle Valli Oglio - Chiese",
+      "data_visita": "2023-09-23",
+      "descrizione": "",
+      "indirizzo": "46013 Canneto Sull’Oglio MN",
+      "commento": ""
+    },
+    {
+      "id": 44,
+      "categoria": "museo",
+      "nome": "Museo Geopaleontologico di Camposilvano",
+      "data_visita": "2023-09-24",
+      "descrizione": "",
+      "indirizzo": "37030 Camposilvano VR",
+      "commento": ""
+    },
+    {
+      "id": 45,
+      "categoria": "museo",
+      "nome": "Museo di Storia Naturale di Verona",
+      "data_visita": "2023-10-05",
+      "descrizione": "",
+      "indirizzo": "37129 Verona VR",
+      "commento": ""
+    },
+    {
+      "id": 46,
+      "categoria": "museo",
+      "nome": "Museo di Castelvecchio",
+      "data_visita": "2023-10-05",
+      "descrizione": "",
+      "indirizzo": "37129 Verona VR",
+      "commento": ""
+    },
+    {
+      "id": 47,
+      "categoria": "museo",
+      "nome": "Museo Lapidario Maﬀeiano",
+      "data_visita": "2023-10-05",
+      "descrizione": "",
+      "indirizzo": "37129 Verona VR",
+      "commento": ""
+    },
+    {
+      "id": 48,
+      "categoria": "museo",
+      "nome": "MACA - Mantova Collezioni Antiche",
+      "data_visita": "2023-10-22",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": ""
+    },
+    {
+      "id": 49,
+      "categoria": "museo",
+      "nome": "Museo del Culatello",
+      "data_visita": "2023-11-11",
+      "descrizione": "",
+      "indirizzo": "43010 Polesine Parmense PR",
+      "commento": ""
+    },
+    {
+      "id": 50,
+      "categoria": "museo",
+      "nome": "Museo Nazionale della Montagna \"Duca degli Abruzzi\"",
+      "data_visita": "2023-11-15",
+      "descrizione": "",
+      "indirizzo": "10131 Torino TO",
+      "commento": ""
+    },
+    {
+      "id": 51,
+      "categoria": "museo",
+      "nome": "Museo della Figurina",
+      "data_visita": "2023-12-03",
+      "descrizione": "",
+      "indirizzo": "41121 Modena MO",
+      "commento": ""
+    },
+    {
+      "id": 52,
+      "categoria": "museo",
+      "nome": "Palazzina dei Giardini",
+      "data_visita": "2023-12-03",
+      "descrizione": "",
+      "indirizzo": "41121 Modena MO",
+      "commento": ""
+    },
+    {
+      "id": 53,
+      "categoria": "museo",
+      "nome": "Museo Geologico G. Cortesi",
+      "data_visita": "2024-06-07",
+      "descrizione": "",
+      "indirizzo": "29014 Castell’Arquato PC",
+      "commento": ""
+    },
+    {
+      "id": 54,
+      "categoria": "museo",
+      "nome": "MuMAB - Museo Mare Antico e Biodiversità",
+      "data_visita": "2024-06-07",
+      "descrizione": "",
+      "indirizzo": "43039 Salsomaggiore Terme PR",
+      "commento": ""
+    },
+    {
+      "id": 55,
+      "categoria": "museo",
+      "nome": "Museo della Battaglia",
+      "data_visita": "2024-06-16",
+      "descrizione": "",
+      "indirizzo": "25015 San Martino della Battaglia BS",
+      "commento": ""
+    },
+    {
+      "id": 56,
+      "categoria": "museo",
+      "nome": "Museo Risorgimentale di Solferino",
+      "data_visita": "2024-06-16",
+      "descrizione": "",
+      "indirizzo": "46040 Solferino MN",
+      "commento": ""
+    },
+    {
+      "id": 57,
+      "categoria": "museo",
+      "nome": "Museo Regionale di Scienze Naturali Eﬁsio Noussan",
+      "data_visita": "2024-07-03",
+      "descrizione": "",
+      "indirizzo": "11010 Saint-Pierre AO",
+      "commento": ""
+    },
+    {
+      "id": 58,
+      "categoria": "museo",
+      "nome": "Maison Bruil",
+      "data_visita": "2024-07-03",
+      "descrizione": "",
+      "indirizzo": "11010 Villes Dessous AO",
+      "commento": ""
+    },
+    {
+      "id": 59,
+      "categoria": "museo",
+      "nome": "Maison Musée Berton",
+      "data_visita": "2024-07-04",
+      "descrizione": "",
+      "indirizzo": "11016 La Thuile AO",
+      "commento": ""
+    },
+    {
+      "id": 60,
+      "categoria": "museo",
+      "nome": "Area Megalitica di Saint-Martin-de-Corléans",
+      "data_visita": "2024-07-06",
+      "descrizione": "",
+      "indirizzo": "11100 Aosta AO",
+      "commento": ""
+    },
+    {
+      "id": 61,
+      "categoria": "museo",
+      "nome": "Museo Archeologico Regionale Valdostano",
+      "data_visita": "2024-07-06",
+      "descrizione": "",
+      "indirizzo": "11100 Aosta AO",
+      "commento": ""
+    },
+    {
+      "id": 62,
+      "categoria": "museo",
+      "nome": "Criptoportico Forense",
+      "data_visita": "2024-07-06",
+      "descrizione": "",
+      "indirizzo": "11100 Aosta AO",
+      "commento": ""
+    },
+    {
+      "id": 63,
+      "categoria": "museo",
+      "nome": "Chiesa Paleocristiana di San Lorenzo",
+      "data_visita": "2024-07-06",
+      "descrizione": "",
+      "indirizzo": "11100 Aosta AO",
+      "commento": ""
+    },
+    {
+      "id": 64,
+      "categoria": "museo",
+      "nome": "Chiostro Romanico di Sant’Orso",
+      "data_visita": "2024-07-06",
+      "descrizione": "",
+      "indirizzo": "11100 Aosta AO",
+      "commento": ""
+    },
+    {
+      "id": 65,
+      "categoria": "museo",
+      "nome": "Mav Museo dell’Artigianato Valdostano di Tradizione",
+      "data_visita": "2024-07-07",
+      "descrizione": "",
+      "indirizzo": "11020 Fénis AO",
+      "commento": ""
+    },
+    {
+      "id": 66,
+      "categoria": "museo",
+      "nome": "Centro Visitatori Riserva Naturale Regionale del Mont Mars",
+      "data_visita": "2024-07-08",
+      "descrizione": "",
+      "indirizzo": "11020 Fontainemore AO",
+      "commento": ""
+    },
+    {
+      "id": 67,
+      "categoria": "museo",
+      "nome": "Parco Archeologico Neapolis",
+      "data_visita": "2024-08-11",
+      "descrizione": "",
+      "indirizzo": "96100 Siracusa SR",
+      "commento": ""
+    },
+    {
+      "id": 68,
+      "categoria": "museo",
+      "nome": "Museo del Prosciutto di Parma",
+      "data_visita": "2024-09-14",
+      "descrizione": "",
+      "indirizzo": "43013 Langhirano PR",
+      "commento": ""
+    },
+    {
+      "id": 69,
+      "categoria": "museo",
+      "nome": "Museo del Palazzo dei Pio",
+      "data_visita": "2024-09-22",
+      "descrizione": "",
+      "indirizzo": "41012 Carpi MO",
+      "commento": ""
+    },
+    {
+      "id": 70,
+      "categoria": "museo",
+      "nome": "Museo della Città",
+      "data_visita": "2024-09-22",
+      "descrizione": "",
+      "indirizzo": "41012 Carpi MO",
+      "commento": ""
+    },
+    {
+      "id": 71,
+      "categoria": "museo",
+      "nome": "Museo al Deportato",
+      "data_visita": "2024-09-22",
+      "descrizione": "",
+      "indirizzo": "41012 Carpi MO",
+      "commento": ""
+    },
+    {
+      "id": 72,
+      "categoria": "museo",
+      "nome": "Museo Diocesano di Arte Sacra Cardinale Rodolfo Pio",
+      "data_visita": "2024-09-22",
+      "descrizione": "",
+      "indirizzo": "41012 Carpi MO",
+      "commento": ""
+    },
+    {
+      "id": 73,
+      "categoria": "museo",
+      "nome": "Museo di Storia Naturale del Baldo e del Garda",
+      "data_visita": "2024-09-29",
+      "descrizione": "",
+      "indirizzo": "37018 Malcesine VR",
+      "commento": ""
+    },
+    {
+      "id": 74,
+      "categoria": "museo",
+      "nome": "Museo Pomposiano",
+      "data_visita": "2024-11-01",
+      "descrizione": "",
+      "indirizzo": "44021 Codigoro FE",
+      "commento": ""
+    },
+    {
+      "id": 75,
+      "categoria": "museo",
+      "nome": "Museo del Cervo e del Bosco della Mesola",
+      "data_visita": "2024-11-01",
+      "descrizione": "",
+      "indirizzo": "44026 Mesola FE",
+      "commento": ""
+    },
+    {
+      "id": 76,
+      "categoria": "museo",
+      "nome": "Manifattura dei Marinati",
+      "data_visita": "2024-11-02",
+      "descrizione": "",
+      "indirizzo": "44022 Comacchio FE",
+      "commento": ""
+    },
+    {
+      "id": 77,
+      "categoria": "museo",
+      "nome": "Museo Delta Antico",
+      "data_visita": "2024-11-02",
+      "descrizione": "",
+      "indirizzo": "44022 Comacchio FE",
+      "commento": ""
+    },
+    {
+      "id": 78,
+      "categoria": "museo",
+      "nome": "Museo di Casa Romei",
+      "data_visita": "2024-11-03",
+      "descrizione": "",
+      "indirizzo": "44121 Ferrara FE",
+      "commento": ""
+    },
+    {
+      "id": 79,
+      "categoria": "museo",
+      "nome": "Museo Archeologico Nazionale di Ferrara",
+      "data_visita": "2024-11-03",
+      "descrizione": "",
+      "indirizzo": "44121 Ferrara FE",
+      "commento": ""
+    },
+    {
+      "id": 80,
+      "categoria": "museo",
+      "nome": "Pinacoteca di Palazzo dei Diamanti",
+      "data_visita": "2024-11-03",
+      "descrizione": "",
+      "indirizzo": "44121 Ferrara FE",
+      "commento": ""
+    },
+    {
+      "id": 81,
+      "categoria": "museo",
+      "nome": "Casa di Ludovico Ariosto",
+      "data_visita": "2024-11-03",
+      "descrizione": "",
+      "indirizzo": "44121 Ferrara FE",
+      "commento": ""
+    },
+    {
+      "id": 82,
+      "categoria": "museo",
+      "nome": "MUSE - Museo delle Scienze",
+      "data_visita": "2024-12-15",
+      "descrizione": "",
+      "indirizzo": "38122 Trento TN",
+      "commento": ""
+    },
+    {
+      "id": 83,
+      "categoria": "museo",
+      "nome": "Museo Internazionale delle Torture",
+      "data_visita": "2025-01-19",
+      "descrizione": "",
+      "indirizzo": "29020 Grazzano Visconti PC",
+      "commento": ""
+    },
+    {
+      "id": 84,
+      "categoria": "museo",
+      "nome": "Mariposa",
+      "data_visita": "2025-01-19",
+      "descrizione": "",
+      "indirizzo": "29020 Grazzano Visconti PC",
+      "commento": ""
+    },
+    {
+      "id": 85,
+      "categoria": "museo",
+      "nome": "Complesso Monumentale della Pilotta",
+      "data_visita": "2025-02-02",
+      "descrizione": "",
+      "indirizzo": "43121 Parma PR",
+      "commento": ""
+    },
+    {
+      "id": 86,
+      "categoria": "museo",
+      "nome": "Museo Archeologico Nazionale di Parma",
+      "data_visita": "2025-02-02",
+      "descrizione": "",
+      "indirizzo": "43121 Parma PR",
+      "commento": ""
+    },
+    {
+      "id": 87,
+      "categoria": "museo",
+      "nome": "Galleria Nazionale di Parma",
+      "data_visita": "2025-02-02",
+      "descrizione": "",
+      "indirizzo": "43121 Parma PR",
+      "commento": ""
+    },
+    {
+      "id": 88,
+      "categoria": "museo",
+      "nome": "Teatro Farnese",
+      "data_visita": "2025-02-02",
+      "descrizione": "",
+      "indirizzo": "43121 Parma PR",
+      "commento": ""
+    },
+    {
+      "id": 89,
+      "categoria": "museo",
+      "nome": "Biblioteca Palatina",
+      "data_visita": "2025-02-02",
+      "descrizione": "",
+      "indirizzo": "43121 Parma PR",
+      "commento": ""
+    },
+    {
+      "id": 90,
+      "categoria": "museo",
+      "nome": "Museo Bodoniano",
+      "data_visita": "2025-02-02",
+      "descrizione": "",
+      "indirizzo": "43121 Parma PR",
+      "commento": ""
+    },
+    {
+      "id": 91,
+      "categoria": "museo",
+      "nome": "Parco Museo Minerario del Monte Amiata",
+      "data_visita": "2025-02-01",
+      "descrizione": "",
+      "indirizzo": "53021 Abbadia San Salvatore SI",
+      "commento": ""
+    },
+    {
+      "id": 92,
+      "categoria": "museo",
+      "nome": "Presepi dal Mondo",
+      "data_visita": "2025-02-04",
+      "descrizione": "",
+      "indirizzo": "53047 Sarteano SI",
+      "commento": ""
+    },
+    {
+      "id": 93,
+      "categoria": "castello",
+      "nome": "Castello di Bardi",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "43032 Bardi PR",
+      "commento": ""
+    },
+    {
+      "id": 94,
+      "categoria": "castello",
+      "nome": "Torrazzo Gonzaghesco di Commessaggio",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46010 Commessaggio MN",
+      "commento": ""
+    },
+    {
+      "id": 95,
+      "categoria": "castello",
+      "nome": "Castello di Neuschwanstein",
+      "data_visita": "2015-04-04",
+      "descrizione": "",
+      "indirizzo": "87645 Schwangau GER",
+      "commento": ""
+    },
+    {
+      "id": 96,
+      "categoria": "castello",
+      "nome": "Castello Scaligero di Lazise",
+      "data_visita": "2015-06-16",
+      "descrizione": "",
+      "indirizzo": "37017 Lazise VR",
+      "commento": ""
+    },
+    {
+      "id": 97,
+      "categoria": "castello",
+      "nome": "Torre Aponale",
+      "data_visita": "2017-08-23",
+      "descrizione": "",
+      "indirizzo": "38066 Riva del Garda TN",
+      "commento": ""
+    },
+    {
+      "id": 98,
+      "categoria": "castello",
+      "nome": "Castello di Castellaro Lagusello",
+      "data_visita": "2021-05-15",
+      "descrizione": "",
+      "indirizzo": "46040 Castellaro Lagusello MN",
+      "commento": ""
+    },
+    {
+      "id": 99,
+      "categoria": "castello",
+      "nome": "Castello di Corniglio",
+      "data_visita": "2021-05-22",
+      "descrizione": "",
+      "indirizzo": "43021 Corniglio PR",
+      "commento": ""
+    },
+    {
+      "id": 100,
+      "categoria": "castello",
+      "nome": "Rocca di Manerba",
+      "data_visita": "2021-05-29",
+      "descrizione": "",
+      "indirizzo": "25080 Manerba del Garda BS",
+      "commento": ""
+    },
+    {
+      "id": 101,
+      "categoria": "castello",
+      "nome": "Castello Sforzesco",
+      "data_visita": "2022-10-01",
+      "descrizione": "",
+      "indirizzo": "20121 Milano MI",
+      "commento": ""
+    },
+    {
+      "id": 102,
+      "categoria": "castello",
+      "nome": "Castello di Rossena",
+      "data_visita": "2023-04-22",
+      "descrizione": "",
+      "indirizzo": "42026 Canossa RE",
+      "commento": ""
+    },
+    {
+      "id": 103,
+      "categoria": "castello",
+      "nome": "Torre di Rossenella",
+      "data_visita": "2023-04-22",
+      "descrizione": "",
+      "indirizzo": "43021 Corniglio PR",
+      "commento": ""
+    },
+    {
+      "id": 104,
+      "categoria": "castello",
+      "nome": "Castello di Canossa",
+      "data_visita": "2023-04-22",
+      "descrizione": "",
+      "indirizzo": "42026 Canossa RE",
+      "commento": ""
+    },
+    {
+      "id": 105,
+      "categoria": "castello",
+      "nome": "CastelVecchio",
+      "data_visita": "2023-10-05",
+      "descrizione": "",
+      "indirizzo": "37121 Verona VR",
+      "commento": ""
+    },
+    {
+      "id": 106,
+      "categoria": "castello",
+      "nome": "Torre Ghirlandina",
+      "data_visita": "2023-12-03",
+      "descrizione": "",
+      "indirizzo": "41121 Modena MO",
+      "commento": ""
+    },
+    {
+      "id": 107,
+      "categoria": "castello",
+      "nome": "Castello di Bianello",
+      "data_visita": "2024-05-26",
+      "descrizione": "",
+      "indirizzo": "42020 Quattro Castella RE",
+      "commento": ""
+    },
+    {
+      "id": 108,
+      "categoria": "castello",
+      "nome": "Rocca Viscontea",
+      "data_visita": "2024-06-07",
+      "descrizione": "",
+      "indirizzo": "29014 Castell’Arquato PC",
+      "commento": ""
+    },
+    {
+      "id": 109,
+      "categoria": "castello",
+      "nome": "Mastio di Vigoleno",
+      "data_visita": "2024-06-07",
+      "descrizione": "",
+      "indirizzo": "29010 Vigoleno PC",
+      "commento": ""
+    },
+    {
+      "id": 110,
+      "categoria": "castello",
+      "nome": "Castello di Tabiano",
+      "data_visita": "2024-06-07",
+      "descrizione": "",
+      "indirizzo": "43039 Tabiano PR",
+      "commento": ""
+    },
+    {
+      "id": 111,
+      "categoria": "castello",
+      "nome": "Torre di San Martino della Battaglia",
+      "data_visita": "2024-06-16",
+      "descrizione": "",
+      "indirizzo": "25015 San Martino della Battaglia BS",
+      "commento": ""
+    },
+    {
+      "id": 112,
+      "categoria": "castello",
+      "nome": "Rocca di Solferino",
+      "data_visita": "2024-06-16",
+      "descrizione": "",
+      "indirizzo": "46040 Solferino MN",
+      "commento": ""
+    },
+    {
+      "id": 113,
+      "categoria": "castello",
+      "nome": "Castello di Orazio Gonzaga",
+      "data_visita": "2024-06-16",
+      "descrizione": "",
+      "indirizzo": "46040 Solferino MN",
+      "commento": ""
+    },
+    {
+      "id": 114,
+      "categoria": "castello",
+      "nome": "Castello di Introd",
+      "data_visita": "2024-07-02",
+      "descrizione": "",
+      "indirizzo": "11010 Introd AO",
+      "commento": ""
+    },
+    {
+      "id": 115,
+      "categoria": "castello",
+      "nome": "Castello di Saint-Pierre",
+      "data_visita": "2024-07-03",
+      "descrizione": "",
+      "indirizzo": "11010 Saint-Pierre AO",
+      "commento": ""
+    },
+    {
+      "id": 116,
+      "categoria": "castello",
+      "nome": "Castello di Fénis",
+      "data_visita": "2024-07-07",
+      "descrizione": "",
+      "indirizzo": "11020 Fénis AO",
+      "commento": ""
+    },
+    {
+      "id": 117,
+      "categoria": "castello",
+      "nome": "Castel Savoia",
+      "data_visita": "2024-07-08",
+      "descrizione": "",
+      "indirizzo": "11025 Gressoney-Saint-Jean AO",
+      "commento": ""
+    },
+    {
+      "id": 118,
+      "categoria": "castello",
+      "nome": "Castello di Torrechiara",
+      "data_visita": "2024-09-14",
+      "descrizione": "",
+      "indirizzo": "43013 Torrechiara PR",
+      "commento": ""
+    },
+    {
+      "id": 119,
+      "categoria": "castello",
+      "nome": "Castello Scaligero di Malcesine",
+      "data_visita": "2024-09-29",
+      "descrizione": "",
+      "indirizzo": "37018 Malcesine VR",
+      "commento": ""
+    },
+    {
+      "id": 120,
+      "categoria": "castello",
+      "nome": "Castello di Mesola",
+      "data_visita": "2024-11-01",
+      "descrizione": "",
+      "indirizzo": "44026 Mesola FE",
+      "commento": ""
+    },
+    {
+      "id": 121,
+      "categoria": "castello",
+      "nome": "Castello Estense di Ferrara",
+      "data_visita": "2024-11-03",
+      "descrizione": "",
+      "indirizzo": "44121 Ferrara FE",
+      "commento": ""
+    },
+    {
+      "id": 122,
+      "categoria": "castello",
+      "nome": "Reggia di Colorno",
+      "data_visita": "2025-04-26",
+      "descrizione": "",
+      "indirizzo": "43052 Colorno PR",
+      "commento": ""
+    },
+    {
+      "id": 123,
+      "categoria": "castello",
+      "nome": "Fortezza di Radicofani",
+      "data_visita": "2025-05-02",
+      "descrizione": "",
+      "indirizzo": "53040 Radicofani SI",
+      "commento": ""
+    },
+    {
+      "id": 124,
+      "categoria": "castello",
+      "nome": "Castello di Sarteano",
+      "data_visita": "2025-05-04",
+      "descrizione": "",
+      "indirizzo": "53047 Sarteano SI",
+      "commento": ""
+    },
+    {
+      "id": 125,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Francesco",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": ""
+    },
+    {
+      "id": 126,
+      "categoria": "chiesa",
+      "nome": "Cattedrale di San Pietro Apostolo",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": ""
+    },
+    {
+      "id": 127,
+      "categoria": "chiesa",
+      "nome": "Basilica di Sant’Andrea",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": ""
+    },
+    {
+      "id": 128,
+      "categoria": "chiesa",
+      "nome": "Tempio di San Sebastiano",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": ""
+    },
+    {
+      "id": 129,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Barnaba",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": ""
+    },
+    {
+      "id": 130,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Pio X",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": ""
+    },
+    {
+      "id": 131,
+      "categoria": "chiesa",
+      "nome": "Chiesa di Santa Paola",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": ""
+    },
+    {
+      "id": 132,
+      "categoria": "chiesa",
+      "nome": "Parrocchia di Sant’Apollonia",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": ""
+    },
+    {
+      "id": 133,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Pietro",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46010 Gazzuolo MN",
+      "commento": ""
+    },
+    {
+      "id": 134,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Rocco",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46010 Gazzuolo MN",
+      "commento": ""
+    },
+    {
+      "id": 135,
+      "categoria": "chiesa",
+      "nome": "Chiesa di Santa Maria Nascente",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46010 Gazzuolo MN",
+      "commento": ""
+    },
+    {
+      "id": 136,
+      "categoria": "chiesa",
+      "nome": "Chiesetta di Nocegrossa",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46010 Gazzuolo MN",
+      "commento": ""
+    },
+    {
+      "id": 137,
+      "categoria": "chiesa",
+      "nome": "Chiesa della Beata Vergine di Loreto",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46010 Gazzuolo MN",
+      "commento": ""
+    },
+    {
+      "id": 138,
+      "categoria": "chiesa",
+      "nome": "Chiesa di Sant’Albino",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46010 Commessaggio MN",
+      "commento": ""
+    },
+    {
+      "id": 139,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Celestino",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46010 Campitello MN",
+      "commento": ""
+    },
+    {
+      "id": 140,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Tommaso Apostolo",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46011 Acquanegra sul Chiese MN",
+      "commento": ""
+    },
+    {
+      "id": 141,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Fortunato",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "46011 Acquanegra sul Chiese MN",
+      "commento": ""
+    },
+    {
+      "id": 142,
+      "categoria": "chiesa",
+      "nome": "Santuario di Maria, Rosa Mistica - Madre della Chiesa",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "25018 Montichiari BS",
+      "commento": ""
+    },
+    {
+      "id": 143,
+      "categoria": "chiesa",
+      "nome": "Basilica di Santa Maria in Ara Coeli",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "00186 Roma RM",
+      "commento": ""
+    },
+    {
+      "id": 144,
+      "categoria": "chiesa",
+      "nome": "Basilica di San Giovanni in Laterano",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "00186 Roma RM",
+      "commento": ""
+    },
+    {
+      "id": 145,
+      "categoria": "chiesa",
+      "nome": "Basilica di San Pietro",
+      "data_visita": "",
+      "descrizione": "",
+      "indirizzo": "00120 Città del Vaticano VAT",
+      "commento": ""
+    },
+    {
+      "id": 146,
+      "categoria": "chiesa",
+      "nome": "Chiesa S.Maria della Misericordia",
+      "data_visita": "2013-08-02",
+      "descrizione": "",
+      "indirizzo": "26014 Romanengo CR",
+      "commento": ""
+    },
+    {
+      "id": 147,
+      "categoria": "chiesa",
+      "nome": "Basilica di Santa Croce",
+      "data_visita": "2016-02-18",
+      "descrizione": "",
+      "indirizzo": "50122 Firenze FI",
+      "commento": ""
+    },
+    {
+      "id": 148,
+      "categoria": "chiesa",
+      "nome": "Basilica di Santa Maria Novella",
+      "data_visita": "2016-02-18",
+      "descrizione": "",
+      "indirizzo": "50122 Firenze FI",
+      "commento": ""
+    },
+    {
+      "id": 149,
+      "categoria": "chiesa",
+      "nome": "Cattedrale di Santa Maria del Fiore",
+      "data_visita": "2016-02-18",
+      "descrizione": "",
+      "indirizzo": "50122 Firenze FI",
+      "commento": ""
+    },
+    {
+      "id": 150,
+      "categoria": "chiesa",
+      "nome": "Chiesa della Dedicazione di San Michele Arcangelo",
+      "data_visita": "2018-06-24",
+      "descrizione": "",
+      "indirizzo": "38067 Mezzolago TN",
+      "commento": ""
+    },
+    {
+      "id": 151,
+      "categoria": "chiesa",
+      "nome": "Duomo di Milano",
+      "data_visita": "2019-10-16",
+      "descrizione": "",
+      "indirizzo": "20122 Milano MI",
+      "commento": ""
+    },
+    {
+      "id": 152,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Nicola da Bari",
+      "data_visita": "2021-05-15",
+      "descrizione": "",
+      "indirizzo": "46040 Castellaro Lagusello MN",
+      "commento": ""
+    },
+    {
+      "id": 153,
+      "categoria": "chiesa",
+      "nome": "Chiesa Assunzione di Maria Vergine",
+      "data_visita": "2021-05-22",
+      "descrizione": "",
+      "indirizzo": "43021 Corniglio PR",
+      "commento": ""
+    },
+    {
+      "id": 154,
+      "categoria": "chiesa",
+      "nome": "Santuario di San Francesco da Paola",
+      "data_visita": "2021-07-31",
+      "descrizione": "",
+      "indirizzo": "87027 Paola CS",
+      "commento": ""
+    },
+    {
+      "id": 155,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Rocco",
+      "data_visita": "2021-08-11",
+      "descrizione": "",
+      "indirizzo": "24060 Riva di Solto BG",
+      "commento": ""
+    },
+    {
+      "id": 156,
+      "categoria": "chiesa",
+      "nome": "Chiesa della Beata Vergine del Rosario",
+      "data_visita": "2022-01-02",
+      "descrizione": "",
+      "indirizzo": "12010 Bernezzo CN",
+      "commento": ""
+    },
+    {
+      "id": 157,
+      "categoria": "chiesa",
+      "nome": "Chiesa Dei Ss. Pietro E Paolo",
+      "data_visita": "2022-01-02",
+      "descrizione": "",
+      "indirizzo": "12010 Bernezzo CN",
+      "commento": ""
+    },
+    {
+      "id": 158,
+      "categoria": "chiesa",
+      "nome": "Chiesa Di Santa Maria Maddalena",
+      "data_visita": "2022-01-02",
+      "descrizione": "",
+      "indirizzo": "12010 Bernezzo CN",
+      "commento": ""
+    },
+    {
+      "id": 159,
+      "categoria": "chiesa",
+      "nome": "Cattedrale di San Nicolò",
+      "data_visita": "2022-08-07",
+      "descrizione": "",
+      "indirizzo": "96017 Noto SR",
+      "commento": ""
+    },
+    {
+      "id": 160,
+      "categoria": "chiesa",
+      "nome": "Parrocchia di San Michele dei Mucchietti",
+      "data_visita": "2022-09-24",
+      "descrizione": "",
+      "indirizzo": "41049 Sassuolo MO",
+      "commento": ""
+    },
+    {
+      "id": 161,
+      "categoria": "chiesa",
+      "nome": "Chiesa Immacolata Concezione della B.V.Maria",
+      "data_visita": "2022-10-22",
+      "descrizione": "",
+      "indirizzo": "46010 Montanara MN",
+      "commento": ""
+    },
+    {
+      "id": 162,
+      "categoria": "chiesa",
+      "nome": "Tempio di Santa Maria della Consolazione",
+      "data_visita": "2022-12-02",
+      "descrizione": "",
+      "indirizzo": "06059 Todi PG",
+      "commento": ""
+    },
+    {
+      "id": 163,
+      "categoria": "chiesa",
+      "nome": "Concattedrale della Santissima Annunziata",
+      "data_visita": "2022-12-02",
+      "descrizione": "",
+      "indirizzo": "06059 Todi PG",
+      "commento": ""
+    },
+    {
+      "id": 164,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Fortunato",
+      "data_visita": "2022-12-02",
+      "descrizione": "",
+      "indirizzo": "06059 Todi PG",
+      "commento": ""
+    },
+    {
+      "id": 165,
+      "categoria": "chiesa",
+      "nome": "Cattedrale di San Lorenzo",
+      "data_visita": "2022-12-03",
+      "descrizione": "",
+      "indirizzo": "06123 Perugia PG",
+      "commento": ""
+    },
+    {
+      "id": 166,
+      "categoria": "chiesa",
+      "nome": "Santuario della Beata Vergine Maria",
+      "data_visita": "2023-08-13",
+      "descrizione": "",
+      "indirizzo": "46010 Grazie MN",
+      "commento": ""
+    },
+    {
+      "id": 167,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Giuseppe",
+      "data_visita": "2023-08-26",
+      "descrizione": "",
+      "indirizzo": "39030 Moso BZ",
+      "commento": ""
+    },
+    {
+      "id": 168,
+      "categoria": "chiesa",
+      "nome": "Chiesa Della Gran Madre di Dio",
+      "data_visita": "2023-11-15",
+      "descrizione": "",
+      "indirizzo": "10131 Torino TO",
+      "commento": ""
+    },
+    {
+      "id": 169,
+      "categoria": "chiesa",
+      "nome": "Chiesa di Santa Maria del Monte dei Cappuccini",
+      "data_visita": "2023-11-15",
+      "descrizione": "",
+      "indirizzo": "10131 Torino TO",
+      "commento": ""
+    },
+    {
+      "id": 170,
+      "categoria": "chiesa",
+      "nome": "Duomo di Modena",
+      "data_visita": "2023-12-03",
+      "descrizione": "",
+      "indirizzo": "41121 Modena MO",
+      "commento": ""
+    },
+    {
+      "id": 171,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Giorgio",
+      "data_visita": "2023-12-03",
+      "descrizione": "",
+      "indirizzo": "41121 Modena MO",
+      "commento": ""
+    },
+    {
+      "id": 172,
+      "categoria": "chiesa",
+      "nome": "Chiesa di Santa Maria della Pomposa",
+      "data_visita": "2023-12-03",
+      "descrizione": "",
+      "indirizzo": "41121 Modena MO",
+      "commento": ""
+    },
+    {
+      "id": 173,
+      "categoria": "chiesa",
+      "nome": "Chiesa Santa Caterina Vergine e Martire",
+      "data_visita": "2023-12-10",
+      "descrizione": "",
+      "indirizzo": "43019 Diolo PR",
+      "commento": ""
+    },
+    {
+      "id": 174,
+      "categoria": "chiesa",
+      "nome": "Chiesa SS Trinità",
+      "data_visita": "2024-06-07",
+      "descrizione": "",
+      "indirizzo": "29014 Castell’Arquato PC",
+      "commento": ""
+    },
+    {
+      "id": 175,
+      "categoria": "chiesa",
+      "nome": "Collegiata di Santa Maria Assunta",
+      "data_visita": "2024-06-07",
+      "descrizione": "",
+      "indirizzo": "29014 Castell’Arquato PC",
+      "commento": ""
+    },
+    {
+      "id": 176,
+      "categoria": "chiesa",
+      "nome": "Pieve di San Giorgio",
+      "data_visita": "2024-06-07",
+      "descrizione": "",
+      "indirizzo": "29010 Vigoleno PC",
+      "commento": ""
+    },
+    {
+      "id": 177,
+      "categoria": "chiesa",
+      "nome": "Oratorio Madonna delle Grazie",
+      "data_visita": "2024-06-07",
+      "descrizione": "",
+      "indirizzo": "29010 Vigoleno PC",
+      "commento": ""
+    },
+    {
+      "id": 178,
+      "categoria": "chiesa",
+      "nome": "Ossario di San Martino",
+      "data_visita": "2024-06-16",
+      "descrizione": "",
+      "indirizzo": "25015 San Martino della Battaglia BS",
+      "commento": ""
+    },
+    {
+      "id": 179,
+      "categoria": "chiesa",
+      "nome": "Ossario di Solferino",
+      "data_visita": "2024-06-16",
+      "descrizione": "",
+      "indirizzo": "46040 Solferino MN",
+      "commento": ""
+    },
+    {
+      "id": 180,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Nicola",
+      "data_visita": "2024-06-16",
+      "descrizione": "",
+      "indirizzo": "46040 Solferino MN",
+      "commento": ""
+    },
+    {
+      "id": 181,
+      "categoria": "chiesa",
+      "nome": "Parrocchia di San Gaetano",
+      "data_visita": "2024-07-28",
+      "descrizione": "",
+      "indirizzo": "96010 Portopalo di Capo Passero SR",
+      "commento": ""
+    },
+    {
+      "id": 182,
+      "categoria": "chiesa",
+      "nome": "Basilica di San Sebastiano",
+      "data_visita": "2024-08-03",
+      "descrizione": "",
+      "indirizzo": "96010 Palazzolo Acreide SR",
+      "commento": ""
+    },
+    {
+      "id": 183,
+      "categoria": "chiesa",
+      "nome": "Basilica Cattedrale di Sant’Agata",
+      "data_visita": "2024-08-06",
+      "descrizione": "",
+      "indirizzo": "95100 Catania CT",
+      "commento": ""
+    },
+    {
+      "id": 184,
+      "categoria": "chiesa",
+      "nome": "Basilica della Collegiata",
+      "data_visita": "2024-08-06",
+      "descrizione": "",
+      "indirizzo": "95100 Catania CT",
+      "commento": ""
+    },
+    {
+      "id": 185,
+      "categoria": "chiesa",
+      "nome": "Basilica di Santa Maria Assunta",
+      "data_visita": "2024-08-08",
+      "descrizione": "",
+      "indirizzo": "95036 Randazzo CT",
+      "commento": ""
+    },
+    {
+      "id": 186,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Nicolò",
+      "data_visita": "2024-08-08",
+      "descrizione": "",
+      "indirizzo": "95036 Randazzo CT",
+      "commento": ""
+    },
+    {
+      "id": 187,
+      "categoria": "chiesa",
+      "nome": "Basilica di San Giovanni Battista",
+      "data_visita": "2024-08-10",
+      "descrizione": "",
+      "indirizzo": "97010 Monterosso Almo RG",
+      "commento": ""
+    },
+    {
+      "id": 188,
+      "categoria": "chiesa",
+      "nome": "Basilica Santuario Madonna delle Lacrime",
+      "data_visita": "2024-08-11",
+      "descrizione": "",
+      "indirizzo": "96100 Siracusa SR",
+      "commento": ""
+    },
+    {
+      "id": 189,
+      "categoria": "chiesa",
+      "nome": "Chiesetta Alpina di Campobrun",
+      "data_visita": "2024-08-15",
+      "descrizione": "",
+      "indirizzo": "38061 Ala TN",
+      "commento": ""
+    },
+    {
+      "id": 190,
+      "categoria": "chiesa",
+      "nome": "Chiesa dell’Annunciazione di Maria Vergine",
+      "data_visita": "2024-09-14",
+      "descrizione": "",
+      "indirizzo": "43013 Langhirano PR",
+      "commento": ""
+    },
+    {
+      "id": 191,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Francesco",
+      "data_visita": "2024-09-21",
+      "descrizione": "",
+      "indirizzo": "26041 Casalmaggiore CR",
+      "commento": ""
+    },
+    {
+      "id": 192,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Bernardino da Siena",
+      "data_visita": "2024-09-22",
+      "descrizione": "",
+      "indirizzo": "41012 Carpi MO",
+      "commento": ""
+    },
+    {
+      "id": 193,
+      "categoria": "chiesa",
+      "nome": "Cattedrale di Santa Maria Assunta",
+      "data_visita": "2024-09-22",
+      "descrizione": "",
+      "indirizzo": "41012 Carpi MO",
+      "commento": ""
+    },
+    {
+      "id": 194,
+      "categoria": "chiesa",
+      "nome": "Monastero Suore Clarisse",
+      "data_visita": "2024-09-22",
+      "descrizione": "",
+      "indirizzo": "41012 Carpi MO",
+      "commento": ""
+    },
+    {
+      "id": 195,
+      "categoria": "chiesa",
+      "nome": "Chiesa di Sant’Ignazio di Loyola",
+      "data_visita": "2024-09-22",
+      "descrizione": "",
+      "indirizzo": "41012 Carpi MO",
+      "commento": ""
+    },
+    {
+      "id": 196,
+      "categoria": "chiesa",
+      "nome": "Chiesa dei Santi Benigno e Caro detta \"della Disciplina\"",
+      "data_visita": "2024-09-29",
+      "descrizione": "",
+      "indirizzo": "37018 Malcesine VR",
+      "commento": ""
+    },
+    {
+      "id": 197,
+      "categoria": "chiesa",
+      "nome": "Chiesa di Spezzano",
+      "data_visita": "2024-10-20",
+      "descrizione": "",
+      "indirizzo": "41042 Fiorano Modenese MO",
+      "commento": ""
+    },
+    {
+      "id": 198,
+      "categoria": "chiesa",
+      "nome": "Chiesa della Beata Vergine di Loreto",
+      "data_visita": "2024-10-28",
+      "descrizione": "",
+      "indirizzo": "43010 Polesine Parmense PR",
+      "commento": ""
+    },
+    {
+      "id": 199,
+      "categoria": "chiesa",
+      "nome": "Abbazia di Pomposa",
+      "data_visita": "2024-11-01",
+      "descrizione": "",
+      "indirizzo": "44021 Codigoro FE",
+      "commento": ""
+    },
+    {
+      "id": 200,
+      "categoria": "chiesa",
+      "nome": "Parrocchia della Natività di Maria",
+      "data_visita": "2024-11-01",
+      "descrizione": "",
+      "indirizzo": "44026 Mesola FE",
+      "commento": ""
+    },
+    {
+      "id": 201,
+      "categoria": "chiesa",
+      "nome": "Santuario Santa Maria in Aula Regia",
+      "data_visita": "2024-11-02",
+      "descrizione": "",
+      "indirizzo": "44022 Comacchio FE",
+      "commento": ""
+    },
+    {
+      "id": 202,
+      "categoria": "chiesa",
+      "nome": "Basilica Concattedrale di San Cassiano Martire",
+      "data_visita": "2024-11-02",
+      "descrizione": "",
+      "indirizzo": "44022 Comacchio FE",
+      "commento": ""
+    },
+    {
+      "id": 203,
+      "categoria": "chiesa",
+      "nome": "Chiesa Parrocchiale del Santissimo Rosario",
+      "data_visita": "2024-11-02",
+      "descrizione": "",
+      "indirizzo": "44022 Comacchio FE",
+      "commento": ""
+    },
+    {
+      "id": 204,
+      "categoria": "chiesa",
+      "nome": "Chiesa del Carmine",
+      "data_visita": "2024-11-02",
+      "descrizione": "",
+      "indirizzo": "44022 Comacchio FE",
+      "commento": ""
+    },
+    {
+      "id": 205,
+      "categoria": "chiesa",
+      "nome": "Chiesa dei SS. Pietro e Paolo",
+      "data_visita": "2024-11-02",
+      "descrizione": "",
+      "indirizzo": "44022 Comacchio FE",
+      "commento": ""
+    },
+    {
+      "id": 206,
+      "categoria": "chiesa",
+      "nome": "Cattedrale di San Giorgio Martire",
+      "data_visita": "2024-11-03",
+      "descrizione": "",
+      "indirizzo": "44121 Ferrara FE",
+      "commento": ""
+    },
+    {
+      "id": 207,
+      "categoria": "chiesa",
+      "nome": "Duomo di San Vigilio",
+      "data_visita": "2024-12-15",
+      "descrizione": "",
+      "indirizzo": "38122 Trento TN",
+      "commento": ""
+    },
+    {
+      "id": 208,
+      "categoria": "chiesa",
+      "nome": "Cattedrale di Parma",
+      "data_visita": "2025-02-02",
+      "descrizione": "",
+      "indirizzo": "43121 Parma PR",
+      "commento": ""
+    },
+    {
+      "id": 209,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Giovanni Evangelista",
+      "data_visita": "2025-02-02",
+      "descrizione": "",
+      "indirizzo": "43121 Parma PR",
+      "commento": ""
+    },
+    {
+      "id": 210,
+      "categoria": "chiesa",
+      "nome": "Chiesa di Sant’Antonio di Padova",
+      "data_visita": "2025-04-25",
+      "descrizione": "",
+      "indirizzo": "38074 Dro TN",
+      "commento": ""
+    },
+    {
+      "id": 211,
+      "categoria": "chiesa",
+      "nome": "Chiesa Madre di Santa Maria Assunta",
+      "data_visita": "2025-04-25",
+      "descrizione": "",
+      "indirizzo": "38062 Arco TN",
+      "commento": ""
+    },
+    {
+      "id": 212,
+      "categoria": "chiesa",
+      "nome": "Chiesa Evangelica della Santissima Trinità",
+      "data_visita": "2025-04-25",
+      "descrizione": "",
+      "indirizzo": "38062 Arco TN",
+      "commento": ""
+    },
+    {
+      "id": 213,
+      "categoria": "chiesa",
+      "nome": "Cappella Ducale di San Liborio",
+      "data_visita": "2025-04-26",
+      "descrizione": "",
+      "indirizzo": "43052 Colorno PR",
+      "commento": ""
+    },
+    {
+      "id": 214,
+      "categoria": "chiesa",
+      "nome": "Duomo di Santa Maria Assunta",
+      "data_visita": "2025-05-01",
+      "descrizione": "",
+      "indirizzo": "53026 Pienza SI",
+      "commento": ""
+    },
+    {
+      "id": 215,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Francesco",
+      "data_visita": "2025-05-01",
+      "descrizione": "",
+      "indirizzo": "53026 Pienza SI",
+      "commento": ""
+    },
+    {
+      "id": 216,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Petro",
+      "data_visita": "2025-05-02",
+      "descrizione": "",
+      "indirizzo": "53040 Radicofani SI",
+      "commento": ""
+    },
+    {
+      "id": 217,
+      "categoria": "chiesa",
+      "nome": "Chiesa di Sant’Agata",
+      "data_visita": "2025-05-02",
+      "descrizione": "",
+      "indirizzo": "53040 Radicofani SI",
+      "commento": ""
+    },
+    {
+      "id": 218,
+      "categoria": "chiesa",
+      "nome": "Collegiata dei Santi Quirico e Giulitta",
+      "data_visita": "2025-05-02",
+      "descrizione": "",
+      "indirizzo": "53027 San Quirico d’Orcia SI",
+      "commento": ""
+    },
+    {
+      "id": 219,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Francesco",
+      "data_visita": "2025-05-02",
+      "descrizione": "",
+      "indirizzo": "53027 San Quirico d’Orcia SI",
+      "commento": ""
+    },
+    {
+      "id": 220,
+      "categoria": "chiesa",
+      "nome": "Chiesa di Santa Maria Assunta",
+      "data_visita": "2025-05-02",
+      "descrizione": "",
+      "indirizzo": "53027 San Quirico d’Orcia SI",
+      "commento": ""
+    },
+    {
+      "id": 221,
+      "categoria": "chiesa",
+      "nome": "Ermicciolo di San Bartolomeo",
+      "data_visita": "2025-05-02",
+      "descrizione": "",
+      "indirizzo": "53023 Vivo D’orcia SI",
+      "commento": ""
+    },
+    {
+      "id": 222,
+      "categoria": "chiesa",
+      "nome": "Chiesa della Madonna della Neve",
+      "data_visita": "2025-05-03",
+      "descrizione": "",
+      "indirizzo": "58037 Santa Fiora GR",
+      "commento": ""
+    },
+    {
+      "id": 223,
+      "categoria": "chiesa",
+      "nome": "Chiesa di Santa Chiara",
+      "data_visita": "2025-05-03",
+      "descrizione": "",
+      "indirizzo": "58037 Santa Fiora GR",
+      "commento": ""
+    },
+    {
+      "id": 224,
+      "categoria": "chiesa",
+      "nome": "Abbazia di San Salvatore",
+      "data_visita": "2025-05-04",
+      "descrizione": "",
+      "indirizzo": "53021 Abbadia San Salvatore SI",
+      "commento": ""
+    },
+    {
+      "id": 225,
+      "categoria": "chiesa",
+      "nome": "Chiesa di San Francesco",
+      "data_visita": "2025-05-04",
+      "descrizione": "",
+      "indirizzo": "53047 Sarteano SI",
+      "commento": ""
+    },
+    {
+      "id": 226,
+      "categoria": "chiesa",
+      "nome": "Collegiata della Santissima Trinità",
+      "data_visita": "2025-05-04",
+      "descrizione": "",
+      "indirizzo": "53040 Cetona SI",
+      "commento": ""
+    },
+    {
+      "id": 227,
+      "categoria": "chiesa",
+      "nome": "Chiesetta della Madonna della Rocca",
+      "data_visita": "2025-05-04",
+      "descrizione": "",
+      "indirizzo": "53040 Cetona SI",
+      "commento": ""
+    },
+    {
+      "id": 228,
+      "categoria": "chiesa",
+      "nome": "Concattedrale di San Secondiano",
+      "data_visita": "2025-05-04",
+      "descrizione": "",
+      "indirizzo": "53043 Chiusi SI",
+      "commento": ""
+    },
+    {
+      "id": 229,
+      "categoria": "chiesa",
+      "nome": "Chiesa di Santo Stefano",
+      "data_visita": "2025-05-04",
+      "descrizione": "",
+      "indirizzo": "53043 Chiusi SI",
+      "commento": ""
+    },
+    {
+      "id": 230,
+      "categoria": "chiesa",
+      "nome": "Chiesa di Sant’Apollinare",
+      "data_visita": "2025-05-04",
+      "descrizione": "",
+      "indirizzo": "53043 Chiusi SI",
+      "commento": ""
+    },
+    {
+      "id": 231,
+      "categoria": "ristorante",
+      "nome": "Antica Locanda ai Portici dal Turco",
+      "data_visita": "2021-02-14",
+      "descrizione": "",
+      "indirizzo": "46010 Gazzuolo MN",
+      "commento": "",
+      "lista_cibi": [
+        "Tartare di Tonno Rosso con Maionese al Caffè",
+        "Tartare di Branzino con Riduzione di Frutto della Passione",
+        "Spaghetti Neri Felicetti con Sugo di Ricciola, Lime e Nocciole Croccanti",
+        "Paccheri al Ragout di Moscardini",
+        "Gamberi in Tempura",
+        "Trancio di Tonno ai Ferri in Crosta di Sesamo",
+        "Sorbetto al Pistacchio e Nocciole",
+        "Fragole e Panna"
+      ]
+    },
+    {
+      "id": 232,
+      "categoria": "ristorante",
+      "nome": "La Casa dello Speck",
+      "data_visita": "2021-05-01",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": "",
+      "lista_cibi": [
+        "Selezione di Salumi",
+        "Speck",
+        "Speck Cotto",
+        "Speck di Filetto",
+        "Fiocco alle Erbe Alpine",
+        "Salame di Capriolo",
+        "Kaminwurz (Salamino Manzo e Maiale Affumicato)",
+        "Bretzel",
+        "Onion Rings",
+        "Hamburger della Casa (200 g Scottona, Speck, Crema di Radicchio, Formaggio, Cavolo Cappuccio, Cipolla Grigliata, Maionese)",
+        "Maccheroncini con Stracotto e Grana",
+        "Wurstel grigliati Meraner e Crauti",
+        "Costine di Maiale alle Erbe Alpine"
+      ]
+    },
+    {
+      "id": 233,
+      "categoria": "ristorante",
+      "nome": "Vecchio Mulino",
+      "data_visita": "2021-05-22",
+      "descrizione": "",
+      "indirizzo": "43037 Stadirano PR",
+      "commento": "",
+      "lista_cibi": [
+        "Antipasto Polenta e Salumi",
+        "Tagliata di Black Angus all’Aceto Balsamico"
+      ]
+    },
+    {
+      "id": 234,
+      "categoria": "ristorante",
+      "nome": "Ranch Balla coi Lupi",
+      "data_visita": "2021-06-28",
+      "descrizione": "",
+      "indirizzo": "42032 Ramiseto RE",
+      "commento": "",
+      "lista_cibi": [
+        "Tortelli Porri e Patate",
+        "Tagliatelle ai Porcini",
+        "Lonza di Maiale all’Aceto Balsamico",
+        "Scaloppine ai Porcini",
+        "Patate al Forno"
+      ]
+    },
+    {
+      "id": 235,
+      "categoria": "ristorante",
+      "nome": "Bar Ristorante Affittacamere Da Pierino",
+      "data_visita": "2021-07-23",
+      "descrizione": "",
+      "indirizzo": "38091 Daone TN",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere di Carne Salada con Chiodini, Rucola e Scaglie di Trentingrana",
+        "Tagliatelle al Ragù di Cervo",
+        "Tortelli alla Fonduta di Formaggi"
+      ]
+    },
+    {
+      "id": 236,
+      "categoria": "ristorante",
+      "nome": "A Taverna Intru u Vicu",
+      "data_visita": "2021-07-30",
+      "descrizione": "",
+      "indirizzo": "87033 Belmonte Calabro CS",
+      "commento": "",
+      "lista_cibi": [
+        "Bistecca di Pomodoro di Belmonte",
+        "Paccheri al Pesce Spada con Pomodorini e Prezzemolo",
+        "Linguine Seppia e Limone",
+        "Fritto Misto di Paranza"
+      ]
+    },
+    {
+      "id": 237,
+      "categoria": "ristorante",
+      "nome": "VAB - Villaggio Albergo Belmonte",
+      "data_visita": "2021-07-31",
+      "descrizione": "(Martimonio Daniele e Luisa)",
+      "indirizzo": "87033 Belmonte Calabro CS",
+      "commento": "",
+      "lista_cibi": [
+        "Insalata di Mare",
+        "Cozze Gratinate",
+        "Cupola di Salmone",
+        "Polpa di Dentice, Melone e Pinoli",
+        "Margherite di Pesce Spada, Melanzane e Pinoli",
+        "Risotto Scampi e Pistacchi",
+        "Spigola in Crosta di Zucchine",
+        "Pesce Spada al Pane Profumato",
+        "Gamberoni Grigliati al Salmoriglio",
+        "Insalata Fantasia",
+        "Frittura Mista",
+        "Composé di Frutta con Perla di Gelato",
+        "Torta Nuziale"
+      ]
+    },
+    {
+      "id": 238,
+      "categoria": "ristorante",
+      "nome": "Ferr’e Fuoco Steakhouse",
+      "data_visita": "2021-08-01",
+      "descrizione": "",
+      "indirizzo": "87032 Amantea CS",
+      "commento": "",
+      "lista_cibi": [
+        "Bombette al Pistacchio di Bronte",
+        "Tagliata di Black Angus"
+      ]
+    },
+    {
+      "id": 239,
+      "categoria": "ristorante",
+      "nome": "Rifugio Lagdei",
+      "data_visita": "2021-08-15",
+      "descrizione": "",
+      "indirizzo": "43021 Bosco PR",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere di Salumi Misti",
+        "Prosciutto Crudo",
+        "Coppa",
+        "Salame di Felino",
+        "Pancetta",
+        "Pappardelle al Ragù di Cervo",
+        "Pappardelle ai Porcini",
+        "Polenta con Gorgonzola, Porcini, Salsiccia",
+        "Lonza di Maiale al Forno",
+        "Patate al Forno"
+      ]
+    },
+    {
+      "id": 240,
+      "categoria": "ristorante",
+      "nome": "Ristorante Ghanese Akwaaba",
+      "data_visita": "2021-09-11",
+      "descrizione": "",
+      "indirizzo": "26041 Casalmaggiore CR",
+      "commento": "",
+      "lista_cibi": [
+        "Riso con Verdure e Pollo Fritto",
+        "Riso con Verdure e Pesce Fritto",
+        "Platano Fritto Dolce"
+      ]
+    },
+    {
+      "id": 241,
+      "categoria": "ristorante",
+      "nome": "Villa Cavriani",
+      "data_visita": "2021-09-21",
+      "descrizione": "(40 Anni Croce Verde Mantova)",
+      "indirizzo": "46037 Roncoferraro MN",
+      "commento": "",
+      "lista_cibi": [
+        "Ravioli di Patate con Prosciutto della Foresta Nera e Timo",
+        "Tagliata di Manzo con Filangè di Verdure ai Ferri",
+        "Mousse ai Frutti Rossi"
+      ]
+    },
+    {
+      "id": 242,
+      "categoria": "ristorante",
+      "nome": "Ristorante La Primoteca",
+      "data_visita": "2021-09-24",
+      "descrizione": "",
+      "indirizzo": "38037 Predazzo TN",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere di Salumi e Formaggi Misti con Giardiniera",
+        "Prosciutto Crudo",
+        "Prosciutto Cotto",
+        "Bresaola della Valtellina",
+        "Speck",
+        "Salame",
+        "Pancetta",
+        "Asiago",
+        "Bruschetta Bresaola e Porcini",
+        "Canederli al Burro e Salvia",
+        "Tagliatelle al Ragù di Capriolo"
+      ]
+    },
+    {
+      "id": 243,
+      "categoria": "ristorante",
+      "nome": "Ristorante Thai Time Out",
+      "data_visita": "2021-10-30",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": "",
+      "lista_cibi": [
+        "Involtini Primavera con Salsa Agrodolce",
+        "Baozi",
+        "Tagliatelle di Riso con Manzo",
+        "Pad Thai con Salsa Thai"
+      ]
+    },
+    {
+      "id": 244,
+      "categoria": "ristorante",
+      "nome": "Osteria La Bajona",
+      "data_visita": "2021-12-02",
+      "descrizione": "",
+      "indirizzo": "23032 Bormio SO",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere con Bresaola della Valtellina e Slinzega",
+        "Tortelli di Brasato con Lamponi Disidratati",
+        "Tagliatelle Salsiccia e Porcini",
+        "Tiramisù",
+        "Creme Brulée"
+      ]
+    },
+    {
+      "id": 245,
+      "categoria": "ristorante",
+      "nome": "Ristorante Gallo Cedrone",
+      "data_visita": "2021-12-03",
+      "descrizione": "",
+      "indirizzo": "23030 Bormio SO",
+      "commento": "",
+      "lista_cibi": [
+        "Tris di Primi",
+        "Pizzoccheri della Valtellina",
+        "Sciatt",
+        "Malfatti",
+        "Tagliatelle al Ragù di Cervo",
+        "Costine di Cervo con Patatine Fritte"
+      ]
+    },
+    {
+      "id": 246,
+      "categoria": "ristorante",
+      "nome": "Itaka Greek Food Parma",
+      "data_visita": "2022-02-05",
+      "descrizione": "",
+      "indirizzo": "43122 Parma PR",
+      "commento": "",
+      "lista_cibi": [
+        "Feta Greca D.O.P.",
+        "Salsa Tzatziki",
+        "Salsa Kopanisti",
+        "Kotopulo Merida",
+        "Ghiros Chirinos"
+      ]
+    },
+    {
+      "id": 247,
+      "categoria": "ristorante",
+      "nome": "Osteria delle Cinque Lire",
+      "data_visita": "2022-03-24",
+      "descrizione": "",
+      "indirizzo": "46100 Pontemerlano MN",
+      "commento": "",
+      "lista_cibi": [
+        "Bruschetta con Bufala",
+        "Maccheroncini con Stracotto di Asino",
+        "Rigatoni al Torchio con Ragù di Maialino e Finferli",
+        "Bocconcini di Pollo al Curry con Burratina"
+      ]
+    },
+    {
+      "id": 248,
+      "categoria": "ristorante",
+      "nome": "Trattoria Pizzeria La Sevra",
+      "data_visita": "2022-04-15",
+      "descrizione": "",
+      "indirizzo": "43038 Sala Baganza PR",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere di Salumi Misti",
+        "Prosciutto Crudo",
+        "Coppa",
+        "Salame",
+        "Pancetta",
+        "Spalla Cotta",
+        "Pappardelle al Cinghiale",
+        "Tortelli di Prosciutto con Fonduta di Formaggi"
+      ]
+    },
+    {
+      "id": 249,
+      "categoria": "ristorante",
+      "nome": "Ristorante OsteRiva",
+      "data_visita": "2022-06-18",
+      "descrizione": "",
+      "indirizzo": "38066 Riva del Garda TN",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere di Salumi e Formaggi",
+        "Giardiniera",
+        "Speck",
+        "Salame",
+        "Pancetta",
+        "Tagliatelle Salsiccia e Funghi",
+        "Bigoli con Pasta di Lucanica e Pomodorini"
+      ]
+    },
+    {
+      "id": 250,
+      "categoria": "ristorante",
+      "nome": "Osteria dell’Oca",
+      "data_visita": "2022-06-24",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere di Salumi, Formaggi e Mostarda",
+        "Polenta con Gras Pistà",
+        "Tronchetti con l’Asino",
+        "Bigoli alla Carrettiera"
+      ]
+    },
+    {
+      "id": 251,
+      "categoria": "ristorante",
+      "nome": "Motonave Andes",
+      "data_visita": "2022-09-16",
+      "descrizione": "(OscarGreen Lombardia 2022)",
+      "indirizzo": "46100 Mantova MN",
+      "commento": "",
+      "lista_cibi": [
+        "Salumi della Tradizione, Formaggi e Mostarde, Torta Salata alle Verdure",
+        "Lasagne al Forno alla Teofilo (Zucca e Salsiccia)",
+        "Pollo alla Bartolomeo Stefani",
+        "Torta Sbrisolona con Zabaione"
+      ]
+    },
+    {
+      "id": 252,
+      "categoria": "ristorante",
+      "nome": "Villa Rosa dei Venti",
+      "data_visita": "2022-09-24",
+      "descrizione": "(Matrimonio Roman e Alessia)",
+      "indirizzo": "41048 San Michele dei Mucchietti MO",
+      "commento": "",
+      "lista_cibi": [
+        "Risotto ai Fiori di Zucchine e Pistilli di Zafferano",
+        "Fagottino al Radicchio Trevigiano e Scaglie di Parmigiano Reggiano in Salsa Parmentier",
+        "Controfiletto di Manzo Argentino alla Colonnata",
+        "Patate Novelle al Forno"
+      ]
+    },
+    {
+      "id": 253,
+      "categoria": "ristorante",
+      "nome": "Enjoy - Ristorante Pizzeria Bistrot",
+      "data_visita": "2022-12-01",
+      "descrizione": "",
+      "indirizzo": "06053 Deruta PG",
+      "commento": "",
+      "lista_cibi": [
+        "Degustazione Formaggi Locali con Miele e Confetture",
+        "Pizza Porcini, Salsiccia, Tartufo Nero",
+        "Mezze Maniche Panna Rosmarino e Salsiccia"
+      ]
+    },
+    {
+      "id": 254,
+      "categoria": "ristorante",
+      "nome": "Trattoria Da Piero e Silvana",
+      "data_visita": "2022-12-02",
+      "descrizione": "",
+      "indirizzo": "06059 Todi PG",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere di Cacciagione",
+        "Salame e Salsiccia di Cinghiale",
+        "Bresaola di Cervo",
+        "Salame di Cervo",
+        "Porchetta di Maiale",
+        "Crostino con Pecorino, Miele e Caffè in Polvere",
+        "Penne alla Norcina",
+        "Bigoli al Cinchiale"
+      ]
+    },
+    {
+      "id": 255,
+      "categoria": "ristorante",
+      "nome": "Ristorante Il Cantinone",
+      "data_visita": "2022-12-03",
+      "descrizione": "",
+      "indirizzo": "06123 Perugia PG",
+      "commento": "",
+      "lista_cibi": [
+        "Maltagliati al Ragù Bianco di Cortile",
+        "Pappardelle al Capriolo",
+        "Polpette di Chianina al Sugo Rosso"
+      ]
+    },
+    {
+      "id": 256,
+      "categoria": "ristorante",
+      "nome": "Ristorante Greco Kalimera",
+      "data_visita": "2022-12-09",
+      "descrizione": "",
+      "indirizzo": "46045 Marmirolo MN",
+      "commento": "",
+      "lista_cibi": [
+        "Giros",
+        "Salsa Tzatziki",
+        "Steik alla Griglia",
+        "Dolmathes"
+      ]
+    },
+    {
+      "id": 257,
+      "categoria": "ristorante",
+      "nome": "Ristorante Indiano Risto Haweli",
+      "data_visita": "2023-02-03",
+      "descrizione": "",
+      "indirizzo": "46014 Castellucchio MN",
+      "commento": "",
+      "lista_cibi": [
+        "Naan Cipolla",
+        "Naan Cumino",
+        "Roti (Naan Integrale)",
+        "Aloo Naan (Patate)",
+        "Kesar Pilao",
+        "Jeera Rice",
+        "Palak Dal",
+        "Chili Chicken",
+        "Lemon Chicken",
+        "Gulab Jamun"
+      ]
+    },
+    {
+      "id": 258,
+      "categoria": "ristorante",
+      "nome": "Ristorante il Monte",
+      "data_visita": "2023-04-22",
+      "descrizione": "",
+      "indirizzo": "42030 Bettola RE",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere di Salumi della Val D’Enza",
+        "Prosciutto Crudo",
+        "Culatta",
+        "Speck",
+        "Pancetta",
+        "Pappardelle al Capriolo",
+        "Tortelli di Patate, Porri e Maggiorana con Sugo di Nonna Stella",
+        "Tiramisù",
+        "Crostata di Prugne"
+      ]
+    },
+    {
+      "id": 259,
+      "categoria": "ristorante",
+      "nome": "Ristorante Baci",
+      "data_visita": "2023-06-17",
+      "descrizione": "",
+      "indirizzo": "24020 Valbondione BG",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere di Salumi",
+        "Prosciutto Cotto",
+        "Prosciutto Crudo",
+        "Salame",
+        "Coppa",
+        "Mortadella",
+        "Casoncelli alla Bergamasca",
+        "Pappardelle al Ragù Casereccio di Cervo"
+      ]
+    },
+    {
+      "id": 260,
+      "categoria": "ristorante",
+      "nome": "Rifugio Monte Orsaro",
+      "data_visita": "2023-07-09",
+      "descrizione": "",
+      "indirizzo": "42030 Monteorsaro RE",
+      "commento": "",
+      "lista_cibi": [
+        "Tortelli del Rifugio (Ripieni di Patate e Salamella Conditi con Soffritto di Cipolla Bianca)",
+        "Pappardelle al Ragù di Cinghiale",
+        "Integrali al Ragù di Pecora"
+      ]
+    },
+    {
+      "id": 261,
+      "categoria": "ristorante",
+      "nome": "Chalet Novezza",
+      "data_visita": "2023-08-12",
+      "descrizione": "",
+      "indirizzo": "37020 Ferrara di Monte Baldo VR",
+      "commento": "",
+      "lista_cibi": [
+        "Canederli Burro e Salvia",
+        "Tagliatelle al Tartufo Nero del Baldo",
+        "Torta di Grano Saraceno con Mirtilli e Panna"
+      ]
+    },
+    {
+      "id": 262,
+      "categoria": "ristorante",
+      "nome": "Ristorante Stella Alpina",
+      "data_visita": "2023-08-19",
+      "descrizione": "",
+      "indirizzo": "25040 Saviore BS",
+      "commento": "",
+      "lista_cibi": [
+        "Carne Salata con Noci, Trentingrana e Rucola",
+        "Formaggio alla Piastra",
+        "Tagliatelle ai Porcini",
+        "Scrigni ai Funghi Porcini"
+      ]
+    },
+    {
+      "id": 263,
+      "categoria": "ristorante",
+      "nome": "Ristorante Pizzeria Il Leone",
+      "data_visita": "2023-08-26",
+      "descrizione": "",
+      "indirizzo": "39030 Sesto BZ",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere di Salumi Tirolesi",
+        "Speck",
+        "Prosciutto Crudo Affumicato",
+        "Salame",
+        "Coppa Affumicata",
+        "Salamini da Passeggio (Affumicato, Piccante)",
+        "Formaggi Tirolesi",
+        "Piatto Unico Tirolese (Canederli, Crauti, Salsiccia)",
+        "Ravioli con Pomodri Secchi e Speck"
+      ]
+    },
+    {
+      "id": 264,
+      "categoria": "ristorante",
+      "nome": "Ristorante San Martino",
+      "data_visita": "2023-09-10",
+      "descrizione": "",
+      "indirizzo": "43025 Palanzano PR",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere di Salumi Misti",
+        "Prosciutto Crudo",
+        "Coppa",
+        "Salame di Felino",
+        "Pancetta",
+        "Tortelli alla Palanzanese (Patate e Erbette)",
+        "Ravioli Porcini e Tartufo",
+        "Tagliatelle al Cinghhiale",
+        "Tartufo Bianco (Dessert)"
+      ]
+    },
+    {
+      "id": 265,
+      "categoria": "ristorante",
+      "nome": "Rifugio Bocca di Selva",
+      "data_visita": "2023-09-24",
+      "descrizione": "",
+      "indirizzo": "37021 Loc. Bocca di Selva, VR",
+      "commento": "",
+      "lista_cibi": [
+        "Gnocchi di Malga Burro e Salvia",
+        "Maccheroncini al Ragù Bianco di Cortile",
+        "Bratwurst con Senape, Crauti e Patate al Forno"
+      ]
+    },
+    {
+      "id": 266,
+      "categoria": "ristorante",
+      "nome": "Agriturismo Corte Barco",
+      "data_visita": "2023-10-29",
+      "descrizione": "",
+      "indirizzo": "46045 Corte Barco - Marmirolo MN",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere Misto Salumi e Formaggi",
+        "Salame Mantovano",
+        "Prosciutto Crudo",
+        "Fiocchetto",
+        "Bresaola con Scamorza",
+        "Pancetta",
+        "Formaggi Vaccini (Affumicato e Stagionato)",
+        "Maccheroncini con Stracotto di Bufala",
+        "Tortelli di Asino",
+        "Caserecce ai Porcini e granella di Nocciole",
+        "Mezzi Paccheri con Sugo di Mascaprone, Castagne e Porcini",
+        "Tagliata di Bufala con Patate al Forno",
+        "Filetto di Maiale al Ribes Rosso",
+        "Tris di Dolci (Terramisù, Sbrisolona, Salame di Cioccolato)"
+      ]
+    },
+    {
+      "id": 267,
+      "categoria": "ristorante",
+      "nome": "Ristorante Indiano Haveli",
+      "data_visita": "2023-11-04",
+      "descrizione": "",
+      "indirizzo": "46030 Cerese MN",
+      "commento": "",
+      "lista_cibi": [
+        "Naan Cipolla",
+        "Naan Aglio",
+        "Roti",
+        "Kesar Pilao",
+        "Jeera Fry Rice",
+        "Punjabi Tori",
+        "Chicken Tikka Masala",
+        "Chicken Kadahi",
+        "Momos"
+      ]
+    },
+    {
+      "id": 268,
+      "categoria": "ristorante",
+      "nome": "Tre da Tre Ristorante Pizzeria",
+      "data_visita": "2023-11-15",
+      "descrizione": "",
+      "indirizzo": "10124 Torino TO",
+      "commento": "",
+      "lista_cibi": [
+        "Agnolotti del Plin con Parmigiano Reggiano, Tè Nero Affumicato e Nocciole delle Langhe",
+        "Tajarin ai Porri di Cervere e Salsiccia"
+      ]
+    },
+    {
+      "id": 269,
+      "categoria": "ristorante",
+      "nome": "Ristorante Ci voleva.mo",
+      "data_visita": "2023-12-03",
+      "descrizione": "",
+      "indirizzo": "41121 Modena MO",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere di Salumi e Formaggi",
+        "Prosciutto Crudo",
+        "Coppa",
+        "Salame",
+        "Mortadella",
+        "Mariola",
+        "Risotto al Lambrusco e Guanciale Rosolato",
+        "Pici Gorgonzola Speck e Noci"
+      ]
+    },
+    {
+      "id": 270,
+      "categoria": "ristorante",
+      "nome": "Ristorante Pizzeria L’Incontro",
+      "data_visita": "2023-12-10",
+      "descrizione": "",
+      "indirizzo": "43039 Salsomaggiore Terme PR",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere di Prosciutto Crudo Guerrino Corradi",
+        "Trancio di Pizza con Culatello e Porcini",
+        "Spaghetti con Crema di Tartufo e Culatello Croccante"
+      ]
+    },
+    {
+      "id": 271,
+      "categoria": "ristorante",
+      "nome": "Da Mandarein di Fontanili Giliola",
+      "data_visita": "2024-05-26",
+      "descrizione": "",
+      "indirizzo": "42020 Salvarano RE",
+      "commento": "",
+      "lista_cibi": [
+        "Antipasto Misto (Offerto)",
+        "Anelli di Cipolla",
+        "Polenta Fritta",
+        "Salame",
+        "Mortadella",
+        "Erbazzone",
+        "Verdure Pastellate Fritte",
+        "Tortelli con Cipolla Rossa di Tropea",
+        "Pappardelle ai Porcini",
+        "Spezzatino di Cervo",
+        "Spezzatino di Cinghiale"
+      ]
+    },
+    {
+      "id": 272,
+      "categoria": "ristorante",
+      "nome": "Culatelleria da Rossi",
+      "data_visita": "2024-06-07",
+      "descrizione": "",
+      "indirizzo": "43012 Sanguinaro PR",
+      "commento": "",
+      "lista_cibi": [
+        "Pane con Grasso Pesto",
+        "Degustazione di Salumi",
+        "Culatello di Zibello DOP",
+        "Culaccia ’Salumifico Rossi’",
+        "Prosciutto Crudo 24 Mesi",
+        "Strolghino di Culatello",
+        "Salame di Felino",
+        "Torta Fritta"
+      ]
+    },
+    {
+      "id": 273,
+      "categoria": "ristorante",
+      "nome": "Ristorante Locanda Del Colle",
+      "data_visita": "2024-06-07",
+      "descrizione": "",
+      "indirizzo": "43039 Tabiano PR",
+      "commento": "",
+      "lista_cibi": [
+        "Formaggio di Capra con Miele, Noci e Mostarda di Fichi",
+        "Tagliatelle ai Porri",
+        "Gnocchi alla Lavanda"
+      ]
+    },
+    {
+      "id": 274,
+      "categoria": "ristorante",
+      "nome": "Bar Ristorane Benini Luciano",
+      "data_visita": "2024-06-22",
+      "descrizione": "",
+      "indirizzo": "25072 Bagolino BS",
+      "commento": "",
+      "lista_cibi": [
+        "Antipasto Misto (Offerto)",
+        "Frittatina Speck, Patate e Cipolle",
+        "Verdure Pastellate",
+        "Involtino Speck e Zucchine",
+        "Bagoss alla Piastra",
+        "Tagliatelle ai Porcini",
+        "Ravioli di Capriolo al Burro e Salvia e Bagoss"
+      ]
+    },
+    {
+      "id": 275,
+      "categoria": "ristorante",
+      "nome": "Grill Du Beau Sejour",
+      "data_visita": "2024-07-01",
+      "descrizione": "",
+      "indirizzo": "11014 Etroubles AO",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere di Salumi Valdostani",
+        "Crudo al Genepy",
+        "Prosciutto di Saint-Marcel",
+        "Coppa",
+        "Moccetta",
+        "Lard d’Arnad",
+        "Speck",
+        "Formaggi Locali",
+        "Tagliatelle al Capriolo",
+        "Gnocchetti con Fonduta di Formaggi"
+      ]
+    },
+    {
+      "id": 276,
+      "categoria": "ristorante",
+      "nome": "Taverna Coppapan e Pizzeria Le Dahu",
+      "data_visita": "2024-07-04",
+      "descrizione": "",
+      "indirizzo": "11016 La Thuile AO",
+      "commento": "",
+      "lista_cibi": [
+        "Pizza Porcini e Salsiccia",
+        "Pizza Moulin (Salsiccia, Pancetta, Fontina)"
+      ]
+    },
+    {
+      "id": 277,
+      "categoria": "ristorante",
+      "nome": "Ristorane Da Antonio",
+      "data_visita": "2024-08-07",
+      "descrizione": "",
+      "indirizzo": "96010 Buccheri SR",
+      "commento": "",
+      "lista_cibi": [
+        "Cavati con Ragù di Finocchietto, Salsiccia e Pinoli"
+      ]
+    },
+    {
+      "id": 278,
+      "categoria": "ristorante",
+      "nome": "Ristorane San Giorgio e il Drago",
+      "data_visita": "2024-08-08",
+      "descrizione": "",
+      "indirizzo": "95036 Randazzo CT",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere Antipasto Misto",
+        "Bruschette",
+        "Piacentinu Ennese",
+        "Formaggio Ubriaco",
+        "Caciocavallo",
+        "Mortadella",
+        "Coppa",
+        "Salame di Suino Nero dei Nebrodi",
+        "Tonnacchioli ai Funghi",
+        "Tagliata di Manzo al Pepe Verde e Rosmarino"
+      ]
+    },
+    {
+      "id": 279,
+      "categoria": "ristorante",
+      "nome": "Ristorane La Sciccheria",
+      "data_visita": "2024-08-11",
+      "descrizione": "",
+      "indirizzo": "96100 Siracusa SR",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliolini alla Marina (Cozze, Vongole, Gamberi)",
+        "Tagliolini Melodia (Tartare di Gambero Rosso, Cipolle, Peperoncino)"
+      ]
+    },
+    {
+      "id": 280,
+      "categoria": "ristorante",
+      "nome": "Rifugio Mario Fraccaroli",
+      "data_visita": "2024-08-15",
+      "descrizione": "",
+      "indirizzo": "38061 Ala TN",
+      "commento": "",
+      "lista_cibi": [
+        "Spaghetti all Montanara (Salsiccia, Funghi, Panna)",
+        "Polenta con Funghi e MonteVeronese",
+        "Funghi Trifolati",
+        "Panino con Speck"
+      ]
+    },
+    {
+      "id": 281,
+      "categoria": "ristorante",
+      "nome": "Ristorante al Museo",
+      "data_visita": "2024-09-14",
+      "descrizione": "",
+      "indirizzo": "43013 Langhirano PR",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere di Salumi e Torta Fritta",
+        "Prosciutto di Parma 24 Mesi",
+        "Pancetta Arrotolata Piacentina",
+        "Coppa Piacentina",
+        "Salame di Felino"
+      ]
+    },
+    {
+      "id": 282,
+      "categoria": "ristorante",
+      "nome": "I Bei Tempi",
+      "data_visita": "2024-09-18",
+      "descrizione": "",
+      "indirizzo": "46010 San Michele In Bosco MN",
+      "commento": "",
+      "lista_cibi": [
+        "Pappardelle con Salmì di Lepre",
+        "Piatto del Norcino",
+        "Prosciutto di Parma",
+        "Pesto di Salame alla Griglia"
+      ]
+    },
+    {
+      "id": 283,
+      "categoria": "ristorante",
+      "nome": "Speck Stube",
+      "data_visita": "2024-09-29",
+      "descrizione": "",
+      "indirizzo": "37018 Malcesine VR",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere Misto",
+        "Speck Alto Adige IGP",
+        "Salamino Affumicato",
+        "Asiago DOP",
+        "Wurstel Bavaresi",
+        "Insalata di Patate",
+        "Stinco di Maiale al Forno",
+        "Patatine Fritte",
+        "Crauti"
+      ]
+    },
+    {
+      "id": 284,
+      "categoria": "ristorante",
+      "nome": "RIC - Chicken House",
+      "data_visita": "2024-10-12",
+      "descrizione": "",
+      "indirizzo": "46100 Mantova MN",
+      "commento": "",
+      "lista_cibi": [
+        "Mega Tenders (Salsa Creamy White)",
+        "Fried Chicken (Salsa Sweet BBQ)",
+        "RIC Potatoes",
+        "Crispy Chicken Burger (Cotoletta, Scamorza, Cipolla Agrodolce, Maionese, Salsa Coleslaw, Salsa Creamy White)"
+      ]
+    },
+    {
+      "id": 285,
+      "categoria": "ristorante",
+      "nome": "Ristorante Pizzeria Ponte Molo",
+      "data_visita": "2024-11-01",
+      "descrizione": "",
+      "indirizzo": "45018 Porto Tolle RO",
+      "commento": "",
+      "lista_cibi": [
+        "Cozze, Vongole, Bibarasse",
+        "Spaghetti allo Scoglio",
+        "Spaghetti alle Vongole e Bibarasse"
+      ]
+    },
+    {
+      "id": 286,
+      "categoria": "ristorante",
+      "nome": "Le Gresine",
+      "data_visita": "2024-11-02",
+      "descrizione": "",
+      "indirizzo": "44022 Comacchio FE",
+      "commento": "",
+      "lista_cibi": [
+        "Anguilla Marinata",
+        "Maccheroncini all’Anguilla",
+        "Spaghetti alle Vongole Veraci",
+        "Anguilla ai Ferri con Polenta"
+      ]
+    },
+    {
+      "id": 287,
+      "categoria": "ristorante",
+      "nome": "Ai Tre Garofani",
+      "data_visita": "2024-12-15",
+      "descrizione": "",
+      "indirizzo": "38122 Trento TN",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere Misto Trentino",
+        "Speck Alto Adige IGP",
+        "Salamino Affumicato",
+        "Prosciutto Crudo",
+        "Bresaola",
+        "Rosti di Patate",
+        "Asiago DOP",
+        "Trentingrana",
+        "Zuppa di Farro alla Trentina",
+        "Canederli con Fonduta di Trentingrana"
+      ]
+    },
+    {
+      "id": 288,
+      "categoria": "ristorante",
+      "nome": "Il Biscione",
+      "data_visita": "2025-01-19",
+      "descrizione": "",
+      "indirizzo": "29020 Grazzano Visconti PC",
+      "commento": "",
+      "lista_cibi": [
+        "Pisarei e Fasö alla Piacentina",
+        "Anvei alla Boscaiola",
+        "Brasato di Coppa con Melannurca IGP e Cannella",
+        "Insalata Rustica di Fagioli, Cipollotto e Pomodorini"
+      ]
+    },
+    {
+      "id": 289,
+      "categoria": "ristorante",
+      "nome": "Calavera",
+      "data_visita": "2025-02-02",
+      "descrizione": "",
+      "indirizzo": "43121 Parma PR",
+      "commento": "",
+      "lista_cibi": [
+        "Arroz con Chorizo",
+        "Burrito Red Avocado",
+        "Taco Chicken",
+        "Taco Pulled Pork"
+      ]
+    },
+    {
+      "id": 290,
+      "categoria": "ristorante",
+      "nome": "Agriturismo Al Fugulèr",
+      "data_visita": "2025-03-21",
+      "descrizione": "",
+      "indirizzo": "46045 Marmirolo MN",
+      "commento": "",
+      "lista_cibi": [
+        "Tagliere di Salumi Mantovani",
+        "Salame Mantovano",
+        "Coppa",
+        "Prosciutto Crudo",
+        "Pancetta",
+        "Grana Padano",
+        "Giardiniera",
+        "Risotto alla Pilota",
+        "Risotto Funghi e Salsiccia",
+        "Maccheroncini allo Stracotto",
+        "Guancialini in Umido"
+      ]
+    },
+    {
+      "id": 291,
+      "categoria": "ristorante",
+      "nome": "Pizzeria Focacceria Quattrocento",
+      "data_visita": "2025-04-12",
+      "descrizione": "",
+      "indirizzo": "37142 Marzana VR",
+      "commento": "",
+      "lista_cibi": [
+        "Pizza Quattrocento (Salsiccia Veneta, Salamino Piccante, Monteveronese DOP, Pangrattato) + Cipolla",
+        "Pizza (Impasto Speciale) Marinara + Cipolla",
+        "Pizza (Impasto senza Glutine) con Nutella"
+      ]
+    },
+    {
+      "id": 292,
+      "categoria": "ristorante",
+      "nome": "Ristorante Trattoria \"Acetaia del Balsamico Trentino\"",
+      "data_visita": "2025-04-25",
+      "descrizione": "",
+      "indirizzo": "38060 Tenno TN",
+      "commento": "",
+      "lista_cibi": [
+        "Antipasto misto dell’Acetaia",
+        "Carne Salada di Cologna",
+        "Coppa di Testa",
+        "Prosciutto Crudo",
+        "Salame Nostrano",
+        "Ricotta Fresca",
+        "Sizam di Biancostato di Manzo",
+        "Focaccia con Marmellata di Cipolle e Arance",
+        "Cavolo Cappuccio e Cipolle in Agrodolce",
+        "Tartare di Carne Salada di Cologna",
+        "Canederli al Burro e Salvia",
+        "Tagliolini di Grano Saraceno con Pesto di Ortiche",
+        "Caserecce con Crema di Zucchine e Trota",
+        "Spaghetti Ubriachi con Guanciale, Pancetta e Fonduta di Bonomì"
+      ]
+    }
+  ]
 }
